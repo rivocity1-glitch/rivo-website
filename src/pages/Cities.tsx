@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
+import SEO from '../components/SEO';
 
 import { 
   ArrowRight, 
@@ -69,6 +70,12 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 const Cities: React.FC = () => {
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', city: '' });
+  
+  const requestSectionRef = useRef<HTMLDivElement>(null);
+
+  const scrollToRequestSection = () => {
+    requestSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenFAQIndex(openFaqIndex === index ? null : index);
@@ -81,17 +88,19 @@ const Cities: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    alert(`Thank you! Your expansion request for "${formData.city}" has been registered safely.`);
+    setFormData({ name: '', email: '', city: '' });
   };
 
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
+      <SEO title="Explore Cities - Rivo" description="Discover where Rivo is expanding next or cast a vote to bring services to your local community area." />
       
       {/* ================= SECTION 1: HERO ================= */}
       <section className="relative pt-8 pb-16 md:pt-16 md:pb-24 lg:pb-32" aria-labelledby="cities-hero-heading">
         <div className="container-custom">
           <div className="max-w-3xl text-left flex flex-col space-y-8 items-start">
             
-            {/* Corrected Badge with self-start */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -101,7 +110,6 @@ const Cities: React.FC = () => {
               Service Areas
             </motion.div>
 
-            {/* Headline */}
             <div className="space-y-4 w-full">
               <motion.h1 
                 id="cities-hero-heading" 
@@ -115,7 +123,6 @@ const Cities: React.FC = () => {
               </motion.h1>
             </div>
 
-            {/* Paragraph */}
             <motion.p 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -125,17 +132,16 @@ const Cities: React.FC = () => {
               We're building Rivo one city at a time, creating trusted local shopping experiences before expanding to new communities.
             </motion.p>
 
-            {/* Actions */}
             <motion.div 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
-              <Button variant="primary" className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Explore Rivo <ArrowRight className="w-5 h-5 ml-1" />
+              <Button variant="primary" onClick={scrollToRequestSection} className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
+                Explore Your City <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
-              <Button variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
+              <Button variant="outline" onClick={scrollToRequestSection} className="px-8 py-4 text-base font-semibold bg-white">
                 Request Your City
               </Button>
             </motion.div>
@@ -179,7 +185,6 @@ const Cities: React.FC = () => {
               </div>
             </div>
 
-            {/* Highlights Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 text-left">
               <div className="flex items-start gap-4">
                 <div className="p-2.5 bg-[#FAF9FA] border border-neutral-200 rounded-xl text-brand-primary">
@@ -216,7 +221,7 @@ const Cities: React.FC = () => {
         </div>
       </section>
 
-      {/* ================= SECTION 3: WHY WE EXPAND CAREFULLY ================= */}
+      {/* ================= SECTION 3: EXPANSION PHILOSOPHY ================= */}
       <section className="py-20 md:py-32 bg-white border-t border-neutral-100" aria-labelledby="expansion-heading">
         <div className="container-custom">
           
@@ -259,7 +264,7 @@ const Cities: React.FC = () => {
         </div>
       </section>
 
-      {/* ================= SECTION 4: COMING SOON ================= */}
+      {/* ================= SECTION 4: ROADMAP ================= */}
       <section className="py-20 md:py-32 bg-[#FAF9FA] border-t border-neutral-100" aria-labelledby="roadmap-heading">
         <div className="container-custom">
           
@@ -293,7 +298,7 @@ const Cities: React.FC = () => {
       </section>
 
       {/* ================= SECTION 5: REQUEST YOUR CITY ================= */}
-      <section className="py-20 md:py-32 bg-white border-t border-neutral-100" aria-labelledby="request-heading">
+      <section ref={requestSectionRef} className="py-20 md:py-32 bg-white border-t border-neutral-100" aria-labelledby="request-heading">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
             
@@ -363,7 +368,7 @@ const Cities: React.FC = () => {
         </div>
       </section>
 
-      {/* ================= SECTION 6: FREQUENTLY ASKED QUESTIONS ================= */}
+      {/* ================= SECTION 6: FAQs ================= */}
       <section className="py-20 md:py-32 bg-white border-t border-neutral-100" aria-labelledby="faq-heading">
         <div className="container-custom">
           
@@ -410,10 +415,10 @@ const Cities: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4 justify-center">
-              <Button variant="primary" className="px-10 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
+              <Button variant="primary" onClick={scrollToRequestSection} className="px-10 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
                 Request Your City <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
-              <Button variant="outline" className="px-10 py-4 text-base font-semibold bg-white">
+              <Button variant="outline" onClick={scrollToRequestSection} className="px-10 py-4 text-base font-semibold bg-white">
                 Explore Rivo
               </Button>
             </div>

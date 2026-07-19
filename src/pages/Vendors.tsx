@@ -79,7 +79,7 @@ const Vendors: React.FC = () => {
   const navigate = useNavigate();
 
   const handleRegisterRedirect = () => {
-    window.open('http://localhost:5174/login?view=register', '_blank', 'noopener,noreferrer');
+    window.open('https://vendorportal-7kq.pages.dev/', '_blank', 'noopener,noreferrer');
   };
 
   const handleViewPricing = () => {

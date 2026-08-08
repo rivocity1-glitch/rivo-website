@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 
 // Lazy load layout pages for structural performance optimization
 const Home = React.lazy(() => import('./pages/Home'));
+const Apps = React.lazy(() => import('./pages/Apps'));
 const About = React.lazy(() => import('./pages/About'));
 const Customers = React.lazy(() => import('./pages/Customers'));
 const Vendors = React.lazy(() => import('./pages/Vendors'));
@@ -23,10 +24,12 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
+
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
+            <Route path="apps" element={<Apps />} />
             <Route path="about" element={<About />} />
             <Route path="customers" element={<Customers />} />
             <Route path="vendors" element={<Vendors />} />

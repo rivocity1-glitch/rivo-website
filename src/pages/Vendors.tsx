@@ -117,4 +117,5 @@ export const Vendors: React.FC = () => {
       />
     </div>
   );
-};
+};  
+export default Vendors;

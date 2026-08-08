@@ -360,10 +360,9 @@ const Apps: React.FC = () => {
                   />
                 </div>
 
-                <p className="text-xs text-neutral-400 mt-5 break-all">
-                  rivo.city/apps
-                </p>
-
+               <p className="text-xs text-neutral-400 mt-5 break-all">
+  rivo-website.pages.dev/apps
+</p>
                 <p className="text-xs text-neutral-500 mt-3">
                   Scan once and choose the app you need.
                 </p>
@@ -451,7 +450,7 @@ const Apps: React.FC = () => {
                   </h3>
 
                   <p className="text-sm text-neutral-400 mt-3 max-w-2xl leading-relaxed">
-                    This QR points to rivo.city/apps instead of directly to
+                    This QR points to rivo-website.pages.dev/apps instead of directly to
                     an APK. That means we can later add Play Store, iOS and
                     future app versions without changing the QR printed on
                     your pamphlets.

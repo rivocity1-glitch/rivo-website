@@ -11,8 +11,9 @@ export interface SEOProps {
 }
 
 const SITE_URL = 'https://rivo.city';
-const DEFAULT_TITLE = 'Rivo | One City. Infinite Possibilities.';
-const DEFAULT_DESCRIPTION = 'Discover trusted local businesses, fast local delivery and everything your city has to offer with Rivo.';
+const DEFAULT_TITLE = 'RivoCity | One City. Infinite Possibilities.';
+const DEFAULT_DESCRIPTION =
+  'Discover trusted local businesses, fast local delivery and everything your city has to offer with RivoCity.';
 const DEFAULT_IMAGE = '/og-image.png';
 const DEFAULT_ROBOTS = 'index,follow';
 
@@ -22,14 +23,16 @@ export const SEO: React.FC<SEOProps> = ({
   keywords,
   canonical,
   image = DEFAULT_IMAGE,
-  robots = DEFAULT_ROBOTS
+  robots = DEFAULT_ROBOTS,
 }) => {
-  const siteName = 'Rivo';
-  
-  // Safe production generation for absolute canonical pathways[cite: 8]
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
-  const canonicalUrl = canonical 
-    ? `${SITE_URL}${canonical.startsWith('/') ? canonical : `/${canonical}`}` 
+  const siteName = 'RivoCity';
+
+  // Generate absolute canonical URLs for production
+  const pathname =
+    typeof window !== 'undefined' ? window.location.pathname : '';
+
+  const canonicalUrl = canonical
+    ? `${SITE_URL}${canonical.startsWith('/') ? canonical : `/${canonical}`}`
     : `${SITE_URL}${pathname}`;
 
   return (

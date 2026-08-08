@@ -14,14 +14,13 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const APPS_PAGE_URL = 'https://rivo.city/apps';
+const APPS_PAGE_URL = 'https://rivo-website.pages.dev/apps';
 
 const CUSTOMER_APK =
   'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity.apk';
 
 const RIDER_APK =
   'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity-Rider.apk';
-
 const getQrUrl = (value: string) =>
   `https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&data=${encodeURIComponent(
     value

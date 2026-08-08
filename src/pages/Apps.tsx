@@ -13,6 +13,12 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 
+const CUSTOMER_APK =
+  'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity.apk';
+
+const RIDER_APK =
+  'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity-Rider.apk';
+
 const Apps: React.FC = () => {
   return (
     <>
@@ -191,7 +197,7 @@ const Apps: React.FC = () => {
 
                   <div className="mt-10 flex flex-col sm:flex-row gap-3">
                     <a
-                      href="/downloads/rivocity-customer.apk"
+                      href={CUSTOMER_APK}
                       className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#2ECC71] text-white text-sm font-semibold hover:bg-[#27ae60] transition-colors"
                     >
                       <Download className="w-4 h-4" />
@@ -207,8 +213,13 @@ const Apps: React.FC = () => {
                 <div className="min-h-[420px] lg:min-h-full bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center p-10">
                   <div className="w-56 h-[440px] rounded-[2.5rem] border-[8px] border-neutral-700 bg-white shadow-2xl flex flex-col items-center justify-center text-black">
                     <div className="w-16 h-1 rounded-full bg-neutral-300 mb-10" />
+
                     <ShoppingBag className="w-14 h-14 text-[#2ECC71]" />
-                    <p className="font-bold mt-5">RivoCity</p>
+
+                    <p className="font-bold mt-5">
+                      RivoCity
+                    </p>
+
                     <p className="text-xs text-neutral-400 mt-1">
                       Customer App
                     </p>
@@ -226,8 +237,13 @@ const Apps: React.FC = () => {
               <div className="order-2 lg:order-1 flex justify-center">
                 <div className="w-56 h-[440px] rounded-[2.5rem] border-[8px] border-neutral-800 bg-white shadow-2xl flex flex-col items-center justify-center">
                   <div className="w-16 h-1 rounded-full bg-neutral-300 mb-10" />
+
                   <Truck className="w-14 h-14 text-[#2ECC71]" />
-                  <p className="font-bold mt-5">RivoCity</p>
+
+                  <p className="font-bold mt-5">
+                    RivoCity
+                  </p>
+
                   <p className="text-xs text-neutral-400 mt-1">
                     Rider App
                   </p>
@@ -275,7 +291,7 @@ const Apps: React.FC = () => {
 
                 <div className="mt-10 flex flex-col sm:flex-row gap-3">
                   <a
-                    href="/downloads/rivocity-rider.apk"
+                    href={RIDER_APK}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black text-white text-sm font-semibold hover:bg-neutral-800 transition-colors"
                   >
                     <Download className="w-4 h-4" />
@@ -353,7 +369,10 @@ const Apps: React.FC = () => {
                     </div>
 
                     <div>
-                      <p className="font-semibold text-sm">RivoCity Vendor</p>
+                      <p className="font-semibold text-sm">
+                        RivoCity Vendor
+                      </p>
+
                       <p className="text-xs text-neutral-400">
                         Business operations
                       </p>
@@ -371,7 +390,10 @@ const Apps: React.FC = () => {
                         key={title}
                         className="bg-white rounded-2xl p-4 border border-neutral-100"
                       >
-                        <p className="text-sm font-semibold">{title}</p>
+                        <p className="text-sm font-semibold">
+                          {title}
+                        </p>
+
                         <p className="text-xs text-neutral-400 mt-1">
                           {description}
                         </p>
@@ -385,7 +407,10 @@ const Apps: React.FC = () => {
         </section>
 
         {/* Journey */}
-        <section id="journey" className="py-20 md:py-28 bg-neutral-950 text-white">
+        <section
+          id="journey"
+          className="py-20 md:py-28 bg-neutral-950 text-white"
+        >
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2ECC71] mb-4">

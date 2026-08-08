@@ -6,6 +6,7 @@ import {
   ExternalLink,
   MapPin,
   Package,
+  QrCode,
   ShoppingBag,
   Store,
   Truck,
@@ -13,11 +14,18 @@ import {
 } from 'lucide-react';
 import SEO from '../components/SEO';
 
+const APPS_PAGE_URL = 'https://rivo.city/apps';
+
 const CUSTOMER_APK =
   'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity.apk';
 
 const RIDER_APK =
   'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity-Rider.apk';
+
+const getQrUrl = (value: string) =>
+  `https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&data=${encodeURIComponent(
+    value
+  )}`;
 
 const Apps: React.FC = () => {
   return (
@@ -62,10 +70,11 @@ const Apps: React.FC = () => {
               </a>
 
               <a
-                href="#journey"
+                href="#qr"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-neutral-200 text-sm font-semibold hover:bg-neutral-50 transition-colors"
               >
-                See how RivoCity works
+                Get the app QR
+                <QrCode className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -302,6 +311,163 @@ const Apps: React.FC = () => {
                     Android • APK
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* QR Codes */}
+        <section id="qr" className="py-20 md:py-28">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center max-w-2xl mx-auto">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2ECC71] mb-4">
+                Scan & download
+              </p>
+
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                Get RivoCity on your phone.
+              </h2>
+
+              <p className="mt-5 text-neutral-500 leading-relaxed">
+                Scan a QR code with your phone camera to open the RivoCity
+                apps or download an app directly.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+              {/* Main Apps QR */}
+              <div className="rounded-3xl border-2 border-[#2ECC71]/20 bg-neutral-50 p-7 text-center">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2ECC71]/10 text-[#239b58] text-xs font-semibold mb-6">
+                  <QrCode className="w-3.5 h-3.5" />
+                  Recommended
+                </div>
+
+                <h3 className="text-xl font-bold">
+                  RivoCity Apps
+                </h3>
+
+                <p className="text-sm text-neutral-500 mt-2 min-h-[40px]">
+                  Best for pamphlets, posters and general promotion.
+                </p>
+
+                <div className="mt-6 bg-white rounded-2xl p-4 inline-flex shadow-sm">
+                  <img
+                    src={getQrUrl(APPS_PAGE_URL)}
+                    alt="QR code for RivoCity Apps"
+                    width={220}
+                    height={220}
+                    className="w-52 h-52 md:w-56 md:h-56"
+                    loading="lazy"
+                  />
+                </div>
+
+                <p className="text-xs text-neutral-400 mt-5 break-all">
+                  rivo.city/apps
+                </p>
+
+                <p className="text-xs text-neutral-500 mt-3">
+                  Scan once and choose the app you need.
+                </p>
+              </div>
+
+              {/* Customer QR */}
+              <div className="rounded-3xl border border-neutral-100 bg-white p-7 text-center shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-[#2ECC71]/10 flex items-center justify-center mx-auto mb-6">
+                  <ShoppingBag className="w-6 h-6 text-[#2ECC71]" />
+                </div>
+
+                <h3 className="text-xl font-bold">
+                  RivoCity
+                </h3>
+
+                <p className="text-sm text-neutral-500 mt-2 min-h-[40px]">
+                  Direct QR for the Customer App APK.
+                </p>
+
+                <div className="mt-6 bg-white rounded-2xl p-4 inline-flex border border-neutral-100">
+                  <img
+                    src={getQrUrl(CUSTOMER_APK)}
+                    alt="QR code for RivoCity Customer App"
+                    width={220}
+                    height={220}
+                    className="w-52 h-52 md:w-56 md:h-56"
+                    loading="lazy"
+                  />
+                </div>
+
+                <a
+                  href={CUSTOMER_APK}
+                  className="inline-flex items-center justify-center gap-2 mt-5 px-5 py-2.5 rounded-full bg-black text-white text-xs font-semibold hover:bg-neutral-800 transition-colors"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  Download Customer App
+                </a>
+              </div>
+
+              {/* Rider QR */}
+              <div className="rounded-3xl border border-neutral-100 bg-white p-7 text-center shadow-sm">
+                <div className="w-12 h-12 rounded-2xl bg-neutral-100 flex items-center justify-center mx-auto mb-6">
+                  <Truck className="w-6 h-6" />
+                </div>
+
+                <h3 className="text-xl font-bold">
+                  RivoCity Rider
+                </h3>
+
+                <p className="text-sm text-neutral-500 mt-2 min-h-[40px]">
+                  Direct QR for the Rider App APK.
+                </p>
+
+                <div className="mt-6 bg-white rounded-2xl p-4 inline-flex border border-neutral-100">
+                  <img
+                    src={getQrUrl(RIDER_APK)}
+                    alt="QR code for RivoCity Rider App"
+                    width={220}
+                    height={220}
+                    className="w-52 h-52 md:w-56 md:h-56"
+                    loading="lazy"
+                  />
+                </div>
+
+                <a
+                  href={RIDER_APK}
+                  className="inline-flex items-center justify-center gap-2 mt-5 px-5 py-2.5 rounded-full bg-black text-white text-xs font-semibold hover:bg-neutral-800 transition-colors"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  Download Rider App
+                </a>
+              </div>
+            </div>
+
+            {/* Pamphlet recommendation */}
+            <div className="mt-10 rounded-3xl bg-neutral-950 text-white p-7 md:p-10">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2ECC71]">
+                    For RivoCity pamphlets
+                  </p>
+
+                  <h3 className="text-2xl md:text-3xl font-bold mt-2">
+                    Use the RivoCity Apps QR.
+                  </h3>
+
+                  <p className="text-sm text-neutral-400 mt-3 max-w-2xl leading-relaxed">
+                    This QR points to rivo.city/apps instead of directly to
+                    an APK. That means we can later add Play Store, iOS and
+                    future app versions without changing the QR printed on
+                    your pamphlets.
+                  </p>
+                </div>
+
+                <a
+                  href={APPS_PAGE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#2ECC71] text-white text-sm font-semibold hover:bg-[#27ae60] transition-colors"
+                >
+                  Open Apps Page
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>

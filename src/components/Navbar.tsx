@@ -30,7 +30,9 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -47,6 +49,7 @@ const Navbar = () => {
       const timer = setTimeout(() => {
         setShowToast(false);
       }, 3000);
+
       return () => clearTimeout(timer);
     }
   }, [showToast]);
@@ -55,7 +58,9 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md ${
-          scrolled ? 'shadow-sm border-b border-neutral-100' : 'border-b border-transparent'
+          scrolled
+            ? 'shadow-sm border-b border-neutral-100'
+            : 'border-b border-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6">
@@ -63,7 +68,7 @@ const Navbar = () => {
             {/* Brand Logo */}
             <Link to="/" className="flex items-center gap-2 group">
               <span className="text-xl font-bold tracking-tight text-black transition-colors duration-200">
-                Rivo<span className="text-[#2ECC71]">.City</span>
+                RivoCity
               </span>
             </Link>
 
@@ -71,20 +76,28 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-1">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
+
                 return (
                   <Link
                     key={item.label}
                     to={item.path}
                     className={`relative px-4 py-2 text-xs font-medium transition-colors duration-200 ${
-                      isActive ? 'text-black' : 'text-neutral-600 hover:text-black'
+                      isActive
+                        ? 'text-black'
+                        : 'text-neutral-600 hover:text-black'
                     }`}
                   >
                     <span className="relative z-10">{item.label}</span>
+
                     {isActive && (
                       <motion.span
                         layoutId="activeIndicator"
                         className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#2ECC71] rounded-full"
-                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        transition={{
+                          type: 'spring',
+                          stiffness: 380,
+                          damping: 30,
+                        }}
                       />
                     )}
                   </Link>
@@ -109,7 +122,11 @@ const Navbar = () => {
               className="p-2 -mr-2 rounded-full text-black hover:bg-neutral-50 md:hidden transition-colors duration-200"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -127,6 +144,7 @@ const Navbar = () => {
               <div className="px-6 py-6 flex flex-col gap-2">
                 {navItems.map((item) => {
                   const isActive = location.pathname === item.path;
+
                   return (
                     <Link
                       key={item.label}
@@ -138,10 +156,14 @@ const Navbar = () => {
                       }`}
                     >
                       <span>{item.label}</span>
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#2ECC71]" />}
+
+                      {isActive && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#2ECC71]" />
+                      )}
                     </Link>
                   );
                 })}
+
                 <div className="pt-4 px-4 border-t border-neutral-100 mt-2">
                   <button
                     type="button"
@@ -161,15 +183,35 @@ const Navbar = () => {
       <AnimatePresence>
         {showToast && (
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.95, x: '-50%' }}
-            animate={{ opacity: 1, y: 0, scale: 1, x: '-50%' }}
-            exit={{ opacity: 0, y: 20, scale: 0.95, x: '-50%' }}
-            transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+            initial={{
+              opacity: 0,
+              y: 50,
+              scale: 0.95,
+              x: '-50%',
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              x: '-50%',
+            }}
+            exit={{
+              opacity: 0,
+              y: 20,
+              scale: 0.95,
+              x: '-50%',
+            }}
+            transition={{
+              type: 'spring',
+              damping: 20,
+              stiffness: 300,
+            }}
             className="fixed bottom-8 left-1/2 z-50 flex items-center gap-2.5 px-5 py-3.5 bg-neutral-900 text-white rounded-2xl shadow-xl shadow-black/10 border border-neutral-800"
           >
             <Sparkles className="w-4 h-4 text-[#2ECC71] animate-pulse" />
+
             <span className="text-xs font-semibold tracking-wide">
-              Rivo apps are launching soon.
+              RivoCity apps are launching soon.
             </span>
           </motion.div>
         )}

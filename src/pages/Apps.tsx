@@ -21,6 +21,54 @@ const CUSTOMER_APK =
 
 const RIDER_APK =
   'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity-Rider.apk';
+
+const VENDOR_PORTAL_URL = 'https://vendorportal-7kq.pages.dev/';
+
+const CUSTOMER_ICON = '/apps/customer-icon.png';
+const RIDER_ICON = '/apps/rider-icon.png';
+
+const smoothTransition: Transition = {
+  type: 'tween',
+  ease: [0.16, 1, 0.3, 1],
+  duration: 0.6,
+};
+
+const revealVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: smoothTransition,
+  },
+};
+
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardHoverVariants: Variants = {
+  initial: {
+    y: 0,
+    scale: 1,
+    borderColor: 'rgba(229, 231, 235, 1)',
+    boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.02)',
+  },
+  hover: {
+    y: -6,
+    scale: 1.015,
+    borderColor: 'rgba(46, 204, 113, 0.4)',
+    boxShadow: '0 16px 32px -12px rgba(46, 204, 113, 0.12)',
+  },
+};
+
 const getQrUrl = (value: string) =>
   `https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&data=${encodeURIComponent(
     value
@@ -285,6 +333,7 @@ const Apps: React.FC = () => {
               </motion.div>
 
               {/* CUSTOMER APP ICON */}
+
               <motion.div
                 variants={revealVariants}
                 className="flex justify-center"
@@ -338,6 +387,7 @@ const Apps: React.FC = () => {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
             >
               {/* RIDER APP ICON */}
+
               <motion.div
                 variants={revealVariants}
                 className="order-2 lg:order-1 flex justify-center"
@@ -433,7 +483,9 @@ const Apps: React.FC = () => {
 
         {/* =========================================================
             QR CODES
-            ONLY CUSTOMER + RIDER
+            EXACTLY TWO:
+            1. CUSTOMER
+            2. RIDER
         ========================================================= */}
 
         <section
@@ -461,60 +513,48 @@ const Apps: React.FC = () => {
                   Get RivoCity on your phone.
                 </h2>
 
-              <p className="mt-5 text-neutral-500 leading-relaxed">
-                Scan a QR code with your phone camera to open the RivoCity
-                apps or download an app directly.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
-              {/* Main Apps QR */}
-              <div className="rounded-3xl border-2 border-[#2ECC71]/20 bg-neutral-50 p-7 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2ECC71]/10 text-[#239b58] text-xs font-semibold mb-6">
-                  <QrCode className="w-3.5 h-3.5" />
-                  Recommended
-                </div>
-
-                <h3 className="text-xl font-bold">
-                  RivoCity Apps
-                </h3>
-
-                <p className="text-sm text-neutral-500 mt-2 min-h-[40px]">
-                  Best for pamphlets, posters and general promotion.
+                <p className="mt-5 text-neutral-500 leading-relaxed">
+                  Scan a QR code with your phone camera to download the
+                  RivoCity app you need.
                 </p>
+              </motion.div>
 
-                <div className="mt-6 bg-white rounded-2xl p-4 inline-flex shadow-sm">
-                  <img
-                    src={getQrUrl(APPS_PAGE_URL)}
-                    alt="QR code for RivoCity Apps"
-                    width={220}
-                    height={220}
-                    className="w-52 h-52 md:w-56 md:h-56"
-                    loading="lazy"
-                  />
-                </div>
+              {/* ONLY TWO QR CARDS */}
 
-               <p className="text-xs text-neutral-400 mt-5 break-all">
-  rivo-website.pages.dev/apps
-</p>
-                <p className="text-xs text-neutral-500 mt-3">
-                  Scan once and choose the app you need.
-                </p>
-              </div>
+              <motion.div
+                variants={staggerContainer}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14 max-w-5xl mx-auto"
+              >
+                {/* =====================================================
+                    CUSTOMER QR
+                ===================================================== */}
 
-              {/* Customer QR */}
-              <div className="rounded-3xl border border-neutral-100 bg-white p-7 text-center shadow-sm">
-                <div className="w-12 h-12 rounded-2xl bg-[#2ECC71]/10 flex items-center justify-center mx-auto mb-6">
-                  <ShoppingBag className="w-6 h-6 text-[#2ECC71]" />
-                </div>
+                <motion.div
+                  variants={cardHoverVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  transition={smoothTransition}
+                  className="rounded-3xl border border-neutral-200 bg-white p-8 md:p-10 text-center shadow-sm"
+                >
+                  <div className="flex flex-col items-center">
+                    <img
+                      src={CUSTOMER_ICON}
+                      alt="RivoCity Customer App icon"
+                      className="w-20 h-20 rounded-[22px] object-cover shadow-md mb-6"
+                    />
 
-                <h3 className="text-xl font-bold">
-                  RivoCity
-                </h3>
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2ECC71]/10 text-brand-primary text-xs font-semibold mb-4">
+                      <ShoppingBag className="w-3.5 h-3.5" />
+                      Customer
+                    </div>
 
-                <p className="text-sm text-neutral-500 mt-2 min-h-[40px]">
-                  Direct QR for the Customer App APK.
-                </p>
+                    <h3 className="text-2xl font-bold text-brand-black">
+                      RivoCity
+                    </h3>
+
+                    <p className="text-sm text-neutral-500 mt-2 max-w-sm">
+                      Scan to download the RivoCity Customer App.
+                    </p>
 
                     <div className="mt-7 bg-white rounded-2xl p-4 inline-flex border border-neutral-100 shadow-sm">
                       <img
@@ -528,7 +568,7 @@ const Apps: React.FC = () => {
                     </div>
 
                     <p className="text-xs text-neutral-400 mt-5">
-                      Scan to download Customer App
+                      Android • APK
                     </p>
 
                     <a
@@ -541,16 +581,18 @@ const Apps: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* RIDER QR */}
+                {/* =====================================================
+                    RIDER QR
+                ===================================================== */}
+
                 <motion.div
                   variants={cardHoverVariants}
                   initial="initial"
                   whileHover="hover"
                   transition={smoothTransition}
-                  className="bg-white border border-neutral-200 rounded-3xl p-8 md:p-10 text-center"
+                  className="rounded-3xl border border-neutral-200 bg-white p-8 md:p-10 text-center shadow-sm"
                 >
                   <div className="flex flex-col items-center">
-
                     <img
                       src={RIDER_ICON}
                       alt="RivoCity Rider App icon"
@@ -562,13 +604,13 @@ const Apps: React.FC = () => {
                       Rider
                     </div>
 
-                <h3 className="text-xl font-bold">
-                  RivoCity Rider
-                </h3>
+                    <h3 className="text-2xl font-bold text-brand-black">
+                      RivoCity Rider
+                    </h3>
 
-                <p className="text-sm text-neutral-500 mt-2 min-h-[40px]">
-                  Direct QR for the Rider App APK.
-                </p>
+                    <p className="text-sm text-neutral-500 mt-2 max-w-sm">
+                      Scan to download the RivoCity Rider App.
+                    </p>
 
                     <div className="mt-7 bg-white rounded-2xl p-4 inline-flex border border-neutral-100 shadow-sm">
                       <img
@@ -582,50 +624,20 @@ const Apps: React.FC = () => {
                     </div>
 
                     <p className="text-xs text-neutral-400 mt-5">
-                      Scan to download Rider App
+                      Android • APK
                     </p>
 
-                <a
-                  href={RIDER_APK}
-                  className="inline-flex items-center justify-center gap-2 mt-5 px-5 py-2.5 rounded-full bg-black text-white text-xs font-semibold hover:bg-neutral-800 transition-colors"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  Download Rider App
-                </a>
-              </div>
-            </div>
-
-            {/* Pamphlet recommendation */}
-            <div className="mt-10 rounded-3xl bg-neutral-950 text-white p-7 md:p-10">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2ECC71]">
-                    For RivoCity pamphlets
-                  </p>
-
-                  <h3 className="text-2xl md:text-3xl font-bold mt-2">
-                    Use the RivoCity Apps QR.
-                  </h3>
-
-                  <p className="text-sm text-neutral-400 mt-3 max-w-2xl leading-relaxed">
-                    This QR points to rivo-website.pages.dev/apps instead of directly to
-                    an APK. That means we can later add Play Store, iOS and
-                    future app versions without changing the QR printed on
-                    your pamphlets.
-                  </p>
-                </div>
-
-                <a
-                  href={APPS_PAGE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#2ECC71] text-white text-sm font-semibold hover:bg-[#27ae60] transition-colors"
-                >
-                  Open Apps Page
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
+                    <a
+                      href={RIDER_APK}
+                      className="inline-flex items-center justify-center gap-2 mt-5 px-6 py-3 rounded-full bg-brand-black text-white text-sm font-semibold hover:bg-neutral-800 transition-colors"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download Rider App
+                    </a>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
@@ -909,7 +921,6 @@ const Apps: React.FC = () => {
             </motion.div>
           </div>
         </section>
-
       </main>
     </>
   );

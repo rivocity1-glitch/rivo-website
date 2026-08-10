@@ -9,9 +9,7 @@ import NotFound from './pages/NotFound';
 const Home = React.lazy(() => import('./pages/Home'));
 const Apps = React.lazy(() => import('./pages/Apps'));
 const About = React.lazy(() => import('./pages/About'));
-const Customers = React.lazy(() => import('./pages/Customers'));
 const Vendors = React.lazy(() => import('./pages/Vendors'));
-const Riders = React.lazy(() => import('./pages/Riders'));
 const Cities = React.lazy(() => import('./pages/Cities'));
 const Pricing = React.lazy(() => import('./pages/Pricing'));
 const HelpCenter = React.lazy(() => import('./pages/Help'));
@@ -30,10 +28,8 @@ const App: React.FC = () => {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="apps" element={<Apps />} />
-            <Route path="about" element={<About />} />
-            <Route path="customers" element={<Customers />} />
+            <Route path="about" element={<About />} />           
             <Route path="vendors" element={<Vendors />} />
-            <Route path="riders" element={<Riders />} />
             <Route path="cities" element={<Cities />} />
             <Route path="pricing" element={<Pricing />} />
             <Route path="help" element={<HelpCenter />} />

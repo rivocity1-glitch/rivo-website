@@ -158,9 +158,20 @@ const FAQItem: React.FC<{
 const Vendors: React.FC = () => {
   const navigate = useNavigate();
 
+  /*
+   * Local:
+   *   http://localhost:5174
+   *
+   * Production:
+   *   https://vendor.rivocity.com
+   *
+   * VITE_VENDOR_PORTAL_URL, when configured, takes priority.
+   */
   const vendorPortalUrl =
     import.meta.env.VITE_VENDOR_PORTAL_URL ||
-    'http://localhost:5174';
+    (import.meta.env.DEV
+      ? 'http://localhost:5174'
+      : 'https://vendor.rivocity.com');
 
   const handleRegisterRedirect = () => {
     window.open(

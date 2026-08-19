@@ -24,7 +24,6 @@ import {
 
 /* =========================================================
    MOTION SYSTEM
-   Matches the smoother Rivo website animation language.
    ========================================================= */
 
 const smoothTransition: Transition = {
@@ -159,19 +158,18 @@ const Vendors: React.FC = () => {
   const navigate = useNavigate();
 
   /*
-   * Local:
-   *   http://localhost:5174
+   * Production Vendor Portal URL.
    *
-   * Production:
-   *   https://vendor.rivocity.com
+   * IMPORTANT:
+   * Do not use import.meta.env.DEV here because that can
+   * incorrectly send visitors to localhost.
    *
-   * VITE_VENDOR_PORTAL_URL, when configured, takes priority.
+   * VITE_VENDOR_PORTAL_URL can still override this value
+   * when explicitly configured.
    */
   const vendorPortalUrl =
     import.meta.env.VITE_VENDOR_PORTAL_URL ||
-    (import.meta.env.DEV
-      ? 'http://localhost:5174'
-      : 'https://vendor.rivocity.com');
+    'https://vendor.rivocity.com';
 
   const handleRegisterRedirect = () => {
     window.open(
@@ -207,8 +205,6 @@ const Vendors: React.FC = () => {
         <div className="container-custom">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-
-            {/* HERO CONTENT */}
 
             <div className="lg:col-span-7 flex flex-col space-y-8 text-left max-w-2xl lg:max-w-none">
 
@@ -316,11 +312,10 @@ const Vendors: React.FC = () => {
 
                 <div className="relative w-full h-full bg-white rounded-[32px] border border-neutral-200 shadow-sm overflow-hidden flex flex-col p-5 space-y-4">
 
-                  {/* PORTAL HEADER */}
-
                   <div className="bg-neutral-50 border border-neutral-200/60 rounded-xl p-3 flex items-center justify-between">
 
                     <div className="flex items-center gap-2">
+
                       <div className="p-1.5 bg-[#2ECC71]/10 rounded-md text-brand-primary">
                         <Store className="w-4 h-4" />
                       </div>
@@ -334,12 +329,12 @@ const Vendors: React.FC = () => {
                           Store management
                         </span>
                       </div>
+
                     </div>
 
                     <span className="h-2 w-2 rounded-full bg-brand-primary animate-pulse" />
-                  </div>
 
-                  {/* SALES */}
+                  </div>
 
                   <div className="border border-neutral-100 rounded-xl p-4 flex flex-col space-y-2 bg-white shadow-sm">
 
@@ -348,6 +343,7 @@ const Vendors: React.FC = () => {
                     </span>
 
                     <div className="flex items-baseline gap-2">
+
                       <span className="text-2xl font-black text-brand-black">
                         ↑ 42.8%
                       </span>
@@ -355,6 +351,7 @@ const Vendors: React.FC = () => {
                       <span className="text-[10px] text-emerald-600 font-bold bg-emerald-50 px-1.5 py-0.5 rounded">
                         This Month
                       </span>
+
                     </div>
 
                     <svg
@@ -397,9 +394,8 @@ const Vendors: React.FC = () => {
                         </linearGradient>
                       </defs>
                     </svg>
-                  </div>
 
-                  {/* ORDER FEED */}
+                  </div>
 
                   <div className="flex-1 flex flex-col space-y-2.5 overflow-hidden justify-end">
 
@@ -426,6 +422,7 @@ const Vendors: React.FC = () => {
                           'bg-[#2ECC71]/10 text-brand-primary',
                       },
                     ].map((row, index) => {
+
                       const Icon = row.icon;
 
                       return (
@@ -445,6 +442,7 @@ const Vendors: React.FC = () => {
                           }}
                           className="bg-white border border-neutral-100 p-3 rounded-xl flex items-center justify-between shadow-sm"
                         >
+
                           <div className="flex items-center gap-3">
 
                             <div
@@ -468,6 +466,7 @@ const Vendors: React.FC = () => {
                           <span className="text-[10px] font-bold text-brand-black bg-neutral-50 px-2 py-1 rounded border border-neutral-100">
                             View
                           </span>
+
                         </motion.div>
                       );
                     })}
@@ -489,6 +488,7 @@ const Vendors: React.FC = () => {
                 >
                   <Sparkles className="w-4 h-4" />
                 </motion.div>
+
               </motion.div>
             </div>
           </div>
@@ -512,6 +512,7 @@ const Vendors: React.FC = () => {
             variants={fadeUpVariants}
             className="max-w-3xl mb-16"
           >
+
             <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">
               Store Advantages
             </span>
@@ -522,6 +523,7 @@ const Vendors: React.FC = () => {
             >
               Everything your business needs to grow.
             </h2>
+
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -558,6 +560,7 @@ const Vendors: React.FC = () => {
                 desc: 'Get help when you need it while running your business.',
               },
             ].map((card, index) => {
+
               const Icon = card.icon;
 
               return (
@@ -585,6 +588,7 @@ const Vendors: React.FC = () => {
                   }}
                   className="bg-white border border-neutral-200 rounded-2xl p-8 flex flex-col space-y-4 cursor-pointer"
                 >
+
                   <motion.div
                     variants={iconAnimationVariants}
                     className="w-12 h-12 rounded-xl bg-[#FAF9FA] border border-neutral-200/60 flex items-center justify-center text-brand-primary shadow-sm"
@@ -593,6 +597,7 @@ const Vendors: React.FC = () => {
                   </motion.div>
 
                   <div>
+
                     <h3 className="text-lg font-bold text-brand-black tracking-tight">
                       {card.title}
                     </h3>
@@ -600,10 +605,13 @@ const Vendors: React.FC = () => {
                     <p className="text-sm text-brand-gray-muted mt-2 leading-relaxed font-light">
                       {card.desc}
                     </p>
+
                   </div>
+
                 </motion.div>
               );
             })}
+
           </div>
         </div>
       </section>
@@ -625,6 +633,7 @@ const Vendors: React.FC = () => {
             variants={fadeUpVariants}
             className="max-w-3xl mb-20"
           >
+
             <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">
               Complete Control
             </span>
@@ -635,6 +644,7 @@ const Vendors: React.FC = () => {
             >
               Manage your store with confidence.
             </h2>
+
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -671,6 +681,7 @@ const Vendors: React.FC = () => {
                 desc: 'Manage business information, timings and availability.',
               },
             ].map((feature, index) => {
+
               const Icon = feature.icon;
 
               return (
@@ -698,6 +709,7 @@ const Vendors: React.FC = () => {
                   }}
                   className="bg-white border border-neutral-200 rounded-2xl p-6 flex flex-col space-y-4 cursor-pointer"
                 >
+
                   <motion.div
                     variants={iconAnimationVariants}
                     className="w-10 h-10 rounded-xl bg-[#FAF9FA] border border-neutral-200/60 flex items-center justify-center text-brand-primary shadow-sm"
@@ -706,6 +718,7 @@ const Vendors: React.FC = () => {
                   </motion.div>
 
                   <div>
+
                     <h3 className="text-base font-bold text-brand-black tracking-tight">
                       {feature.title}
                     </h3>
@@ -713,10 +726,13 @@ const Vendors: React.FC = () => {
                     <p className="text-xs text-brand-gray-muted mt-1.5 leading-relaxed font-light">
                       {feature.desc}
                     </p>
+
                   </div>
+
                 </motion.div>
               );
             })}
+
           </div>
         </div>
       </section>
@@ -738,6 +754,7 @@ const Vendors: React.FC = () => {
             variants={fadeUpVariants}
             className="max-w-3xl mb-20"
           >
+
             <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">
               Onboarding Steps
             </span>
@@ -748,6 +765,7 @@ const Vendors: React.FC = () => {
             >
               Start selling in four simple steps.
             </h2>
+
           </motion.div>
 
           <div className="relative">
@@ -778,6 +796,7 @@ const Vendors: React.FC = () => {
                   desc: 'Open your digital storefront and start reaching customers in your city.',
                 },
               ].map((item, index) => (
+
                 <motion.div
                   key={item.step}
                   initial="hidden"
@@ -786,6 +805,7 @@ const Vendors: React.FC = () => {
                   variants={fadeUpDelayed(index * 0.08)}
                   className="flex flex-col space-y-4"
                 >
+
                   <div className="flex items-center justify-between lg:justify-start lg:gap-4">
 
                     <div className="w-12 h-12 rounded-full bg-white border-2 border-brand-primary flex items-center justify-center font-extrabold text-sm text-brand-black shadow-sm relative">
@@ -795,9 +815,11 @@ const Vendors: React.FC = () => {
                     <span className="text-[10px] uppercase font-bold tracking-widest text-brand-primary bg-[#2ECC71]/10 px-2.5 py-1 rounded-full">
                       Step {item.step}
                     </span>
+
                   </div>
 
                   <div className="pt-2">
+
                     <h3 className="text-lg font-bold text-brand-black tracking-tight">
                       {item.title}
                     </h3>
@@ -805,9 +827,12 @@ const Vendors: React.FC = () => {
                     <p className="text-sm text-brand-gray-muted mt-2 leading-relaxed font-light">
                       {item.desc}
                     </p>
+
                   </div>
+
                 </motion.div>
               ))}
+
             </div>
           </div>
         </div>
@@ -830,6 +855,7 @@ const Vendors: React.FC = () => {
             variants={fadeUpVariants}
             className="max-w-3xl mb-16"
           >
+
             <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">
               Built Around Your Business
             </span>
@@ -840,6 +866,7 @@ const Vendors: React.FC = () => {
             >
               Built for local businesses.
             </h2>
+
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -866,6 +893,7 @@ const Vendors: React.FC = () => {
                 desc: 'Focus on serving customers while Rivo handles the technology.',
               },
             ].map((card, index) => {
+
               const Icon = card.icon;
 
               return (
@@ -893,6 +921,7 @@ const Vendors: React.FC = () => {
                   }}
                   className="bg-white border border-neutral-200 rounded-2xl p-6 flex flex-col space-y-3 cursor-pointer"
                 >
+
                   <motion.div
                     variants={iconAnimationVariants}
                     className="text-brand-primary"
@@ -901,6 +930,7 @@ const Vendors: React.FC = () => {
                   </motion.div>
 
                   <div>
+
                     <h3 className="text-base font-bold text-brand-black tracking-tight">
                       {card.title}
                     </h3>
@@ -908,10 +938,13 @@ const Vendors: React.FC = () => {
                     <p className="text-xs text-brand-gray-muted mt-1.5 leading-relaxed font-light">
                       {card.desc}
                     </p>
+
                   </div>
+
                 </motion.div>
               );
             })}
+
           </div>
         </div>
       </section>
@@ -921,6 +954,7 @@ const Vendors: React.FC = () => {
           ===================================================== */}
 
       <section className="py-20 md:py-32 bg-white border-t border-neutral-100">
+
         <div className="container-custom">
 
           <motion.div
@@ -971,6 +1005,7 @@ const Vendors: React.FC = () => {
               </Button>
 
             </div>
+
           </motion.div>
         </div>
       </section>
@@ -992,6 +1027,7 @@ const Vendors: React.FC = () => {
             variants={fadeUpVariants}
             className="max-w-3xl mb-16 text-left mx-auto md:text-center flex flex-col md:items-center"
           >
+
             <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">
               Merchant Inquiries
             </span>
@@ -1002,6 +1038,7 @@ const Vendors: React.FC = () => {
             >
               Frequently Asked Questions
             </h2>
+
           </motion.div>
 
           <div className="max-w-3xl mx-auto space-y-4">
@@ -1043,6 +1080,7 @@ const Vendors: React.FC = () => {
         className="py-20 md:py-32 bg-[#FAF9FA] border-t border-b border-neutral-100"
         aria-labelledby="vendors-cta-heading"
       >
+
         <div className="container-custom">
 
           <motion.div
@@ -1091,6 +1129,7 @@ const Vendors: React.FC = () => {
               </Button>
 
             </div>
+
           </motion.div>
         </div>
       </section>

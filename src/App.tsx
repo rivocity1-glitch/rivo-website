@@ -17,6 +17,7 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const Terms = React.lazy(() => import('./pages/Terms'));
 const Privacy = React.lazy(() => import('./pages/Privacy'));
 const Refund = React.lazy(() => import('./pages/Refund'));
+const DeleteAccount = React.lazy(() => import('./pages/DeleteAccount'));
 
 const App: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const App: React.FC = () => {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="apps" element={<Apps />} />
-            <Route path="about" element={<About />} />           
+            <Route path="about" element={<About />} />
             <Route path="vendors" element={<Vendors />} />
             <Route path="cities" element={<Cities />} />
             <Route path="pricing" element={<Pricing />} />
@@ -37,6 +38,7 @@ const App: React.FC = () => {
             <Route path="legal/terms" element={<Terms />} />
             <Route path="legal/privacy" element={<Privacy />} />
             <Route path="legal/refund-policy" element={<Refund />} />
+            <Route path="delete-account" element={<DeleteAccount />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

@@ -1,155 +1,24 @@
 import React from 'react';
 import { LegalLayout } from '../components/LegalLayout';
 
-const Privacy: React.FC = () => {
-  return (
-    <LegalLayout
-      title="Privacy Policy"
-      activePage="privacy"
-      lastUpdated="14 July 2026"
-    >
-      <div className="space-y-10 text-brand-black font-light leading-relaxed text-sm md:text-base">
-        
-        {/* Section 1 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">1. Introduction</h3>
-          <p>
-            At Rivo, we highly value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, store, and safeguard your data when you visit our website, download our mobile applications, or interact with our hyperlocal marketplace services. 
-          </p>
-        </section>
-
-        {/* Section 2 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">2. Information We Collect</h3>
-          <p>
-            We collect information that is necessary to provide you with a reliable shopping, selling, or delivery experience. This includes:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 text-brand-gray-muted font-normal">
-            <li>Personal details such as your full name, email address, and mobile number.</li>
-            <li>Delivery details including saved delivery addresses and explicit drop-off instructions.</li>
-            <li>Profile information and a secure record of your complete order history.</li>
-            <li>Payment details required to process transactions, excluding sensitive payment credentials like card PINs or passwords, which are handled directly by secure payment gateways.</li>
-            <li>Technical details such as device information, app diagnostics, and browser type.</li>
-            <li>Location data collected from your device to facilitate local transactions.</li>
-            <li>Communications, messages, and notes exchanged with our customer support teams.</li>
-          </ul>
-        </section>
-
-        {/* Section 3 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">3. How We Use Your Information</h3>
-          <p>
-            Rivo uses the collected data to maintain seamless day-to-day platform operations. Specifically, we use your information to:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 text-brand-gray-muted font-normal">
-            <li>Create, verify, and manage customer, vendor, and rider accounts.</li>
-            <li>Process incoming store orders, compile checkout carts, and manage transactions.</li>
-            <li>Deliver products efficiently from neighbourhood physical stores to your doorstep.</li>
-            <li>Facilitate weekly settlements, secure payment authorizations, and transaction clearings.</li>
-            <li>Provide helpful customer support and resolve user queries quickly.</li>
-            <li>Send order notifications, updates, and essential service alerts.</li>
-            <li>Analyze usage trends to introduce regular platform improvements and fix bugs.</li>
-            <li>Prevent fraud, detect unauthorized layout access, and maintain general safety.</li>
-            <li>Comply with local regulations and meet mandatory legal requirements under Indian law.</li>
-          </ul>
-        </section>
-
-        {/* Section 4 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">4. Location Information</h3>
-          <p>
-            Because Rivo is a hyperlocal commerce platform, location tracking is essential for our operations. Your device location may be used to show you nearby stores, display accurate product availability, improve delivery routes, and assist riders during active deliveries. 
-          </p>
-          <p>
-            We only collect and access your location data when it is truly necessary to perform these tasks. You can manage or restrict location permissions at any time through your device's built-in operating system settings.
-          </p>
-        </section>
-
-        {/* Section 5 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">5. Cookies & Similar Technologies</h3>
-          <p>
-             Rivo uses cookies and basic web tracking tools to make your online experience smoother. These cookies are used for remembering your preferences (like your default city), analyzing website traffic patterns, protecting account security, and improving user experience. You can choose to disable cookies through your browser settings, though some platform features may become unavailable as a result.
-          </p>
-        </section>
-
-        {/* Section 6 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">6. Information Sharing</h3>
-          <p>
-            We do not sell your personal information to third parties. We share your data only when necessary to complete your requests, including sharing with:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 text-brand-gray-muted font-normal">
-            <li>Local vendors so they can accept, prepare, and accurately pack your product items.</li>
-            <li>Delivery riders so they know your delivery location and can complete the drop-off.</li>
-            <li>Authorized payment partners to process transactions securely.</li>
-            <li>Government authorities, law enforcement, or tax regulators when explicitly required by law.</li>
-            <li>Trusted service providers who offer infrastructure support, cloud hosting, or technical assistance.</li>
-          </ul>
-        </section>
-
-        {/* Section 7 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">7. Data Security</h3>
-          <p>
-            Rivo utilizes reasonable technical and organisational security measures designed to protect your personal data against unauthorized access, loss, alteration, or misuse. However, please be aware that no system or online transmission is absolutely secure, and we cannot guarantee the absolute security of your information.
-          </p>
-        </section>
-
-        {/* Section 8 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">8. Data Retention</h3>
-          <p>
-            We store your personal data only for as long as necessary to complete your orders, fulfill our business obligations, resolve user disputes, and satisfy legal or tax requirements under applicable Indian laws. When information is no longer required, it is securely deleted or completely anonymized.
-          </p>
-        </section>
-
-        {/* Section 9 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">9. User Rights</h3>
-          <p>
-            You have full control over your personal data. You may request to access the specific information we hold about you, correct inaccuracies or outdated profile entries, or delete your account data where legally permitted. If you have any privacy concerns or wish to exercise these rights, please reach out to our support channel.
-          </p>
-        </section>
-
-        {/* Section 10 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">10. Children's Privacy</h3>
-          <p>
-            Rivo is not intended for use by children below the legal age of majority. We do not knowingly collect personal details from minors without explicit parental supervision and consent. If we discover that a minor has created an unapproved account, we will take steps to remove the data promptly.
-          </p>
-        </section>
-
-        {/* Section 11 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">11. Third-Party Services</h3>
-          <p>
-            Our platform may contain links to external sites or use external components, such as digital payment gateways. These third-party providers operate independently and maintain their own unique privacy policies. We encourage you to review their terms directly before completing transactions.
-          </p>
-        </section>
-
-        {/* Section 12 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">12. Policy Updates</h3>
-          <p>
-            We may modify or update this Privacy Policy from time to time to match changing laws or platform upgrades. When updates are published, we will revise the date listed at the top of this documentation page. We encourage you to review this policy periodically to stay informed about how we protect your data.
-          </p>
-        </section>
-
-        {/* Section 13 */}
-        <section className="space-y-3">
-          <h3 className="text-xl font-bold tracking-tight text-brand-black">13. Contact</h3>
-          <p>
-            If you have any questions, complaints, or feedback regarding this Privacy Policy or our data management steps, please reach out to us at:
-          </p>
-          <p className="font-bold text-brand-black bg-[#FAF9FA] border border-neutral-200 rounded-xl p-4 inline-block tracking-tight select-all">
-            rivo.cityhelp1@gmail.com
-          </p>
-        </section>
-
-      </div>
-    </LegalLayout>
-  );
-};
+const Privacy: React.FC = () => (
+  <LegalLayout title="Privacy Policy" activePage="privacy" lastUpdated="22 August 2026">
+    <div className="space-y-10 text-brand-black font-light leading-relaxed text-sm md:text-base">
+      <section className="space-y-3"><h3 className="text-xl font-bold">1. Introduction</h3><p>At Rivo, we value your privacy and are committed to protecting personal information. This Privacy Policy explains how we collect, use, store, share, and safeguard data when you use our website, mobile applications, and hyperlocal marketplace services.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">2. Information We Collect</h3><p>Depending on the service you use, we may collect:</p><ul className="list-disc pl-5 space-y-2 text-brand-gray-muted font-normal"><li>Name, email address, mobile number, and account information.</li><li>Delivery addresses and drop-off instructions.</li><li>Profile information and order history.</li><li>Payment and transaction information needed to process orders; sensitive payment credentials are handled by payment providers.</li><li>Device information, diagnostics, browser/app information, and technical logs.</li><li>Location information where required for local discovery, addresses, routing, or delivery operations.</li><li>Support communications, messages, and related records.</li></ul></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">3. How We Use Information</h3><p>We use information to create and manage accounts, process orders and transactions, coordinate vendors and riders, provide support, send service notifications, improve the platform, prevent fraud and unauthorized access, and comply with applicable law.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">4. Location Information</h3><p>Rivo may use location information to show nearby businesses, associate addresses with orders, calculate delivery distances, support delivery operations, and improve local services. Permissions can be managed through your device settings.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">5. Cookies & Similar Technologies</h3><p>Our website may use cookies or similar technologies for preferences, security, analytics, and website functionality. Browser settings may allow you to control cookies, although some features may be affected.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">6. Information Sharing</h3><p>We do not sell personal information. Information may be shared when necessary with vendors for order fulfilment, riders for delivery, payment providers for transactions, service providers supporting infrastructure, and authorities where required by law.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">7. Data Security</h3><p>We use reasonable technical and organizational safeguards designed to protect personal information against unauthorized access, loss, alteration, or misuse. No online system can be guaranteed completely secure.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">8. Data Retention</h3><p>We retain information for as long as reasonably necessary to provide services, complete transactions, resolve disputes, meet business obligations, and comply with legal or tax requirements. Information that is no longer required may be deleted or anonymized, subject to applicable retention obligations.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">9. User Rights</h3><p>Subject to applicable law, you may request access to or correction of personal information and request account or data deletion. Some information may need to be retained for legal, security, fraud-prevention, transaction, or dispute-resolution purposes.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">10. Children's Privacy</h3><p>Rivo is not intended for children below the applicable legal age. We do not knowingly collect personal information from children where prohibited by law.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">11. Third-Party Services</h3><p>Rivo may use or link to third-party services such as payment, hosting, analytics, mapping, authentication, and communication providers. Those providers may have their own terms and privacy policies.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">12. Policy Updates</h3><p>We may update this Privacy Policy as the platform, services, or applicable requirements change. The Last Updated date will be revised when material updates are published.</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">13. Contact</h3><p>For privacy questions, complaints, or requests, contact Rivo Support:</p><p className="font-bold text-brand-black bg-[#FAF9FA] border border-neutral-200 rounded-xl p-4 inline-block tracking-tight select-all">support@rivocity.com</p></section>
+    </div>
+  </LegalLayout>
+);
 
 export default Privacy;

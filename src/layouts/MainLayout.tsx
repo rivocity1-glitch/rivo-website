@@ -7,13 +7,13 @@ const MainLayout = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex min-h-screen flex-col bg-white">
       <Navbar />
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-20 page-shell">
         <Outlet />
       </main>
       <Footer />

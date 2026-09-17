@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 interface NavItem {
@@ -25,62 +25,66 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
+    let frame = 0;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 16);
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md ${
+      aria-label="Main navigation"
+      className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl transition-[background-color,box-shadow,border-color] duration-300 ${
         scrolled
-          ? 'shadow-sm border-b border-neutral-100'
-          : 'border-b border-transparent'
+          ? 'border-neutral-200/80 bg-white/95 shadow-[0_8px_30px_-20px_rgba(0,0,0,0.25)]'
+          : 'border-transparent bg-white/80'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="text-xl font-bold tracking-tight text-black transition-colors duration-200">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
+          <Link
+            to="/"
+            aria-label="RivoCity home"
+            className="group flex items-center gap-2 rounded-full"
+          >
+            <span className="text-xl font-extrabold tracking-tight text-black transition-transform duration-200 group-hover:-translate-y-px">
               RivoCity
             </span>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
-
               return (
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`relative px-3 py-2 text-xs font-medium transition-colors duration-200 ${
-                    isActive
-                      ? 'text-black'
-                      : 'text-neutral-600 hover:text-black'
+                  className={`relative rounded-full px-3 py-2 text-xs font-semibold transition-colors duration-200 ${
+                    isActive ? 'text-black' : 'text-neutral-600 hover:text-black'
                   }`}
                 >
                   <span className="relative z-10">{item.label}</span>
-
                   {isActive && (
                     <motion.span
-                      layoutId="activeIndicator"
-                      className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#2ECC71] rounded-full"
-                      transition={{
-                        type: 'spring',
-                        stiffness: 380,
-                        damping: 30,
-                      }}
+                      layoutId="activeNavIndicator"
+                      className="absolute inset-x-2 bottom-0 h-0.5 rounded-full bg-[#2ECC71]"
+                      transition={{ type: 'spring', stiffness: 420, damping: 34 }}
                     />
                   )}
                 </Link>
@@ -88,69 +92,60 @@ const Navbar = () => {
             })}
           </div>
 
-          {/* Apps CTA */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden items-center lg:flex">
             <Link
               to="/apps"
-              className="px-5 py-2.5 rounded-full bg-[#2ECC71] text-white hover:bg-[#27ae60] active:scale-95 transition-all duration-200 text-xs font-semibold tracking-wide shadow-sm"
+              className="rounded-full bg-[#2ECC71] px-5 py-2.5 text-xs font-bold tracking-wide text-black shadow-sm transition-[transform,background-color,box-shadow] duration-200 hover:bg-[#27ae60] hover:shadow-md active:scale-[0.98]"
             >
               Get RivoCity
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 -mr-2 rounded-full text-black hover:bg-neutral-50 lg:hidden transition-colors duration-200"
-            aria-label="Toggle navigation menu"
             type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="rounded-full p-2 text-black transition-colors duration-200 hover:bg-neutral-100 lg:hidden"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isOpen}
           >
-            {isOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="border-b border-neutral-100 bg-white lg:hidden overflow-hidden"
+            transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden border-t border-neutral-100 bg-white/98 lg:hidden"
           >
-            <div className="px-6 py-6 flex flex-col gap-2">
-              {navItems.map((item) => {
-                const isActive = location.pathname === item.path;
-
-                return (
-                  <Link
-                    key={item.label}
-                    to={item.path}
-                    className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors duration-200 flex items-center justify-between ${
-                      isActive
-                        ? 'text-black bg-neutral-50 font-semibold'
-                        : 'text-neutral-600 hover:text-black hover:bg-neutral-50'
-                    }`}
-                  >
-                    <span>{item.label}</span>
-
-                    {isActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2ECC71]" />
-                    )}
-                  </Link>
-                );
-              })}
-
-              <div className="pt-4 px-4 border-t border-neutral-100 mt-2">
+            <div className="mx-auto max-w-7xl px-5 py-5 sm:px-6">
+              <div className="flex flex-col gap-1">
+                {navItems.map((item) => {
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Link
+                      key={item.label}
+                      to={item.path}
+                      className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold transition-colors duration-200 ${
+                        isActive
+                          ? 'bg-neutral-50 text-black'
+                          : 'text-neutral-600 hover:bg-neutral-50 hover:text-black'
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      {isActive && <span className="h-1.5 w-1.5 rounded-full bg-[#2ECC71]" />}
+                    </Link>
+                  );
+                })}
+              </div>
+              <div className="mt-4 border-t border-neutral-100 pt-4">
                 <Link
                   to="/apps"
-                  className="w-full py-3 rounded-xl bg-[#2ECC71] text-white hover:bg-[#27ae60] active:scale-95 transition-all duration-200 font-semibold text-center text-sm shadow-sm block"
+                  className="block w-full rounded-xl bg-[#2ECC71] px-4 py-3 text-center text-sm font-bold text-black transition-[transform,background-color] duration-200 hover:bg-[#27ae60] active:scale-[0.99]"
                 >
                   Get RivoCity
                 </Link>

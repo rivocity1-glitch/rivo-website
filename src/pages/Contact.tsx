@@ -150,7 +150,7 @@ export const Contact: React.FC = () => {
                   <p className="text-xs text-brand-gray-muted mt-1 leading-relaxed font-light">For general questions and support.</p>
                 </div>
               </div>
-              <p className="text-sm font-semibold text-brand-black mt-6 break-all">rivo.cityhelp1@gmail.com</p>
+              <p className="text-sm font-semibold text-brand-black mt-6 break-all">rivocity1@gmail.com</p>
             </motion.div>
 
             {/* Business Enquiries */}
@@ -170,7 +170,7 @@ export const Contact: React.FC = () => {
                   <p className="text-xs text-brand-gray-muted mt-1 leading-relaxed font-light">For partnerships and business enquiries.</p>
                 </div>
               </div>
-              <p className="text-sm font-semibold text-brand-black mt-6 break-all">rivo.city1@gmail.com</p>
+              <p className="text-sm font-semibold text-brand-black mt-6 break-all">rivocity1@gmail.com</p>
             </motion.div>
 
             {/* Business Hours */}

@@ -2,9 +2,9 @@
 
 @theme {
   --font-sans: "Manrope", sans-serif;
-  --color-brand-primary: #2ECC71;      /* Emerald Green */
-  --color-brand-accent: #A8E63A;       /* Lime Green */
-  --color-brand-black: #0D0D0D;        /* Jet Black */
+  --color-brand-primary: #2ECC71;
+  --color-brand-accent: #A8E63A;
+  --color-brand-black: #0D0D0D;
   --color-brand-gray-light: #F4F4F6;
   --color-brand-gray-muted: #646470;
   --color-brand-border: #E5E7EB;
@@ -14,17 +14,100 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #FFFFFF;
+    background: #fff;
     color: var(--color-brand-black);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: #fff;
+    overflow-x: hidden;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
   ::selection {
-    background-color: var(--color-brand-primary);
+    background: var(--color-brand-primary);
     color: #0D0D0D;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 3px;
   }
 }
 
-.container-custom {
-  @apply mx-auto px-6 max-w-7xl;
+@layer utilities {
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Shared motion primitives: predictable, subtle, and consistent across routes. */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.interactive-lift {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 220ms ease;
+}
+
+.interactive-lift:hover {
+  transform: translate3d(0, -4px, 0);
+}
+
+.page-shell {
+  animation: page-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

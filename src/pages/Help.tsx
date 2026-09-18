@@ -373,7 +373,7 @@ export const HelpCenter: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xs uppercase tracking-wider font-bold text-brand-black">Email Support</h3>
-                  <p className="text-sm text-brand-gray-muted font-normal mt-1 selection:bg-brand-primary/30">rivo.cityhelp1@gmail.com</p>
+                  <p className="text-sm text-brand-gray-muted font-normal mt-1 selection:bg-brand-primary/30">rivocity1@gmail.com</p>
                 </div>
               </div>
 

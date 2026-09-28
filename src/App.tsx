@@ -1,49 +1,34 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
-import PageLoader from './components/PageLoader';
-import ScrollToTop from './components/ScrollToTop';
-import NotFound from './pages/NotFound';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
 
-const Home = React.lazy(() => import('./pages/Home'));
-const Apps = React.lazy(() => import('./pages/Apps'));
-const About = React.lazy(() => import('./pages/About'));
-const Vendors = React.lazy(() => import('./pages/Vendors'));
-const Cities = React.lazy(() => import('./pages/Cities'));
-const Pricing = React.lazy(() => import('./pages/Pricing'));
-const HelpCenter = React.lazy(() => import('./pages/Help'));
-const Contact = React.lazy(() => import('./pages/Contact'));
-const Terms = React.lazy(() => import('./pages/Terms'));
-const Privacy = React.lazy(() => import('./pages/Privacy'));
-const Refund = React.lazy(() => import('./pages/Refund'));
-const DeleteAccount = React.lazy(() => import('./pages/DeleteAccount'));
-const Customers = React.lazy(() => import('./pages/Customers'));
-const Riders = React.lazy(() => import('./pages/Riders'));
+const TemporaryNotFound: React.FC = () => (
+  <main
+    style={{
+      minHeight: '100vh',
+      display: 'grid',
+      placeItems: 'center',
+      padding: '24px',
+      background: '#ffffff',
+      color: '#0D0D0D',
+      fontFamily: '"Manrope", sans-serif',
+      textAlign: 'center',
+    }}
+  >
+    <div>
+      <h1 style={{ margin: 0, fontSize: 'clamp(48px, 10vw, 96px)', lineHeight: 1, fontWeight: 700 }}>
+        404 — NOT FOUND
+      </h1>
+      <p style={{ margin: '20px 0 0', fontSize: '16px', lineHeight: 1.6, fontWeight: 400 }}>
+        This page doesn&apos;t exist or has been deleted by the owner.
+      </p>
+    </div>
+  </main>
+);
 
 const App: React.FC = () => (
   <BrowserRouter>
-    <ScrollToTop />
-    <Suspense fallback={<PageLoader />}>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="apps" element={<Apps />} />
-          <Route path="customers" element={<Customers />} />
-          <Route path="riders" element={<Riders />} />
-          <Route path="about" element={<About />} />
-          <Route path="vendors" element={<Vendors />} />
-          <Route path="cities" element={<Cities />} />
-          <Route path="pricing" element={<Pricing />} />
-          <Route path="help" element={<HelpCenter />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="legal/terms" element={<Terms />} />
-          <Route path="legal/privacy" element={<Privacy />} />
-          <Route path="legal/refund-policy" element={<Refund />} />
-          <Route path="delete-account" element={<DeleteAccount />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </Suspense>
+    <TemporaryNotFound />
   </BrowserRouter>
 );
 

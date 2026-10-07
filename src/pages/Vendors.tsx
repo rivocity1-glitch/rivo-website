@@ -534,7 +534,7 @@ const Vendors: React.FC = () => {
               },
               {
                 title: 'Launch Partner Benefit',
-                desc: 'Eligible launch vendors can receive a one-time joining bonus after the initial trial period.',
+                desc: 'Selected initial-launch vendors can receive a one-time joining bonus after the first month, extending the launch benefit to up to 3 months.',
               },
               {
                 title: 'Built for Local Business',

@@ -23,7 +23,7 @@ import {
 const smoothTransition: Transition = {
   type: "tween",
   ease: [0.16, 1, 0.3, 1],
-  duration: 0.6
+  duration: 0.5
 };
 
 const cardHoverVariants: Variants = {
@@ -33,9 +33,9 @@ const cardHoverVariants: Variants = {
     borderColor: "rgba(229, 231, 235, 1)", 
     boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.02)" 
   },
-  hover: { 
-    y: -6, 
-    scale: 1.015, 
+  hover: {
+    y: -4,
+    scale: 1.01, 
     borderColor: "rgba(46, 204, 113, 0.4)", 
     boxShadow: "0 16px 32px -12px rgba(46, 204, 113, 0.12)" 
   }
@@ -169,6 +169,7 @@ const Riders: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
+              { icon: Wallet, title: "Launch Incentives — Coming Soon", desc: "Early riders can unlock launch incentives based on verified activity and completed deliveries." },
               { icon: Clock, title: "Flexible Working Hours", desc: "Choose when you want to work." },
               { icon: Wallet, title: "Weekly Settlements", desc: "Receive transparent weekly payouts." },
               { icon: Layers, title: "Easy Delivery Flow", desc: "Simple pickup and delivery process." },

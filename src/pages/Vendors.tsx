@@ -29,7 +29,7 @@ import {
 const smoothTransition: Transition = {
   type: 'tween',
   ease: [0.16, 1, 0.3, 1],
-  duration: 0.6,
+  duration: 0.5,
 };
 
 const viewportSettings = {
@@ -72,8 +72,8 @@ const cardHoverVariants: Variants = {
     boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.02)',
   },
   hover: {
-    y: -6,
-    scale: 1.015,
+    y: -4,
+    scale: 1.01,
     borderColor: 'rgba(46, 204, 113, 0.4)',
     boxShadow: '0 16px 32px -12px rgba(46, 204, 113, 0.12)',
   },
@@ -492,6 +492,84 @@ const Vendors: React.FC = () => {
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          SECTION 2 — INITIAL LAUNCH PARTNERS
+          ===================================================== */}
+      <section
+        className="py-16 md:py-24 bg-[#FAF9FA] border-t border-neutral-100"
+        aria-labelledby="launch-partners-heading"
+      >
+        <div className="container-custom">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={fadeUpVariants}
+            className="max-w-3xl"
+          >
+            <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">
+              Initial Launch
+            </span>
+
+            <h2
+              id="launch-partners-heading"
+              className="text-3xl md:text-5xl font-extrabold text-brand-black tracking-tight leading-tight"
+            >
+              Looking for local businesses to start our initial launch.
+            </h2>
+
+            <p className="mt-5 text-base md:text-lg text-brand-gray-muted leading-relaxed max-w-2xl">
+              Rivo is onboarding local businesses for its initial city launch. Join early, get your store online and be part of building local commerce in your city.
+            </p>
+          </motion.div>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                title: '1 Month Free',
+                desc: 'Start your Rivo journey with a free first month.',
+              },
+              {
+                title: 'Launch Partner Benefit',
+                desc: 'Eligible launch vendors can receive a one-time joining bonus after the initial trial period.',
+              },
+              {
+                title: 'Built for Local Business',
+                desc: 'Manage products, inventory and orders through the Rivo Vendor Portal.',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                viewport={viewportSettings}
+                variants={{
+                  ...fadeUpDelayed(index * 0.05),
+                  initial: cardHoverVariants.initial,
+                  hover: cardHoverVariants.hover,
+                }}
+                className="bg-white border border-neutral-200 rounded-2xl p-7"
+              >
+                <div className="w-11 h-11 rounded-xl bg-[#2ECC71]/10 flex items-center justify-center text-brand-primary mb-5">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-brand-black tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-brand-gray-muted mt-2 leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-xs text-brand-gray-muted">
+            Launch incentives and eligibility may vary by city, launch period and vendor activity.
+          </p>
         </div>
       </section>
 

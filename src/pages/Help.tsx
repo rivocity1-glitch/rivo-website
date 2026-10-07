@@ -21,7 +21,7 @@ import {
 const smoothTransition: Transition = {
   type: "tween",
   ease: [0.16, 1, 0.3, 1],
-  duration: 0.6
+  duration: 0.5
 };
 
 const cardHoverVariants: Variants = {
@@ -31,9 +31,9 @@ const cardHoverVariants: Variants = {
     borderColor: "rgba(229, 231, 235, 1)", 
     boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.02)" 
   },
-  hover: { 
-    y: -6, 
-    scale: 1.015, 
+  hover: {
+    y: -4,
+    scale: 1.01, 
     borderColor: "rgba(46, 204, 113, 0.4)", 
     boxShadow: "0 16px 32px -12px rgba(46, 204, 113, 0.12)" 
   }

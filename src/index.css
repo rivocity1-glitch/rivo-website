@@ -55,11 +55,17 @@
 }
 
 /* Shared motion primitives: predictable, subtle, and consistent across routes. */
+:root {
+  --rivo-motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --rivo-motion-fast: 200ms;
+  --rivo-motion-standard: 500ms;
+}
+
 .reveal {
   opacity: 0;
   transform: translate3d(0, 18px, 0);
-  transition: opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity var(--rivo-motion-standard) var(--rivo-motion-ease),
+    transform var(--rivo-motion-standard) var(--rivo-motion-ease);
 }
 
 .reveal.is-visible {
@@ -68,9 +74,9 @@
 }
 
 .interactive-lift {
-  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 220ms ease;
+  transition: transform var(--rivo-motion-fast) var(--rivo-motion-ease),
+    box-shadow var(--rivo-motion-fast) var(--rivo-motion-ease),
+    border-color var(--rivo-motion-fast) ease;
 }
 
 .interactive-lift:hover {
@@ -78,7 +84,7 @@
 }
 
 .page-shell {
-  animation: page-enter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: page-enter 500ms var(--rivo-motion-ease) both;
 }
 
 @keyframes page-enter {

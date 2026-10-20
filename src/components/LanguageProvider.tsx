@@ -205,6 +205,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     try { localStorage.setItem('rivo-language', language); } catch { /* storage may be disabled */ }
     document.documentElement.lang = language === 'mr' ? 'mr-IN' : language === 'hi' ? 'hi-IN' : 'en';
+    document.documentElement.dataset.rivoLanguage = language;
   }, [language]);
 
   const value = useMemo(() => ({ language, setLanguage, t }), [language, setLanguage, t]);

@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import SEO from '../components/SEO';
@@ -68,6 +69,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 const Cities: React.FC = () => {
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', city: '' });
   
@@ -118,7 +120,7 @@ const Cities: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
-                Starting with Baramati. <br />
+                {t('cities.hero.title')} <br />
                 <span className="text-brand-primary">Growing one city at a time.</span>
               </motion.h1>
             </div>
@@ -129,7 +131,7 @@ const Cities: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed font-normal max-w-2xl text-left"
             >
-              We're building Rivo one city at a time, creating trusted local shopping experiences before expanding to new communities.
+              {t('cities.hero.subtitle')}
             </motion.p>
 
             <motion.div 
@@ -139,7 +141,7 @@ const Cities: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
               <Button variant="primary" onClick={scrollToRequestSection} className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Explore Your City <ArrowRight className="w-5 h-5 ml-1" />
+                {t('home.hero.cta')} <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
               <Button variant="outline" onClick={scrollToRequestSection} className="px-8 py-4 text-base font-semibold bg-white">
                 Request Your City
@@ -171,16 +173,16 @@ const Cities: React.FC = () => {
             <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-8 border-b border-neutral-100 text-left">
               <div>
                 <span className="text-xs uppercase tracking-widest font-bold text-brand-primary bg-[#2ECC71]/10 px-3 py-1.5 rounded-full border border-brand-primary/20">
-                  Now Launching
+                  {t('home.city')}
                 </span>
                 <h3 className="text-3xl md:text-4xl font-black text-brand-black tracking-tight mt-4">Baramati</h3>
               </div>
               <div className="flex flex-col space-y-3 max-w-xl">
                 <p className="text-base text-brand-gray-muted font-light leading-relaxed">
-                  Baramati is where the Rivo journey begins. Customers, local businesses and riders come together to create a better local shopping experience.
+                  {t('cities.hero.subtitle')}
                 </p>
                 <p className="text-sm text-brand-gray-muted font-normal italic leading-relaxed">
-                  We're starting in Baramati because we believe every great journey begins by getting one community right before expanding to the next.
+                  {t('cities.hero.subtitle')}
                 </p>
               </div>
             </div>

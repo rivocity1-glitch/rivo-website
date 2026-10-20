@@ -96,7 +96,7 @@ const Customers: React.FC = () => {
               className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
             >
               {t('customers.hero.title')} <br />
-              <span className="text-brand-primary">has to offer.</span>
+              <span className="text-brand-primary">{t('home.hero.vendor')}</span>
             </motion.h1>
 
             {/* Paragraph */}

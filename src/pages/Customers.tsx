@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import { 
@@ -67,6 +68,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 };
 
 const Customers: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
       
@@ -93,7 +95,7 @@ const Customers: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
             >
-              Everything your city <br />
+              {t('customers.hero.title')} <br />
               <span className="text-brand-primary">has to offer.</span>
             </motion.h1>
 
@@ -104,7 +106,7 @@ const Customers: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed font-normal max-w-2xl"
             >
-              Discover trusted local stores, shop from multiple categories and get everything you need delivered quickly from businesses near you.
+              {t('customers.hero.subtitle')}
             </motion.p>
 
             {/* Actions */}
@@ -115,7 +117,7 @@ const Customers: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
               <Button variant="primary" className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Explore Stores <ArrowRight className="w-5 h-5 ml-1" />
+                {t('home.hero.cta')} <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
               <Button variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
                 Download App

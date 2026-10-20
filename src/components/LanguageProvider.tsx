@@ -217,6 +217,14 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
 'legal.badge': 'कानूनी जानकारी',
     'legal.title': 'कानूनी केंद्र',
     'legal.subtitle': 'RivoCity के उपयोग, आपकी गोपनीयता और हमारी नीतियों से जुड़ी आवश्यक जानकारी।',
+'pricing.compare': 'योजनाओं की तुलना करें',
+    'about.mission': 'स्थानीय खरीदारी को तेज़, आसान और अधिक जुड़ा हुआ बनाकर हर शहर को आगे बढ़ने में मदद करना।',
+    'about.vision': 'ऐसा भविष्य जहाँ हर शहर के पास भरोसेमंद स्थानीय व्यवसायों और डिलीवरी पार्टनर्स से चलने वाला अपना डिजिटल बाज़ार हो।',
+    'home.community.title': 'हर किसी के लिए बनाया गया।',
+    'home.community.subtitle': 'ग्राहकों, स्थानीय व्यवसायों और डिलीवरी पार्टनर्स के लिए एक शहर का प्लेटफ़ॉर्म।',
+    'home.customer.title': 'ग्राहक', 'home.customer.desc': 'स्थानीय दुकानें खोजें, भरोसे से खरीदारी करें और ज़रूरी सामान पाएँ।', 'home.customer.cta': 'ऐप देखें',
+    'home.vendor.title': 'विक्रेता', 'home.vendor.desc': 'अपना व्यवसाय बढ़ाएँ, अधिक ग्राहकों तक पहुँचें और सब कुछ एक जगह संभालें।', 'home.vendor.cta': 'पार्टनर बनें',
+    'home.rider.title': 'राइडर', 'home.rider.desc': 'स्थानीय डिलीवरी करें और डिलीवरी पार्टनर के अवसर जानें।', 'home.rider.cta': 'RivoCity Rider से जुड़ें',
   },
 };
 

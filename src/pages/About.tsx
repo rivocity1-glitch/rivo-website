@@ -73,8 +73,8 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
             >
-              Built for the cities <br />
-              <span className="text-brand-primary">we call home.</span>
+              {t('about.hero.title')} <br />
+              <span className="text-brand-primary"></span>
             </motion.h1>
 
             {/* Paragraph */}

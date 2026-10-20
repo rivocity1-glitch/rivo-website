@@ -242,15 +242,15 @@ const Home: React.FC = () => {
       <section className="border-t border-neutral-100 bg-[#FAF9FA] py-20 md:py-28" aria-labelledby="everyone-heading">
         <div className="container-custom">
           <div className="mb-14 max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Our Community</span>
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">{t('home.local.title')}</span>
             <h2 id="everyone-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t('home.local.title')}</h2>
             <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">{t('home.local.subtitle')}</p>
           </div>
           <div className="grid gap-5 lg:grid-cols-3">
             {[
-              { icon: Users, title: 'Customers', desc: 'Discover local stores, shop with confidence and get your essentials delivered.', cta: 'Explore App', path: '/apps' },
-              { icon: Briefcase, title: 'Vendors', desc: 'Grow your business, reach more customers and manage everything from one place.', cta: 'Become a Partner', path: '/vendors' },
-              { icon: Bike, title: 'Riders', desc: 'Deliver locally, stay flexible and build reliable income opportunities.', cta: 'Join RivoCity Rider', path: '/apps' },
+              { icon: Users, title: t('home.customer.title'), desc: t('home.customer.desc'), cta: t('home.customer.cta'), path: '/apps' },
+              { icon: Briefcase, title: t('home.vendor.title'), desc: t('home.vendor.desc'), cta: t('home.vendor.cta'), path: '/vendors' },
+              { icon: Bike, title: t('home.rider.title'), desc: t('home.rider.desc'), cta: t('home.rider.cta'), path: '/apps' },
             ].map((item) => (
               <motion.div key={item.title} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[360px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-8">
                 <div><div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 text-brand-primary"><item.icon className="h-6 w-6 stroke-[1.8]" /></div><h3 className="mt-6 text-xl font-bold tracking-tight">{item.title}</h3><p className="mt-3 text-sm leading-relaxed text-brand-gray-muted">{item.desc}</p></div>

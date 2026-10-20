@@ -75,6 +75,10 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'home.cat.beauty': 'Beauty', 'home.cat.beautyDesc': 'Skincare, cosmetics and personal care.',
     'home.cat.stationery': 'Stationery', 'home.cat.stationeryDesc': 'Books, notebooks, office supplies and school essentials.',
     'home.cat.home': 'Home Essentials', 'home.cat.homeDesc': 'Kitchen, cleaning and everyday home products.',
+    'delete.badge': 'Account & Privacy',
+    'delete.title': 'Delete your RivoCity account',
+    'delete.subtitle': 'Request account deletion',
+
   },
   mr: {
     'language.label': 'भाषा',
@@ -136,6 +140,10 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'home.cat.beauty': 'सौंदर्य', 'home.cat.beautyDesc': 'त्वचेची काळजी, सौंदर्यप्रसाधने आणि वैयक्तिक निगा.',
     'home.cat.stationery': 'स्टेशनरी', 'home.cat.stationeryDesc': 'पुस्तके, वह्या, कार्यालयीन साहित्य आणि शालेय वस्तू.',
     'home.cat.home': 'घरगुती आवश्यक वस्तू', 'home.cat.homeDesc': 'स्वयंपाकघर, स्वच्छता आणि घरातील दैनंदिन वस्तू.',
+    'delete.badge': 'खाते आणि गोपनीयता',
+    'delete.title': 'तुमचे RivoCity खाते हटवा',
+    'delete.subtitle': 'खाते हटवण्याची विनंती करा',
+
   },
   hi: {
     'language.label': 'भाषा',
@@ -184,6 +192,10 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'home.cat.beauty': 'ब्यूटी', 'home.cat.beautyDesc': 'त्वचा की देखभाल, कॉस्मेटिक्स और व्यक्तिगत देखभाल।',
     'home.cat.stationery': 'स्टेशनरी', 'home.cat.stationeryDesc': 'किताबें, कॉपियाँ, दफ़्तर का सामान और स्कूल की ज़रूरतें।',
     'home.cat.home': 'घर की ज़रूरी चीज़ें', 'home.cat.homeDesc': 'रसोई, सफ़ाई और रोज़मर्रा के घरेलू उत्पाद।',
+    'delete.badge': 'खाता और गोपनीयता',
+    'delete.title': 'अपना RivoCity खाता हटाएँ',
+    'delete.subtitle': 'खाता हटाने का अनुरोध करें',
+
   },
 };
 

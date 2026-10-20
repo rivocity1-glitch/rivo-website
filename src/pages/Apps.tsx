@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -83,6 +84,7 @@ const SectionLabel: React.FC<{ children: React.ReactNode }> = ({
 );
 
 const Apps: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <>
       <SEO
@@ -115,7 +117,7 @@ const Apps: React.FC = () => {
               <motion.div variants={revealVariants}>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2ECC71]/10 border border-[#2ECC71]/20 rounded-full text-xs font-semibold tracking-wider text-brand-primary uppercase">
                   <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-                  The RivoCity ecosystem
+                  {t('apps.hero.title')}
                 </div>
               </motion.div>
 
@@ -124,7 +126,7 @@ const Apps: React.FC = () => {
                 variants={revealVariants}
                 className="mt-8 text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.05]"
               >
-                Everything RivoCity,
+                {t('apps.hero.subtitle')}
                 <br />
                 <span className="text-brand-primary">in one place.</span>
               </motion.h1>

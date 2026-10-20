@@ -189,7 +189,7 @@ const Apps: React.FC = () => {
                   id="ecosystem-heading"
                   className="mt-3 text-3xl md:text-5xl font-extrabold text-brand-black tracking-tight leading-tight"
                 >
-                  Built for every side of local commerce.
+                  {t('apps.ecosystem.subtitle')}
                 </h2>
 
                 <p className="mt-5 text-base text-brand-gray-muted leading-relaxed max-w-2xl">

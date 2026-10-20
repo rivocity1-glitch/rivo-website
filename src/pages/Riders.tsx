@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import { 
@@ -82,6 +83,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 const Riders: React.FC = () => {
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
 
@@ -122,8 +124,8 @@ const Riders: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
-                Earn on your schedule. <br />
-                <span className="text-brand-primary">Deliver with confidence.</span>
+                {t('riders.hero.title')} <br />
+                <span className="text-brand-primary"></span>
               </motion.h1>
             </div>
 
@@ -145,10 +147,10 @@ const Riders: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
               <Button variant="primary" className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Become a Rider <ArrowRight className="w-5 h-5 ml-1" />
+                {t('home.rider.cta')} <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
               <Button onClick={scrollToBenefits} variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
-                Learn More
+                {t('home.hero.cta')}
               </Button>
             </motion.div>
 

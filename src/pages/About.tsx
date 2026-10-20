@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import SEO from "../components/SEO";
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
@@ -45,6 +46,7 @@ const cardHoverVariants: Variants = {
 };
 
 export const About: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
       <SEO title="About Rivo" description="Learn more about Rivo and our mission to make local shopping easier." />
@@ -96,7 +98,7 @@ export const About: React.FC = () => {
             <div className="lg:col-span-4">
               <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">The Challenge</span>
               <h2 id="problem-heading" className="text-3xl md:text-4xl font-extrabold text-brand-black tracking-tight leading-tight">
-                Local shopping should be easier.
+                {t('about.hero.title')}
               </h2>
             </div>
 
@@ -128,10 +130,10 @@ export const About: React.FC = () => {
           <div className="max-w-3xl mb-16 text-left">
             <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">Unified Commerce</span>
             <h2 id="solution-heading" className="text-3xl md:text-5xl font-extrabold text-brand-black tracking-tight leading-tight">
-              One platform for your entire city.
+              {t('home.local.title')}
             </h2>
             <p className="mt-4 text-base md:text-lg text-brand-gray-muted font-light leading-relaxed">
-              We tie the community closer together by closing the gap between neighborhood supply and immediate home demands.
+              {t('about.hero.subtitle')}
             </p>
           </div>
 
@@ -181,7 +183,7 @@ export const About: React.FC = () => {
             >
               <span className="text-xs uppercase tracking-widest text-brand-primary font-bold">Our Mission</span>
               <h2 className="text-2xl md:text-3xl font-black text-brand-black tracking-tight leading-tight">
-                To help every city thrive by making local shopping faster, easier and more connected.
+                {t('about.mission')}
               </h2>
             </motion.div>
 
@@ -195,7 +197,7 @@ export const About: React.FC = () => {
             >
               <span className="text-xs uppercase tracking-widest text-brand-primary font-bold">Our Vision</span>
               <h2 className="text-2xl md:text-3xl font-black text-brand-black tracking-tight leading-tight">
-                A future where every city has its own digital marketplace powered by trusted local businesses and reliable delivery partners.
+                {t('about.vision')}
               </h2>
             </motion.div>
 

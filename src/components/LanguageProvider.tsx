@@ -46,6 +46,11 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'help.hero.subtitle': 'Find answers about using RivoCity and preparing to join the platform.',
     'apps.hero.title': 'RivoCity apps',
     'apps.hero.subtitle': 'Explore the apps created for customers and delivery partners.',
+    'home.category.title': 'Explore what is local', 'home.category.subtitle': 'Discover everyday needs from businesses around your city.',
+    'home.community.title': 'Built for everyone.', 'home.community.subtitle': 'One city platform for customers, local businesses and delivery partners.',
+    'home.customer.title': 'Customers', 'home.customer.desc': 'Discover local stores, shop with confidence and get your essentials delivered.', 'home.customer.cta': 'Explore App',
+    'home.vendor.title': 'Vendors', 'home.vendor.desc': 'Grow your business, reach more customers and manage everything from one place.', 'home.vendor.cta': 'Become a Partner',
+    'home.rider.title': 'Riders', 'home.rider.desc': 'Deliver locally, stay flexible and explore delivery partner opportunities.', 'home.rider.cta': 'Join RivoCity Rider',
   },
   mr: {
     'language.label': 'भाषा',
@@ -84,6 +89,11 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'help.hero.subtitle': 'RivoCity वापरण्याबद्दल आणि प्लॅटफॉर्ममध्ये सहभागी होण्याबद्दल माहिती मिळवा.',
     'apps.hero.title': 'RivoCity अ‍ॅप्स',
     'apps.hero.subtitle': 'ग्राहक आणि डिलिव्हरी भागीदारांसाठी तयार केलेले अ‍ॅप्स पाहा.',
+    'home.category.title': 'स्थानिक पर्याय पाहा', 'home.category.subtitle': 'तुमच्या शहरातील व्यवसायांकडून रोजच्या गरजेच्या वस्तू शोधा.',
+    'home.community.title': 'प्रत्येकासाठी तयार.', 'home.community.subtitle': 'ग्राहक, स्थानिक व्यवसाय आणि डिलिव्हरी भागीदारांसाठी एक शहर-केंद्रित प्लॅटफॉर्म.',
+    'home.customer.title': 'ग्राहक', 'home.customer.desc': 'स्थानिक दुकाने शोधा, विश्वासाने खरेदी करा आणि आवश्यक वस्तू मिळवा.', 'home.customer.cta': 'अ‍ॅप पाहा',
+    'home.vendor.title': 'विक्रेते', 'home.vendor.desc': 'व्यवसाय वाढवा, अधिक ग्राहकांपर्यंत पोहोचा आणि सर्व काही एकाच ठिकाणी व्यवस्थापित करा.', 'home.vendor.cta': 'भागीदार बना',
+    'home.rider.title': 'रायडर्स', 'home.rider.desc': 'स्थानिक डिलिव्हरी करा आणि डिलिव्हरी भागीदार म्हणून संधी जाणून घ्या.', 'home.rider.cta': 'RivoCity Rider मध्ये सहभागी व्हा',
   },
   hi: {
     'language.label': 'भाषा',

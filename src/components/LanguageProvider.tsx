@@ -1187,21 +1187,32 @@ const nodeOriginals = new WeakMap<Text, string>();
 function translateStaticText(node: Text, language: RivoLanguage) {
   const current = node.data;
   const original = nodeOriginals.get(node);
-  const lookup = copyByValue.get(normalizeCopy(original ?? current));
-  if (lookup) {
-    if (!original) nodeOriginals.set(node, lookup.en);
-    const desired = lookup[language];
+
+  if (original !== undefined) {
+    const lookup = copyByValue.get(normalizeCopy(original));
+    if (!lookup) return;
+    const desired = language === 'en' ? original : lookup[language];
     if (current !== desired) node.data = desired;
     return;
   }
-  const reverse = copyByValue.get(normalizeCopy(current));
-  if (reverse) {
-    nodeOriginals.set(node, reverse.en);
-    const desired = reverse[language];
-    if (current !== desired) node.data = desired;
+
+  const lookup = copyByValue.get(normalizeCopy(current));
+  if (!lookup) {
+    nodeOriginals.set(node, current);
     return;
   }
-  if (!original) nodeOriginals.set(node, current);
+
+  // Text already emitted in the selected language by React's t() keys should be left alone.
+  if (language === 'en' || current === lookup.mr || current === lookup.hi) {
+    nodeOriginals.set(node, current);
+    return;
+  }
+
+  // Hard-coded English copy is translated in place, while preserving the exact original
+  // capitalization for a later switch back to English.
+  nodeOriginals.set(node, current);
+  const desired = lookup[language];
+  if (current !== desired) node.data = desired;
 }
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);

@@ -63,8 +63,8 @@ export const Footer: React.FC = () => {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-neutral-100 pt-7 md:flex-row">
           <p className="text-xs text-neutral-400">&copy; 2026 RivoCity. {t('footer.rights')}</p>
           <div className="flex gap-6 text-xs text-neutral-400">
-            <Link to="/legal/privacy" className="transition-colors duration-200 hover:text-black">Privacy Policy</Link>
-            <Link to="/legal/terms" className="transition-colors duration-200 hover:text-black">Terms & Conditions</Link>
+            <Link to="/legal/privacy" className="transition-colors duration-200 hover:text-black">{t('footer.privacy')}</Link>
+            <Link to="/legal/terms" className="transition-colors duration-200 hover:text-black">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

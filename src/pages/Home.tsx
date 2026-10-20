@@ -169,8 +169,8 @@ const Home: React.FC = () => {
         <div className="container-custom">
           <div className="mb-14 max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Everything on Demand</span>
-            <h2 id="categories-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Everything your city has to offer.</h2>
-            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">Shop from trusted local businesses across multiple categories, all in one place.</p>
+            <h2 id="categories-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t('home.category.title')}</h2>
+            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">{t('home.category.subtitle')}</p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (

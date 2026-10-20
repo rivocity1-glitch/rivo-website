@@ -41,7 +41,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-[#2ECC71]/10 border border-[#2ECC71]/20 rounded-full text-xs font-semibold tracking-wider text-brand-primary uppercase"
             >
-              Legal
+              {t('legal.badge')}
             </motion.div>
 
             {/* Headline */}
@@ -53,7 +53,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-black"
               >
-                Legal Center
+                {t('legal.title')}
               </motion.h1>
             </div>
 
@@ -64,7 +64,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed font-normal max-w-2xl"
             >
-              Everything you need to know about using Rivo, your privacy and our policies.
+              {t('legal.subtitle')}
             </motion.p>
 
           </div>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from './Button';
 import { ArrowRight, FileText, Shield, RefreshCcw } from 'lucide-react';
 import { NavLink } from "react-router-dom";
+import { useLanguage } from './LanguageProvider';
 
 export interface LegalLayoutProps {
   title: string;
@@ -17,11 +18,12 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
   children,
   activePage
 }) => {
+  const { t } = useLanguage();
   // Navigation sidebar configuration mapped to updated application routes
   const navigationItems = [
-    { id: 'terms', name: 'Terms & Conditions', icon: FileText, href: '/legal/terms' },
-    { id: 'privacy', name: 'Privacy Policy', icon: Shield, href: '/legal/privacy' },
-    { id: 'refund', name: 'Refund & Cancellation', icon: RefreshCcw, href: '/legal/refund-policy' }
+    { id: 'terms', name: t('footer.terms'), icon: FileText, href: '/legal/terms' },
+    { id: 'privacy', name: t('footer.privacy'), icon: Shield, href: '/legal/privacy' },
+    { id: 'refund', name: t('footer.refund'), icon: RefreshCcw, href: '/legal/refund-policy' }
   ];
 
   return (

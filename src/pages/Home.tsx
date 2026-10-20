@@ -47,15 +47,15 @@ const cardHoverVariants: Variants = {
 
 type LoopStep = 'placed' | 'packed' | 'collecting' | 'otp' | 'delivered';
 
-const categories = [
-  { icon: ShoppingBag, name: 'Grocery', desc: 'Fresh fruits, vegetables, daily essentials and household items.' },
-  { icon: Activity, name: 'Pharmacy', desc: 'Medicines, healthcare products and wellness essentials.' },
-  { icon: Tv, name: 'Electronics', desc: 'Mobile accessories, gadgets and home electronics.' },
-  { icon: Shirt, name: 'Fashion', desc: 'Clothing, footwear and everyday fashion.' },
-  { icon: Heart, name: 'Pet Care', desc: 'Food, toys and essentials for your pets.' },
-  { icon: Sparkle, name: 'Beauty', desc: 'Skincare, cosmetics and personal care.' },
-  { icon: BookOpen, name: 'Stationery', desc: 'Books, notebooks, office supplies and school essentials.' },
-  { icon: HomeIcon, name: 'Home Essentials', desc: 'Kitchen, cleaning and everyday home products.' },
+const categoryKeys = [
+  { icon: ShoppingBag, nameKey: 'home.cat.grocery', descKey: 'home.cat.groceryDesc' },
+  { icon: Activity, nameKey: 'home.cat.pharmacy', descKey: 'home.cat.pharmacyDesc' },
+  { icon: Tv, nameKey: 'home.cat.electronics', descKey: 'home.cat.electronicsDesc' },
+  { icon: Shirt, nameKey: 'home.cat.fashion', descKey: 'home.cat.fashionDesc' },
+  { icon: Heart, nameKey: 'home.cat.pet', descKey: 'home.cat.petDesc' },
+  { icon: Sparkle, nameKey: 'home.cat.beauty', descKey: 'home.cat.beautyDesc' },
+  { icon: BookOpen, nameKey: 'home.cat.stationery', descKey: 'home.cat.stationeryDesc' },
+  { icon: HomeIcon, nameKey: 'home.cat.home', descKey: 'home.cat.homeDesc' },
 ];
 
 const Home: React.FC = () => {
@@ -173,7 +173,9 @@ const Home: React.FC = () => {
             <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">{t('home.category.subtitle')}</p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((category) => (
+            {categoryKeys.map((item) => {
+              const category = { icon: item.icon, name: t(item.nameKey), desc: t(item.descKey) };
+              return (
               <motion.div key={category.name} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[208px] flex-col justify-between rounded-2xl border border-neutral-200/80 bg-[#FAF9FA] p-6">
                 <div>
                   <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200/60 bg-white text-brand-primary shadow-sm"><category.icon className="h-5 w-5 stroke-[1.8]" /></div>
@@ -182,7 +184,8 @@ const Home: React.FC = () => {
                 </div>
                 <span className="mt-5 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-brand-primary">Explore <ArrowRight className="h-3.5 w-3.5" /></span>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

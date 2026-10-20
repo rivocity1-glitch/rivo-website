@@ -1447,7 +1447,7 @@ const moreGlobalTranslations: Record<string, [string, string]> = {
 };
 Object.assign(globalTranslations, moreGlobalTranslations);
 
-const normalizeCopy = (value: string) => value.replace(/\\s+/g, ' ').trim().toLocaleLowerCase();
+const normalizeCopy = (value: string) => value.replace(/\s+/g, ' ').trim().toLocaleLowerCase();
 
 const copyByValue = (() => {
   const index = new Map<string, { en: string; mr: string; hi: string }>();

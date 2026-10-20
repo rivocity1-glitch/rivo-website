@@ -120,7 +120,7 @@ const Customers: React.FC = () => {
                 {t('home.hero.cta')} <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
               <Button variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
-                Download App
+                {t('home.hero.cta')}
               </Button>
             </motion.div>
 

@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '../components/Button';
+import { useLanguage } from '../components/LanguageProvider';
 
 const NotFound: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <main className="min-h-[80vh] flex flex-col justify-center items-center bg-white px-6 text-center select-none">
       <motion.div
@@ -31,24 +33,24 @@ const NotFound: React.FC = () => {
 
         {/* Headline */}
         <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight mb-4">
-          Page not found.
+          {t('notfound.title')}
         </h1>
 
         {/* Description */}
         <p className="text-neutral-500 max-w-sm mb-10 text-sm md:text-base leading-relaxed">
-          The page you are looking for doesn't exist or may have been moved.
+          {t('notfound.subtitle')}
         </p>
 
         {/* Dual Actions Container */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full">
           <Link to="/" className="w-full sm:w-auto">
             <Button variant="primary" className="w-full sm:w-auto px-8">
-              Go Home
+              {t('notfound.home')}
             </Button>
           </Link>
           <Link to="/contact" className="w-full sm:w-auto">
             <Button variant="outline" className="w-full sm:w-auto px-8">
-              Contact Support
+              {t('notfound.contact')}
             </Button>
           </Link>
         </div>

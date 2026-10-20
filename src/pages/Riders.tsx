@@ -422,7 +422,7 @@ const Riders: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4 justify-center">
               <Button variant="primary" className="px-10 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Become a Rider <ArrowRight className="w-5 h-5 ml-1" />
+                {t('home.rider.cta')} <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
               <Button variant="outline" className="px-10 py-4 text-base font-semibold bg-white">
                 Contact Us

@@ -143,7 +143,7 @@ export const HelpCenter: React.FC = () => {
                 <Search className="w-5 h-5 text-neutral-400 absolute top-4 left-4 group-focus-within:text-brand-primary transition-colors duration-300" />
               </form>
               <p className="text-xs text-brand-gray-muted text-left mt-3 font-light">
-                Search support topics, frequently asked questions and helpful guides.
+                {t('help.search')}
               </p>
             </motion.div>
 

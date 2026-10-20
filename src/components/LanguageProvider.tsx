@@ -1248,6 +1248,48 @@ const copyByValue = (() => {
   return index;
 })();
 
+const attributeOriginals = new WeakMap<Element, Map<string, string>>();
+
+function translateAttributes(element: Element, language: RivoLanguage) {
+  const attributes = ['placeholder', 'title', 'aria-label', 'alt'];
+  let originals = attributeOriginals.get(element);
+  if (!originals) {
+    originals = new Map<string, string>();
+    attributeOriginals.set(element, originals);
+  }
+  for (const attribute of attributes) {
+    const current = element.getAttribute(attribute);
+    if (current === null) continue;
+    const original = originals.get(attribute);
+    if (original !== undefined) {
+      const lookup = copyByValue.get(normalizeCopy(original));
+      if (lookup) {
+        const desired = language === 'en' ? original : lookup[language];
+        if (current !== desired) element.setAttribute(attribute, desired);
+      }
+      continue;
+    }
+    const lookup = copyByValue.get(normalizeCopy(current));
+    if (!lookup) {
+      originals.set(attribute, current);
+      continue;
+    }
+    if (language === 'en' || current === lookup.mr || current === lookup.hi) {
+      originals.set(attribute, current);
+      continue;
+    }
+    originals.set(attribute, current);
+    element.setAttribute(attribute, lookup[language]);
+  }
+}
+
+function translateAttributesTree(start: Node, language: RivoLanguage) {
+  if (start instanceof Element) translateAttributes(start, language);
+  if (start instanceof Element || start instanceof Document) {
+    start.querySelectorAll('*').forEach((element) => translateAttributes(element, language));
+  }
+}
+
 const nodeOriginals = new WeakMap<Text, string>();
 
 function translateStaticText(node: Text, language: RivoLanguage) {
@@ -1316,6 +1358,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     };
 
     translateTree(root);
+    translateAttributesTree(root, language);
     const observer = new MutationObserver((records) => {
       for (const record of records) {
         if (record.type === 'characterData' && record.target instanceof Text) {
@@ -1323,7 +1366,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         }
         record.addedNodes.forEach((node) => {
           if (node.nodeType === Node.TEXT_NODE) translateStaticText(node as Text, language);
-          else if (node.nodeType === Node.ELEMENT_NODE) translateTree(node);
+          else if (node.nodeType === Node.ELEMENT_NODE) {
+            translateTree(node);
+            translateAttributesTree(node, language);
+          }
         });
       }
     });

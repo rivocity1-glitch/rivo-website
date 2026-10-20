@@ -178,7 +178,7 @@ export const Pricing: React.FC = () => {
                 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
                 {t('pricing.hero.title')} <br />
-                <span className="text-brand-primary">'</span>
+                <span className="text-brand-primary">{t('pricing.hero.subtitle')}</span>
               </motion.h1>
             </div>
 

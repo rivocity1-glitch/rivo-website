@@ -1,17 +1,19 @@
 import React from 'react';
+import { useLanguage } from './LanguageProvider';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
   const navigation = [
-    ['Home', '/'],
-    ['Customers', '/customers'],
-    ['Vendors', '/vendors'],
-    ['Riders', '/riders'],
-    ['Cities', '/cities'],
-    ['Pricing', '/pricing'],
-    ['About', '/about'],
-    ['Help', '/help'],
-    ['Contact', '/contact'],
+    ['nav.home', '/'],
+    ['footer.customers', '/customers'],
+    ['nav.vendors', '/vendors'],
+    ['footer.riders', '/riders'],
+    ['nav.cities', '/cities'],
+    ['nav.pricing', '/pricing'],
+    ['nav.about', '/about'],
+    ['nav.help', '/help'],
+    ['nav.contact', '/contact'],
   ] as const;
 
   return (
@@ -23,17 +25,17 @@ export const Footer: React.FC = () => {
               RivoCity
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-7 text-neutral-500">
-              RivoCity connects customers, local businesses and delivery partners through one trusted city commerce platform built for local communities.
+              {t('footer.tagline')}
             </p>
           </div>
 
           <div>
-            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">Navigation</h2>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.navigation')}</h2>
             <ul className="space-y-3">
               {navigation.map(([label, path]) => (
                 <li key={label}>
                   <Link to={path} className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
-                    {label}
+                    {t(label)}
                   </Link>
                 </li>
               ))}
@@ -41,17 +43,17 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">Legal</h2>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.legal')}</h2>
             <ul className="space-y-3">
-              <li><Link to="/legal/terms" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Terms & Conditions</Link></li>
-              <li><Link to="/legal/privacy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Privacy Policy</Link></li>
-              <li><Link to="/legal/refund-policy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Refund & Cancellation</Link></li>
-              <li><Link to="/delete-account" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Delete Account</Link></li>
+              <li><Link to="/legal/terms" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.terms')}</Link></li>
+              <li><Link to="/legal/privacy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.privacy')}</Link></li>
+              <li><Link to="/legal/refund-policy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.refund')}</Link></li>
+              <li><Link to="/delete-account" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.delete')}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">Contact</h2>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.contact')}</h2>
             <a href="mailto:support@rivocity.com" className="break-all text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
               support@rivocity.com
             </a>
@@ -59,7 +61,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-neutral-100 pt-7 md:flex-row">
-          <p className="text-xs text-neutral-400">&copy; 2026 RivoCity. All rights reserved.</p>
+          <p className="text-xs text-neutral-400">&copy; 2026 RivoCity. {t('footer.rights')}</p>
           <div className="flex gap-6 text-xs text-neutral-400">
             <Link to="/legal/privacy" className="transition-colors duration-200 hover:text-black">Privacy Policy</Link>
             <Link to="/legal/terms" className="transition-colors duration-200 hover:text-black">Terms & Conditions</Link>

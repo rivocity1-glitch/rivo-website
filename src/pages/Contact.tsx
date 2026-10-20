@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import SEO from "../components/SEO";
@@ -66,6 +67,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 export const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 
@@ -110,7 +112,7 @@ export const Contact: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
-                We're here to help.
+                {t('contact.hero.title')}
               </motion.h1>
             </div>
 
@@ -121,7 +123,7 @@ export const Contact: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed font-normal max-w-2xl text-left"
             >
-              Whether you have a question, business enquiry or need support, we'd love to hear from you.
+              {t('contact.hero.subtitle')}
             </motion.p>
 
           </div>

@@ -227,10 +227,10 @@ const Vendors: React.FC = () => {
                 variants={fadeUpDelayed(0.1)}
                 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
-                Grow your business
+                {t('vendors.hero.title')}
                 <br />
                 <span className="text-brand-primary">
-                  with Rivo.
+                  
                 </span>
               </motion.h1>
 

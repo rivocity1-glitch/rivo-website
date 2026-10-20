@@ -74,7 +74,7 @@ export const About: React.FC = () => {
               className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
             >
               {t('about.hero.title')} <br />
-              <span className="text-brand-primary">{t('about.hero.subtitle')}</span>
+              <span className="text-brand-primary">{t('about.hero.accent')}</span>
             </motion.h1>
 
             {/* Paragraph */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../components/LanguageProvider';
 import { Button } from '../components/Button';
 import {
   ArrowRight,
@@ -156,6 +157,7 @@ const FAQItem: React.FC<{
 
 const Vendors: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   /*
    * Production Vendor Portal URL.
@@ -254,7 +256,7 @@ const Vendors: React.FC = () => {
                   variant="primary"
                   className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10"
                 >
-                  Register Your Store
+                  {t('vendors.cta')}
                   <ArrowRight className="w-5 h-5 ml-1" />
                 </Button>
 

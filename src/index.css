@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap');
 
 @theme {
   --font-sans: "Manrope", sans-serif;
@@ -116,4 +117,20 @@
     opacity: 1;
     transform: none;
   }
+}
+
+
+/* Indian-language typography and translated-copy wrapping */
+html[lang^="hi"], html[lang^="mr"] {
+  --font-sans: "Noto Sans Devanagari", "Manrope", sans-serif;
+}
+
+html[lang^="hi"] body, html[lang^="mr"] body {
+  font-family: "Noto Sans Devanagari", "Manrope", sans-serif;
+}
+
+select { max-width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-shell { animation: none; }
 }

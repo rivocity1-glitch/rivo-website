@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import { 
@@ -71,6 +72,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 export const HelpCenter: React.FC = () => {
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -109,7 +111,7 @@ export const HelpCenter: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
-                How can we help?
+                {t('help.hero.title')}
               </motion.h1>
             </div>
 
@@ -120,7 +122,7 @@ export const HelpCenter: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed font-normal max-w-2xl text-left"
             >
-              Find answers to common questions about shopping, deliveries, vendor accounts, rider accounts and using Rivo.
+              {t('help.hero.subtitle')}
             </motion.p>
 
             {/* Large Search Box */}

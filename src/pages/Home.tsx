@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, type Transition, type Variants } from 'framer-motion';
 import SEO from '../components/SEO';
+import { useLanguage } from '../components/LanguageProvider';
 import { Button } from '../components/Button';
 import {
   Activity,
@@ -58,6 +59,7 @@ const categories = [
 ];
 
 const Home: React.FC = () => {
+  const { t } = useLanguage();
   const [activeStep, setActiveStep] = useState<LoopStep>('placed');
   const navigate = useNavigate();
   const categoriesRef = useRef<HTMLDivElement>(null);

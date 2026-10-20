@@ -154,6 +154,16 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'help.hero.subtitle': 'RivoCity और प्लेटफ़ॉर्म से जुड़ने की प्रक्रिया के बारे में जानें।',
     'apps.hero.title': 'RivoCity ऐप्स',
     'apps.hero.subtitle': 'ग्राहकों और डिलीवरी पार्टनर्स के लिए बनाए गए ऐप्स देखें।',
+    'home.category.title': 'आपके शहर के सभी विकल्प।',
+    'home.category.subtitle': 'विभिन्न श्रेणियों में भरोसेमंद स्थानीय दुकानों से खरीदारी करें—सब एक जगह।',
+    'home.cat.grocery': 'किराना', 'home.cat.groceryDesc': 'ताज़े फल, सब्ज़ियाँ, रोज़मर्रा और घरेलू ज़रूरतों की चीज़ें।',
+    'home.cat.pharmacy': 'फार्मेसी', 'home.cat.pharmacyDesc': 'दवाइयाँ, स्वास्थ्य उत्पाद और वेलनेस की ज़रूरी चीज़ें।',
+    'home.cat.electronics': 'इलेक्ट्रॉनिक्स', 'home.cat.electronicsDesc': 'मोबाइल एक्सेसरीज़, गैजेट्स और घरेलू इलेक्ट्रॉनिक्स।',
+    'home.cat.fashion': 'फैशन', 'home.cat.fashionDesc': 'कपड़े, जूते और रोज़मर्रा का फैशन।',
+    'home.cat.pet': 'पालतू जानवरों की देखभाल', 'home.cat.petDesc': 'पालतू जानवरों का भोजन, खिलौने और ज़रूरी सामान।',
+    'home.cat.beauty': 'ब्यूटी', 'home.cat.beautyDesc': 'त्वचा की देखभाल, कॉस्मेटिक्स और व्यक्तिगत देखभाल।',
+    'home.cat.stationery': 'स्टेशनरी', 'home.cat.stationeryDesc': 'किताबें, कॉपियाँ, दफ़्तर का सामान और स्कूल की ज़रूरतें।',
+    'home.cat.home': 'घर की ज़रूरी चीज़ें', 'home.cat.homeDesc': 'रसोई, सफ़ाई और रोज़मर्रा के घरेलू उत्पाद।',
   },
 };
 

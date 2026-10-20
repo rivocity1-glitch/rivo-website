@@ -83,6 +83,9 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'notfound.subtitle': "The page you are looking for doesn't exist or may have been moved.",
     'notfound.home': 'Go Home', 'notfound.contact': 'Contact Support',
 
+'legal.badge': 'Legal',
+    'legal.title': 'Legal Center',
+    'legal.subtitle': 'Everything you need to know about using Rivo, your privacy and our policies.',
   },
   mr: {
     'language.label': 'भाषा',
@@ -152,6 +155,9 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'notfound.subtitle': 'तुम्ही शोधत असलेले पृष्ठ उपलब्ध नाही किंवा हलवले गेले असू शकते.',
     'notfound.home': 'मुख्यपृष्ठावर जा', 'notfound.contact': 'सपोर्टशी संपर्क साधा',
 
+'legal.badge': 'कायदेशीर माहिती',
+    'legal.title': 'कायदेशीर केंद्र',
+    'legal.subtitle': 'RivoCity चा वापर, तुमची गोपनीयता आणि आमच्या धोरणांबद्दल आवश्यक माहिती.',
   },
   hi: {
     'language.label': 'भाषा',
@@ -208,6 +214,9 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'notfound.subtitle': 'आप जिस पेज को खोज रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।',
     'notfound.home': 'होम पर जाएँ', 'notfound.contact': 'सहायता से संपर्क करें',
 
+'legal.badge': 'कानूनी जानकारी',
+    'legal.title': 'कानूनी केंद्र',
+    'legal.subtitle': 'RivoCity के उपयोग, आपकी गोपनीयता और हमारी नीतियों से जुड़ी आवश्यक जानकारी।',
   },
 };
 

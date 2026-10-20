@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
@@ -130,6 +131,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 export const Pricing: React.FC = () => {
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const navigate = useNavigate();
   const comparisonRef = useRef<HTMLDivElement>(null);
@@ -175,8 +177,8 @@ export const Pricing: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
-                Simple and transparent pricing <br />
-                <span className="text-brand-primary">for local businesses.</span>
+                {t('pricing.hero.title')} <br />
+                <span className="text-brand-primary">'</span>
               </motion.h1>
             </div>
 
@@ -198,10 +200,10 @@ export const Pricing: React.FC = () => {
               className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
               <Button onClick={scrollToComparison} variant="primary" className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Compare Plans <ArrowRight className="w-5 h-5 ml-1" />
+                {t('pricing.compare')} <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
               <Button onClick={handleContactClick} variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
-                Contact Us
+                {t('nav.contact')}
               </Button>
             </motion.div>
 

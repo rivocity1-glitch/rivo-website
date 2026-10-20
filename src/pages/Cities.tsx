@@ -121,7 +121,7 @@ const Cities: React.FC = () => {
                 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
               >
                 {t('cities.hero.title')} <br />
-                <span className="text-brand-primary">Growing one city at a time.</span>
+                <span className="text-brand-primary">{t('cities.hero.subtitle')}</span>
               </motion.h1>
             </div>
 

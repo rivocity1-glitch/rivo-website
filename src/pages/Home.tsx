@@ -102,15 +102,15 @@ const Home: React.FC = () => {
             <div className="lg:col-span-7">
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={smoothTransition} className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#2ECC71]/20 bg-[#2ECC71]/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-brand-primary">
                 <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-primary opacity-50" /><span className="relative inline-flex h-2 w-2 rounded-full bg-brand-primary" /></span>
-                Launching in Baramati
+                {t('home.city')}
               </motion.div>
 
               <motion.h1 id="hero-heading" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.05 }} className="max-w-4xl text-balance text-5xl font-extrabold leading-[1.04] tracking-[-0.045em] sm:text-6xl xl:text-7xl">
-                One City.<br /><span className="text-brand-primary">Infinite Possibilities.</span>
+                {t('home.hero.title')}
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.1 }} className="mt-6 max-w-2xl text-base leading-7 text-brand-gray-muted sm:text-lg">
-                Shop from trusted local stores across your city. From groceries and medicines to electronics, stationery and everyday essentials, everything you need is a few taps away.
+                {t('home.hero.subtitle')}
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.16 }} className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -243,8 +243,8 @@ const Home: React.FC = () => {
         <div className="container-custom">
           <div className="mb-14 max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Our Community</span>
-            <h2 id="everyone-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Built for everyone.</h2>
-            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">One city platform for customers, local businesses and delivery partners.</p>
+            <h2 id="everyone-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t('home.local.title')}</h2>
+            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">{t('home.local.subtitle')}</p>
           </div>
           <div className="grid gap-5 lg:grid-cols-3">
             {[

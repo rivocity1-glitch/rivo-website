@@ -1,7 +1,10 @@
 import React from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { LegalLayout } from '../components/LegalLayout';
 
-const Privacy: React.FC = () => (
+const Privacy: React.FC = () => {
+  const { t } = useLanguage();
+  return (
   <LegalLayout title="Privacy Policy" activePage="privacy" lastUpdated="22 August 2026">
     <div className="space-y-10 text-brand-black font-light leading-relaxed text-sm md:text-base">
       <section className="space-y-3"><h3 className="text-xl font-bold">1. Introduction</h3><p>At Rivo, we value your privacy and are committed to protecting personal information. This Privacy Policy explains how we collect, use, store, share, and safeguard data when you use our website, mobile applications, and hyperlocal marketplace services.</p></section>
@@ -19,6 +22,7 @@ const Privacy: React.FC = () => (
       <section className="space-y-3"><h3 className="text-xl font-bold">13. Contact</h3><p>For privacy questions, complaints, or requests, contact Rivo Support:</p><p className="font-bold text-brand-black bg-[#FAF9FA] border border-neutral-200 rounded-xl p-4 inline-block tracking-tight select-all">support@rivocity.com</p></section>
     </div>
   </LegalLayout>
-);
+  );
+};
 
 export default Privacy;

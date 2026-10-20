@@ -7,7 +7,7 @@ const Terms: React.FC = () => {
   return (
   <LegalLayout title="Terms & Conditions" activePage="terms" lastUpdated="22 August 2026">
     <div className="space-y-10 text-brand-black font-light leading-relaxed text-sm md:text-base">
-      <section className="space-y-3"><h3 className="text-xl font-bold">{t('legal.terms.heading1')}</h3><p>{t('legal.mr.Welcome to Rivo. These Terms & Conditions govern your access to and use of Rivo’s website, mobile applications, and connected services. By using our platform, you agree to follow these rules. If you do not agree with any part of these terms, please do not use our services.')}</p></section>
+      <section className="space-y-3"><h3 className="text-xl font-bold">{t('legal.terms.heading1')}</h3><p>{t('legal.terms.1')}</p></section>
       <section className="space-y-3"><h3 className="text-xl font-bold">{t('legal.terms.heading2')}</h3><p>{t('legal.terms.2')}</p></section>
       <section className="space-y-3"><h3 className="text-xl font-bold">{t('legal.terms.heading3')}</h3><p>{t('legal.terms.3')}</p></section>
       <section className="space-y-3"><h3 className="text-xl font-bold">{t('legal.terms.heading4')}</h3><p>{t('legal.terms.4')}</p></section>

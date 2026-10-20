@@ -95,8 +95,7 @@ const Customers: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
             >
-              {t('customers.hero.title')} <br />
-              <span className="text-brand-primary">{t('home.hero.vendor')}</span>
+              {t('customers.hero.headline')}
             </motion.h1>
 
             {/* Paragraph */}

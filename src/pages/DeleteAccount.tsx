@@ -3,10 +3,12 @@ import type { FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Mail, Shield, UserRound } from 'lucide-react';
 import { Button } from '../components/Button';
+import { useLanguage } from '../components/LanguageProvider';
 
 const SUPPORT_EMAIL = 'support@rivocity.com';
 
 const DeleteAccount: React.FC = () => {
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [identifier, setIdentifier] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -35,7 +37,7 @@ const DeleteAccount: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-[#2ECC71]/20 bg-[#2ECC71]/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-brand-primary"
           >
-            Account & Privacy
+            {t('delete.badge')}
           </motion.div>
 
           <motion.h1
@@ -44,7 +46,7 @@ const DeleteAccount: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.08 }}
             className="text-5xl font-black tracking-tight sm:text-6xl lg:text-7xl"
           >
-            Delete your RivoCity account
+            {t('delete.title')}
           </motion.h1>
 
           <motion.p
@@ -76,7 +78,7 @@ const DeleteAccount: React.FC = () => {
 
                 <div>
                   <h2 className="text-2xl font-black tracking-tight">
-                    Request account deletion
+                    {t('delete.subtitle')}
                   </h2>
 
                   <p className="mt-1 text-sm leading-relaxed text-brand-gray-muted">

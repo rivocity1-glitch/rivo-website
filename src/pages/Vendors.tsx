@@ -265,7 +265,7 @@ const Vendors: React.FC = () => {
                   variant="outline"
                   className="px-8 py-4 text-base font-semibold"
                 >
-                  View Pricing
+                  {t('pricing.compare')}
                 </Button>
               </motion.div>
 
@@ -1071,7 +1071,7 @@ const Vendors: React.FC = () => {
                 variant="primary"
                 className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10"
               >
-                Register Your Store
+                {t('vendors.cta')}
                 <ArrowRight className="w-5 h-5 ml-1" />
               </Button>
 

@@ -79,6 +79,10 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'delete.title': 'Delete your RivoCity account',
     'delete.subtitle': 'Request account deletion',
 
+    'notfound.title': 'Page not found.',
+    'notfound.subtitle': "The page you are looking for doesn't exist or may have been moved.",
+    'notfound.home': 'Go Home', 'notfound.contact': 'Contact Support',
+
   },
   mr: {
     'language.label': 'भाषा',
@@ -144,6 +148,10 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'delete.title': 'तुमचे RivoCity खाते हटवा',
     'delete.subtitle': 'खाते हटवण्याची विनंती करा',
 
+    'notfound.title': 'पृष्ठ सापडले नाही.',
+    'notfound.subtitle': 'तुम्ही शोधत असलेले पृष्ठ उपलब्ध नाही किंवा हलवले गेले असू शकते.',
+    'notfound.home': 'मुख्यपृष्ठावर जा', 'notfound.contact': 'सपोर्टशी संपर्क साधा',
+
   },
   hi: {
     'language.label': 'भाषा',
@@ -195,6 +203,10 @@ const translations: Record<RivoLanguage, Record<string, string>> = {
     'delete.badge': 'खाता और गोपनीयता',
     'delete.title': 'अपना RivoCity खाता हटाएँ',
     'delete.subtitle': 'खाता हटाने का अनुरोध करें',
+
+    'notfound.title': 'पेज नहीं मिला।',
+    'notfound.subtitle': 'आप जिस पेज को खोज रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।',
+    'notfound.home': 'होम पर जाएँ', 'notfound.contact': 'सहायता से संपर्क करें',
 
   },
 };

@@ -152,7 +152,7 @@ const Navbar = () => {
                           : 'text-neutral-600 hover:bg-neutral-50 hover:text-black'
                       }`}
                     >
-                      <span>{item.label}</span>
+                      <span>{t(item.label)}</span>
                       {isActive && <span className="h-1.5 w-1.5 rounded-full bg-[#2ECC71]" />}
                     </Link>
                   );

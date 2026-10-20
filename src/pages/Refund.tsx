@@ -1,7 +1,10 @@
 import React from 'react';
+import { useLanguage } from '../components/LanguageProvider';
 import { LegalLayout } from '../components/LegalLayout';
 
-const Refund: React.FC = () => (
+const Refund: React.FC = () => {
+  const { t } = useLanguage();
+  return (
   <LegalLayout title="Refund & Cancellation Policy" activePage="refund" lastUpdated="22 August 2026">
     <div className="space-y-10 text-brand-black font-light leading-relaxed text-sm md:text-base">
       <section className="space-y-3"><h3 className="text-xl font-bold">1. Introduction</h3><p>This Refund & Cancellation Policy explains the rules for cancelling orders and requesting refunds on Rivo. Eligibility depends on the order stage, reason for cancellation, transaction status, and applicable law.</p></section>
@@ -16,6 +19,7 @@ const Refund: React.FC = () => (
       <section className="space-y-3"><h3 className="text-xl font-bold">10. Contact</h3><p>For cancellation and refund support, contact:</p><p className="font-bold text-brand-black bg-[#FAF9FA] border border-neutral-200 rounded-xl p-4 inline-block tracking-tight select-all">support@rivocity.com</p></section>
     </div>
   </LegalLayout>
-);
+  );
+};
 
 export default Refund;

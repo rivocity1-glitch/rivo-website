@@ -1521,8 +1521,12 @@ function translateStaticText(node: Text, language: RivoLanguage) {
   }
 
   // Text already emitted in the selected language by React's t() keys should be left alone.
-  if (language === 'en' || current === lookup.mr || current === lookup.hi) {
+  if (language === 'en') {
     nodeOriginals.set(node, current);
+    return;
+  }
+  if (current === lookup.mr || current === lookup.hi) {
+    // React-owned t() copy is already localized; allow React to replace it on the next switch.
     return;
   }
 

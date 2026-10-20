@@ -182,7 +182,7 @@ const Home: React.FC = () => {
                   <h3 className="text-lg font-bold tracking-tight">{category.name}</h3>
                   <p className="mt-2 text-xs leading-relaxed text-brand-gray-muted">{category.desc}</p>
                 </div>
-                <span className="mt-5 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-brand-primary">Explore <ArrowRight className="h-3.5 w-3.5" /></span>
+                <span className="mt-5 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-brand-primary">{t('home.local.discover')} <ArrowRight className="h-3.5 w-3.5" /></span>
               </motion.div>
               );
             })}

@@ -229,7 +229,7 @@ const Vendors: React.FC = () => {
               >
                 {t('vendors.hero.title')}
                 <br />
-                <span className="text-brand-primary">{t('vendors.hero.subtitle')}</span>
+                <span className="text-brand-primary">{t('vendors.hero.accent')}</span>
               </motion.h1>
 
               <motion.p

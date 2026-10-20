@@ -135,7 +135,7 @@ export const Contact: React.FC = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto text-left">
             
-            {/* Email Support */}
+            {/* {t('contact.cta.email')} */}
             <motion.div
               variants={cardHoverVariants}
               initial="initial"
@@ -329,7 +329,7 @@ export const Contact: React.FC = () => {
           <div className="max-w-3xl mx-auto space-y-4 text-left">
             {[
               { question: "How long does it take to receive a reply?", answer: "We aim to respond to all enquiries within 24 hours during our working business hours." },
-              { question: "Where can I get order support?", answer: "For immediate help with a live order, please consult our Help Center topics or contact us using our dedicated support email." },
+              { question: "Where can I get order support?", answer: "For immediate help with a live order, please consult our {t('nav.help')} topics or contact us using our dedicated support email." },
               { question: "Can businesses contact Rivo before joining?", answer: "Yes, you can drop us an email with your business details, and we will help walk you through the catalog steps before your store launches." },
               { question: "How do I report a problem?", answer: "Please email our support channel with a brief summary of the issue, and our team will check it right away." },
               { question: "Can riders contact support?", answer: "Yes. Active riders can drop us a mail regarding account updates, verification statuses, or settlement questions." }
@@ -353,11 +353,11 @@ export const Contact: React.FC = () => {
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center space-y-8">
             
             <h2 id="final-contact-cta" className="text-4xl md:text-6xl font-black text-brand-black tracking-tight leading-[1.1]">
-              Let's stay connected.
+              {t('contact.cta.title')}
             </h2>
             
             <p className="text-base md:text-lg text-brand-gray-muted font-light leading-relaxed max-w-2xl">
-              If you have a question or need assistance, we're always happy to help.
+              {t('contact.cta.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4 justify-center">

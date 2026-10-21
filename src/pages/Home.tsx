@@ -47,22 +47,10 @@ const cardHoverVariants: Variants = {
 
 type LoopStep = 'placed' | 'packed' | 'collecting' | 'otp' | 'delivered';
 
-const categories = [
-  { icon: ShoppingBag, nameKey: 'category.grocery', nameFallback: 'Grocery', descKey: 'category.groceryDesc', descFallback: 'Fresh fruits, vegetables, daily essentials and household items.' },
-  { icon: Activity, nameKey: 'category.pharmacy', nameFallback: 'Pharmacy', descKey: 'category.pharmacyDesc', descFallback: 'Medicines, healthcare products and wellness essentials.' },
-  { icon: Tv, nameKey: 'category.electronics', nameFallback: 'Electronics', descKey: 'category.electronicsDesc', descFallback: 'Mobile accessories, gadgets and home electronics.' },
-  { icon: Shirt, nameKey: 'category.fashion', nameFallback: 'Fashion', descKey: 'category.fashionDesc', descFallback: 'Clothing, footwear and everyday fashion.' },
-  { icon: Heart, nameKey: 'category.petCare', nameFallback: 'Pet Care', descKey: 'category.petCareDesc', descFallback: 'Food, toys and essentials for your pets.' },
-  { icon: Sparkle, nameKey: 'category.beauty', nameFallback: 'Beauty', descKey: 'category.beautyDesc', descFallback: 'Skincare, cosmetics and personal care.' },
-  { icon: BookOpen, nameKey: 'category.stationery', nameFallback: 'Stationery', descKey: 'category.stationeryDesc', descFallback: 'Books, notebooks, office supplies and school essentials.' },
-  { icon: HomeIcon, nameKey: 'category.home', nameFallback: 'Home Essentials', descKey: 'category.homeDesc', descFallback: 'Kitchen, cleaning and everyday home products.' },
-];
-
 const Home: React.FC = () => {
   const { t } = useLanguage();
   const [activeStep, setActiveStep] = useState<LoopStep>('placed');
   const navigate = useNavigate();
-  const categoriesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const sequence: LoopStep[] = ['placed', 'packed', 'collecting', 'otp', 'delivered'];
@@ -73,10 +61,6 @@ const Home: React.FC = () => {
     }, 3200);
     return () => window.clearInterval(interval);
   }, []);
-
-  const scrollToCategories = () => {
-    categoriesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   const activeCard = {
     placed: { title: t('home.order.placed', 'Order Placed'), description: t('home.order.placedDesc', 'Your order is received and secure.'), icon: ShoppingBag, color: 'bg-[#2ECC71]/10 text-brand-primary' },
@@ -114,7 +98,7 @@ const Home: React.FC = () => {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.16 }} className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button onClick={scrollToCategories} className="px-8 py-4 text-base font-semibold">
+                <Button onClick={() => navigate('/apps')} className="px-8 py-4 text-base font-semibold">
                   {t('home.hero.primary', 'Explore Rivo')} <ArrowRight className="h-5 w-5" />
                 </Button>
                 <Button onClick={() => navigate('/vendors')} variant="outline" className="px-8 py-4 text-base font-semibold">
@@ -161,28 +145,6 @@ const Home: React.FC = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section ref={categoriesRef} className="border-t border-neutral-100 bg-white py-20 md:py-28" aria-labelledby="categories-heading">
-        <div className="container-custom">
-          <div className="mb-14 max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">{t('home.categories.label', 'Everything on Demand')}</span>
-            <h2 id="categories-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t('home.categories.title', 'Everything your city has to offer.')}</h2>
-            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">{t('home.categories.body', 'Shop from trusted local businesses across multiple categories, all in one place.')}</p>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map((category) => (
-              <motion.div key={category.nameKey} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[208px] flex-col justify-between rounded-2xl border border-neutral-200/80 bg-[#FAF9FA] p-6">
-                <div>
-                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200/60 bg-white text-brand-primary shadow-sm"><category.icon className="h-5 w-5 stroke-[1.8]" /></div>
-                  <h3 className="text-lg font-bold tracking-tight">{t(category.nameKey, category.nameFallback)}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-brand-gray-muted">{t(category.descKey, category.descFallback)}</p>
-                </div>
-                <span className="mt-5 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-brand-primary">{t('common.explore', 'Explore')} <ArrowRight className="h-3.5 w-3.5" /></span>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

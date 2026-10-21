@@ -133,7 +133,7 @@ const Apps: React.FC = () => {
                 variants={revealVariants}
                 className="mt-7 text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed max-w-2xl"
               >
-                {t('apps.body', 'Shop locally, manage your business, or deliver across your city. RivoCity connects every part of the local commerce journey.')}
+                {t('apps.intro', 'Shop locally, manage your business, or deliver across your city. RivoCity connects every part of the local commerce journey.')}
               </motion.p>
 
               <motion.div

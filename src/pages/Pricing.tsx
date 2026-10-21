@@ -130,6 +130,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 export const Pricing: React.FC = () => {
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const navigate = useNavigate();
   const comparisonRef = useRef<HTMLDivElement>(null);

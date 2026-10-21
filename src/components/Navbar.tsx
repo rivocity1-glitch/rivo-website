@@ -58,7 +58,7 @@ const Navbar = () => {
 
   return (
     <nav
-      aria-label="Main navigation"
+      aria-label={t('nav.home', 'Main navigation')}
       className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl transition-[background-color,box-shadow,border-color] duration-300 ${
         scrolled
           ? 'border-neutral-200/80 bg-white/95 shadow-[0_8px_30px_-20px_rgba(0,0,0,0.25)]'
@@ -152,7 +152,7 @@ const Navbar = () => {
                           : 'text-neutral-600 hover:bg-neutral-50 hover:text-black'
                       }`}
                     >
-                      <span>{item.label}</span>
+                      <span>{t('nav.' + item.label.toLowerCase(), item.label)}</span>
                       {isActive && <span className="h-1.5 w-1.5 rounded-full bg-[#2ECC71]" />}
                     </Link>
                   );

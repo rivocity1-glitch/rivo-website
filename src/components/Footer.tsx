@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
   const navigation = [
-    ['Home', '/'],
-    ['Customers', '/customers'],
-    ['Vendors', '/vendors'],
-    ['Riders', '/riders'],
-    ['Cities', '/cities'],
-    ['Pricing', '/pricing'],
-    ['About', '/about'],
-    ['Help', '/help'],
-    ['Contact', '/contact'],
+    [t('nav.home', 'Home'), '/'],
+    [t('nav.customers', 'Customers'), '/customers'],
+    [t('nav.vendors', 'Vendors'), '/vendors'],
+    [t('nav.riders', 'Riders'), '/riders'],
+    [t('nav.cities', 'Cities'), '/cities'],
+    [t('nav.pricing', 'Pricing'), '/pricing'],
+    [t('nav.about', 'About'), '/about'],
+    [t('nav.help', 'Help'), '/help'],
+    [t('nav.contact', 'Contact'), '/contact'],
   ] as const;
 
   return (

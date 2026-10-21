@@ -1,7 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
   const navigation = [
     ['Home', '/'],
     ['Customers', '/customers'],
@@ -23,12 +25,12 @@ export const Footer: React.FC = () => {
               RivoCity
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-7 text-neutral-500">
-              RivoCity connects customers, local businesses and delivery partners through one trusted city commerce platform built for local communities.
+              {t('footer.description', 'RivoCity connects customers, local businesses and delivery partners through one trusted city commerce platform built for local communities.')}
             </p>
           </div>
 
           <div>
-            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">Navigation</h2>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.navigation', 'Navigation')}</h2>
             <ul className="space-y-3">
               {navigation.map(([label, path]) => (
                 <li key={label}>
@@ -41,17 +43,17 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">Legal</h2>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.legal', 'Legal')}</h2>
             <ul className="space-y-3">
-              <li><Link to="/legal/terms" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Terms & Conditions</Link></li>
-              <li><Link to="/legal/privacy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Privacy Policy</Link></li>
-              <li><Link to="/legal/refund-policy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Refund & Cancellation</Link></li>
-              <li><Link to="/delete-account" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">Delete Account</Link></li>
+              <li><Link to="/legal/terms" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.terms', 'Terms & Conditions')}</Link></li>
+              <li><Link to="/legal/privacy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.privacy', 'Privacy Policy')}</Link></li>
+              <li><Link to="/legal/refund-policy" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.refund', 'Refund & Cancellation')}</Link></li>
+              <li><Link to="/delete-account" className="text-sm text-neutral-500 transition-colors duration-200 hover:text-black">{t('footer.delete', 'Delete Account')}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">Contact</h2>
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.contact', 'Contact')}</h2>
             <a href="mailto:support@rivocity.com" className="break-all text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
               support@rivocity.com
             </a>

@@ -46,7 +46,7 @@ const cardHoverVariants: Variants = {
 };
 
 export const About: React.FC = () => {
-  const { t } = useLanguage();
+  const languageText = useLanguage();
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
       <SEO title="About Rivo" description="Learn more about Rivo and our mission to make local shopping easier." />

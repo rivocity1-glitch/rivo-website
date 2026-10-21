@@ -7,7 +7,7 @@ import { Button } from '../components/Button';
 const SUPPORT_EMAIL = 'support@rivocity.com';
 
 const DeleteAccount: React.FC = () => {
-  const { t } = useLanguage();
+  const languageText = useLanguage();
   const [email, setEmail] = useState('');
   const [identifier, setIdentifier] = useState('');
   const [submitted, setSubmitted] = useState(false);

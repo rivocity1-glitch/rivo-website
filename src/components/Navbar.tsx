@@ -82,13 +82,13 @@ const Navbar = () => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
-                  key={t('nav.' + item.label.toLowerCase(), item.label)}
+                  key={item.path}
                   to={item.path}
                   className={`relative rounded-full px-3 py-2 text-xs font-semibold transition-colors duration-200 ${
                     isActive ? 'text-black' : 'text-neutral-600 hover:text-black'
                   }`}
                 >
-                  <span className="relative z-10">{item.label}</span>
+                  <span className="relative z-10">{t('nav.' + item.label.toLowerCase(), item.label)}</span>
                   {isActive && (
                     <motion.span
                       layoutId="activeNavIndicator"
@@ -102,11 +102,18 @@ const Navbar = () => {
           </div>
 
           <div className="hidden items-center lg:flex">
+            <div className="mr-3 flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-2 text-xs font-semibold text-neutral-700">
+              <Languages className="h-4 w-4" aria-hidden="true" />
+              <label className="sr-only" htmlFor="language-select-desktop">{t('nav.language', 'Language')}</label>
+              <select id="language-select-desktop" value={language} onChange={(event) => setLanguage(event.target.value as Language)} className="max-w-24 cursor-pointer bg-transparent outline-none" aria-label={t('nav.language', 'Language')}>
+                {languageOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+              </select>
+            </div>
             <Link
               to="/apps"
               className="rounded-full bg-[#2ECC71] px-5 py-2.5 text-xs font-bold tracking-wide text-black shadow-sm transition-[transform,background-color,box-shadow] duration-200 hover:bg-[#27ae60] hover:shadow-md active:scale-[0.98]"
             >
-              Get RivoCity
+              {t('nav.getApp', 'Get RivoCity')}
             </Link>
           </div>
 
@@ -163,7 +170,7 @@ const Navbar = () => {
                   to="/apps"
                   className="block w-full rounded-xl bg-[#2ECC71] px-4 py-3 text-center text-sm font-bold text-black transition-[transform,background-color] duration-200 hover:bg-[#27ae60] active:scale-[0.99]"
                 >
-                  Get RivoCity
+                  {t('nav.getApp', 'Get RivoCity')}
                 </Link>
               </div>
             </div>

@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import SEO from '../components/SEO';
+import { useLanguage } from '../i18n/LanguageContext';
 
 import { 
   ArrowRight, 

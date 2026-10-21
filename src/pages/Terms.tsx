@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { LegalLayout } from '../components/LegalLayout';
 
 const Terms: React.FC = () => (

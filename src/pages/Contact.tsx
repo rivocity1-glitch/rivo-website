@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import SEO from "../components/SEO";
-import { useLanguage } from '../i18n/LanguageContext';
 import { 
   ArrowRight, 
   ChevronDown,
@@ -67,7 +66,6 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 export const Contact: React.FC = () => {
-  const languageText = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
 

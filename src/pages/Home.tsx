@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, type Transition, type Variants } from 'framer-motion';
 import SEO from '../components/SEO';
 import { Button } from '../components/Button';
+import { useLanguage } from '../i18n/LanguageContext';
 import {
   Activity,
   ArrowRight,
@@ -58,6 +59,7 @@ const categories = [
 ];
 
 const Home: React.FC = () => {
+  const { t } = useLanguage();
   const [activeStep, setActiveStep] = useState<LoopStep>('placed');
   const navigate = useNavigate();
   const categoriesRef = useRef<HTMLDivElement>(null);
@@ -104,11 +106,11 @@ const Home: React.FC = () => {
               </motion.div>
 
               <motion.h1 id="hero-heading" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.05 }} className="max-w-4xl text-balance text-5xl font-extrabold leading-[1.04] tracking-[-0.045em] sm:text-6xl xl:text-7xl">
-                One City.<br /><span className="text-brand-primary">Infinite Possibilities.</span>
+                {t('home.hero.title', 'One City. Infinite Possibilities.')}
               </motion.h1>
 
               <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.1 }} className="mt-6 max-w-2xl text-base leading-7 text-brand-gray-muted sm:text-lg">
-                Shop from trusted local stores across your city. From groceries and medicines to electronics, stationery and everyday essentials, everything you need is a few taps away.
+                {t('home.hero.body', 'Shop from trusted local stores across your city. From groceries and medicines to electronics, stationery and everyday essentials, everything you need is a few taps away.')}
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.16 }} className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -166,9 +168,9 @@ const Home: React.FC = () => {
       <section ref={categoriesRef} className="border-t border-neutral-100 bg-white py-20 md:py-28" aria-labelledby="categories-heading">
         <div className="container-custom">
           <div className="mb-14 max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Everything on Demand</span>
-            <h2 id="categories-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Everything your city has to offer.</h2>
-            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">Shop from trusted local businesses across multiple categories, all in one place.</p>
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">{t('home.categories.label', 'Everything on Demand')}</span>
+            <h2 id="categories-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t('home.categories.title', 'Everything your city has to offer.')}</h2>
+            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">{t('home.categories.body', 'Shop from trusted local businesses across multiple categories, all in one place.')}</p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
@@ -188,9 +190,9 @@ const Home: React.FC = () => {
       <section className="border-t border-neutral-100 bg-[#FAF9FA] py-20 md:py-28" aria-labelledby="how-it-works-heading">
         <div className="container-custom">
           <div className="mb-16 max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Simple Steps</span>
-            <h2 id="how-it-works-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Shopping locally has never been easier.</h2>
-            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">We bring neighborhood stores straight to you with quick and reliable handoffs.</p>
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">{t('home.steps.label', 'Simple Steps')}</span>
+            <h2 id="how-it-works-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">{t('home.steps.title', 'Shopping locally has never been easier.')}</h2>
+            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">{t('home.steps.body', 'We bring neighborhood stores straight to you with quick and reliable handoffs.')}</p>
           </div>
           <div className="relative">
             <div className="absolute left-8 right-8 top-6 hidden h-px bg-neutral-200 lg:block" />

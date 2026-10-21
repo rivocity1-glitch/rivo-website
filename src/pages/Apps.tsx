@@ -117,7 +117,7 @@ const Apps: React.FC = () => {
               <motion.div variants={revealVariants}>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2ECC71]/10 border border-[#2ECC71]/20 rounded-full text-xs font-semibold tracking-wider text-brand-primary uppercase">
                   <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-                  The RivoCity ecosystem
+                  {t('apps.eyebrow', 'The RivoCity ecosystem')}
                 </div>
               </motion.div>
 
@@ -144,7 +144,7 @@ const Apps: React.FC = () => {
                   href="#customer"
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-brand-black text-white text-sm font-semibold hover:bg-neutral-800 transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  Explore the apps
+                  {t('apps.explore', 'Explore the apps')}
                   <ArrowRight className="w-4 h-4" />
                 </a>
 
@@ -152,7 +152,7 @@ const Apps: React.FC = () => {
                   href="#qr"
                   className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-neutral-200 text-brand-black text-sm font-semibold hover:bg-neutral-50 transition-all duration-300 hover:-translate-y-0.5"
                 >
-                  Get the app QR
+                  {t('apps.qr', 'Get the app QR')}
                   <QrCode className="w-4 h-4" />
                 </a>
               </motion.div>
@@ -179,19 +179,17 @@ const Apps: React.FC = () => {
                 variants={revealVariants}
                 className="max-w-3xl mb-16"
               >
-                <SectionLabel>One connected platform</SectionLabel>
+                <SectionLabel>{t('apps.connected', 'One connected platform')}</SectionLabel>
 
                 <h2
                   id="ecosystem-heading"
                   className="mt-3 text-3xl md:text-5xl font-extrabold text-brand-black tracking-tight leading-tight"
                 >
-                  Built for every side of local commerce.
+                  {t('apps.heading', 'Built for every side of local commerce.')}
                 </h2>
 
                 <p className="mt-5 text-base text-brand-gray-muted leading-relaxed max-w-2xl">
-                  Customers, businesses and delivery partners each have their
-                  own tools — while working together through the same RivoCity
-                  ecosystem.
+                  {t('apps.ecosystemBody', 'Customers, businesses and delivery partners each have their own tools — while working together through the same RivoCity ecosystem.')}
                 </p>
               </motion.div>
 
@@ -202,24 +200,24 @@ const Apps: React.FC = () => {
                 {[
                   {
                     icon: ShoppingBag,
-                    label: 'Customer',
-                    title: 'Discover & shop',
+                    label: t('apps.customerLabel', 'Customer'),
+                    title: t('apps.customerTitle', 'Discover & shop'),
                     description:
-                      'Find local stores, browse products, place orders and follow your delivery.',
+                      t('apps.customerDescription', 'Find local stores, browse products, place orders and follow your delivery.'),
                   },
                   {
                     icon: Store,
-                    label: 'Vendor',
-                    title: 'Manage & grow',
+                    label: t('apps.vendorLabel', 'Vendor'),
+                    title: t('apps.vendorTitle', 'Manage & grow'),
                     description:
-                      'Manage products, inventory, orders, store timings, offers and business operations.',
+                      t('apps.vendorDescription', 'Manage products, inventory, orders, store timings, offers and business operations.'),
                   },
                   {
                     icon: Truck,
-                    label: 'Rider',
-                    title: 'Pick up & deliver',
+                    label: t('apps.riderLabel', 'Rider'),
+                    title: t('apps.riderTitle', 'Pick up & deliver'),
                     description:
-                      'Manage assigned deliveries, pickup orders, complete deliveries and track earnings.',
+                      t('apps.riderDescription', 'Manage assigned deliveries, pickup orders, complete deliveries and track earnings.'),
                   },
                 ].map((item) => {
                   const Icon = item.icon;

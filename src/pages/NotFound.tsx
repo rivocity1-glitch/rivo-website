@@ -1,11 +1,9 @@
 import React from 'react';
-import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '../components/Button';
 
 const NotFound: React.FC = () => {
-  const languageText = useLanguage();
   return (
     <main className="min-h-[80vh] flex flex-col justify-center items-center bg-white px-6 text-center select-none">
       <motion.div

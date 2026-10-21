@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from "../components/SEO";
+import { useLanguage } from '../i18n/LanguageContext';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import { 
@@ -45,9 +46,10 @@ const cardHoverVariants: Variants = {
 };
 
 export const About: React.FC = () => {
+  const languageText = useLanguage();
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
-      <SEO title="About Rivo" description="Learn more about Rivo and our mission to make local shopping easier." />
+      <SEO title="{languageText.t('about.eyebrow', 'About Rivo')}" description="Learn more about Rivo and our mission to make local shopping easier." />
       {/* ================= SECTION 1: HERO ================= */}
       <section className="relative pt-8 pb-16 md:pt-16 md:pb-24 lg:pb-32" aria-labelledby="about-hero-heading">
         <div className="container-custom">
@@ -71,8 +73,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.08]"
             >
-              Built for the cities <br />
-              <span className="text-brand-primary">we call home.</span>
+              {languageText.t('about.heroTitle', 'Built for the cities we call home.')}
             </motion.h1>
 
             {/* Paragraph */}
@@ -82,7 +83,7 @@ export const About: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed font-normal max-w-2xl"
             >
-              Rivo was created with a simple idea — make local shopping easier for customers while helping local businesses grow. By bringing trusted stores, delivery partners and customers together on one platform, we're building a better way to shop locally.
+              {languageText.t('about.heroBody', "Rivo was created with a simple idea — make local shopping easier for customers while helping local businesses grow. By bringing trusted stores, delivery partners and customers together on one platform, we're building a better way to shop locally.")}
             </motion.p>
           </div>
         </div>
@@ -94,9 +95,9 @@ export const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
             
             <div className="lg:col-span-4">
-              <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">The Challenge</span>
+              <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">{languageText.t('about.challenge', 'The Challenge')}</span>
               <h2 id="problem-heading" className="text-3xl md:text-4xl font-extrabold text-brand-black tracking-tight leading-tight">
-                Local shopping should be easier.
+                {languageText.t('about.challengeTitle', 'Local shopping should be easier.')}
               </h2>
             </div>
 
@@ -126,12 +127,12 @@ export const About: React.FC = () => {
         <div className="container-custom">
           
           <div className="max-w-3xl mb-16 text-left">
-            <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">Unified Commerce</span>
+            <span className="text-xs uppercase tracking-widest text-brand-primary font-bold mb-3 block">{languageText.t('about.unified', 'Unified Commerce')}</span>
             <h2 id="solution-heading" className="text-3xl md:text-5xl font-extrabold text-brand-black tracking-tight leading-tight">
-              One platform for your entire city.
+              {languageText.t('about.solutionTitle', 'One platform for your entire city.')}
             </h2>
             <p className="mt-4 text-base md:text-lg text-brand-gray-muted font-light leading-relaxed">
-              We tie the community closer together by closing the gap between neighborhood supply and immediate home demands.
+              {languageText.t('about.solutionBody', 'We tie the community closer together by closing the gap between neighborhood supply and immediate home demands.')}
             </p>
           </div>
 
@@ -179,9 +180,9 @@ export const About: React.FC = () => {
               transition={smoothTransition}
               className="bg-white border border-neutral-200 rounded-3xl p-8 md:p-12 cursor-pointer flex flex-col space-y-6"
             >
-              <span className="text-xs uppercase tracking-widest text-brand-primary font-bold">Our Mission</span>
+              <span className="text-xs uppercase tracking-widest text-brand-primary font-bold">{languageText.t('about.mission', 'Our Mission')}</span>
               <h2 className="text-2xl md:text-3xl font-black text-brand-black tracking-tight leading-tight">
-                To help every city thrive by making local shopping faster, easier and more connected.
+                {languageText.t('about.missionBody', 'To help every city thrive by making local shopping faster, easier and more connected.')}
               </h2>
             </motion.div>
 
@@ -193,7 +194,7 @@ export const About: React.FC = () => {
               transition={smoothTransition}
               className="bg-white border border-neutral-200 rounded-3xl p-8 md:p-12 cursor-pointer flex flex-col space-y-6"
             >
-              <span className="text-xs uppercase tracking-widest text-brand-primary font-bold">Our Vision</span>
+              <span className="text-xs uppercase tracking-widest text-brand-primary font-bold">{languageText.t('about.vision', 'Our Vision')}</span>
               <h2 className="text-2xl md:text-3xl font-black text-brand-black tracking-tight leading-tight">
                 A future where every city has its own digital marketplace powered by trusted local businesses and reliable delivery partners.
               </h2>

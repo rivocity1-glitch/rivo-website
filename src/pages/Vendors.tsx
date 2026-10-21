@@ -1051,6 +1051,11 @@ const Vendors: React.FC = () => {
               Rivo Vendor Portal
             </span>
 
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#2ECC71]/25 bg-[#2ECC71]/10 px-4 py-2 text-sm font-bold text-brand-primary">
+              <CheckCircle2 className="h-4 w-4" />
+              Same-day payments for vendors
+            </div>
+
             <h2 className="text-4xl md:text-5xl font-black text-brand-black tracking-tight leading-tight">
               Your business.
               <br />
@@ -1060,6 +1065,10 @@ const Vendors: React.FC = () => {
             <p className="text-base md:text-lg text-brand-gray-muted font-light leading-relaxed max-w-2xl">
               Manage your products, orders, inventory, store information,
               analytics and settlements from the Rivo Vendor Portal.
+            </p>
+
+            <p className="max-w-2xl text-sm leading-relaxed text-brand-gray-muted">
+              Get paid on the same day, subject to order completion and applicable payment processing terms.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import SEO from '../components/SEO';
-import { useLanguage } from '../i18n/LanguageContext';
 
 import { 
   ArrowRight, 
@@ -69,7 +68,6 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 const Cities: React.FC = () => {
-  const languageText = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', city: '' });
   

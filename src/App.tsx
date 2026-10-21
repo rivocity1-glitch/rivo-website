@@ -25,6 +25,7 @@ const App: React.FC = () => (
   <LanguageProvider>
   <BrowserRouter>
     <ScrollToTop />
+    <div key={window.localStorage.getItem('rivo-language') || 'en'} className="locale-transition">
     <Suspense fallback={<PageLoader />}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
@@ -46,6 +47,7 @@ const App: React.FC = () => (
         </Route>
       </Routes>
     </Suspense>
+    </div>
   </BrowserRouter>
   </LanguageProvider>
 );

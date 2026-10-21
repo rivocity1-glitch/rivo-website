@@ -71,7 +71,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 export const HelpCenter: React.FC = () => {
-  const { t } = useLanguage();
+  const languageText = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 

@@ -118,7 +118,7 @@ const Home: React.FC = () => {
                   {t('home.hero.primary', 'Explore Rivo')} <ArrowRight className="h-5 w-5" />
                 </Button>
                 <Button onClick={() => navigate('/vendors')} variant="outline" className="px-8 py-4 text-base font-semibold">
-                  Become a Partner
+                  {t('home.hero.partner', 'Become a Partner')}
                 </Button>
               </motion.div>
             </div>

@@ -8,7 +8,7 @@ type TranslationTable = Record<Language, Dictionary>;
 const translations: TranslationTable = {
   en: {
     'nav.home': 'Home', 'nav.apps': 'Apps', 'nav.customers': 'Customers', 'nav.riders': 'Riders', 'nav.vendors': 'Vendors', 'nav.cities': 'Cities', 'nav.pricing': 'Pricing', 'nav.about': 'About', 'nav.help': 'Help', 'nav.contact': 'Contact',
-    'nav.getApp': 'Get RivoCity', 'nav.language': 'Language', 'footer.navigation': 'Navigation', 'footer.legal': 'Legal', 'footer.contact': 'Contact',
+    'nav.getApp': 'Get RivoCity', 'nav.language': 'Language', 'nav.menuOpen': 'Open navigation menu', 'nav.menuClose': 'Close navigation menu', 'footer.navigation': 'Navigation', 'footer.legal': 'Legal', 'footer.contact': 'Contact',
     'footer.description': 'RivoCity connects customers, local businesses and delivery partners through one trusted city commerce platform built for local communities.',
     'footer.terms': 'Terms & Conditions', 'footer.privacy': 'Privacy Policy', 'footer.refund': 'Refund & Cancellation', 'footer.delete': 'Delete Account',
     'common.learnMore': 'Learn more', 'common.getStarted': 'Get started', 'common.comingSoon': 'Coming soon',
@@ -20,7 +20,7 @@ const translations: TranslationTable = {
   },
   hi: {
     'nav.home': 'होम', 'nav.apps': 'ऐप्स', 'nav.customers': 'ग्राहक', 'nav.riders': 'डिलीवरी पार्टनर', 'nav.vendors': 'दुकानदार', 'nav.cities': 'शहर', 'nav.pricing': 'कीमतें', 'nav.about': 'हमारे बारे में', 'nav.help': 'मदद', 'nav.contact': 'संपर्क',
-    'nav.getApp': 'RivoCity इस्तेमाल करें', 'nav.language': 'भाषा', 'footer.navigation': 'नेविगेशन', 'footer.legal': 'कानूनी जानकारी', 'footer.contact': 'संपर्क',
+    'nav.getApp': 'RivoCity इस्तेमाल करें', 'nav.language': 'भाषा', 'nav.menuOpen': 'नेविगेशन मेन्यू खोलें', 'nav.menuClose': 'नेविगेशन मेन्यू बंद करें', 'footer.navigation': 'नेविगेशन', 'footer.legal': 'कानूनी जानकारी', 'footer.contact': 'संपर्क',
     'footer.description': 'RivoCity ग्राहकों, स्थानीय दुकानों और डिलीवरी पार्टनर्स को एक भरोसेमंद स्थानीय कॉमर्स प्लेटफ़ॉर्म से जोड़ता है।',
     'footer.terms': 'नियम और शर्तें', 'footer.privacy': 'गोपनीयता नीति', 'footer.refund': 'रिफंड और रद्दीकरण', 'footer.delete': 'खाता हटाएँ',
     'common.learnMore': 'और जानें', 'common.getStarted': 'शुरू करें', 'common.comingSoon': 'जल्द आ रहा है',
@@ -32,7 +32,7 @@ const translations: TranslationTable = {
   },
   mr: {
     'nav.home': 'मुख्यपृष्ठ', 'nav.apps': 'अ‍ॅप्स', 'nav.customers': 'ग्राहक', 'nav.riders': 'डिलिव्हरी पार्टनर्स', 'nav.vendors': 'दुकानदार', 'nav.cities': 'शहरे', 'nav.pricing': 'दर', 'nav.about': 'आमच्याबद्दल', 'nav.help': 'मदत', 'nav.contact': 'संपर्क',
-    'nav.getApp': 'RivoCity वापरा', 'nav.language': 'भाषा', 'footer.navigation': 'नेव्हिगेशन', 'footer.legal': 'कायदेशीर माहिती', 'footer.contact': 'संपर्क',
+    'nav.getApp': 'RivoCity वापरा', 'nav.language': 'भाषा', 'nav.menuOpen': 'नेव्हिगेशन मेन्यू उघडा', 'nav.menuClose': 'नेव्हिगेशन मेन्यू बंद करा', 'footer.navigation': 'नेव्हिगेशन', 'footer.legal': 'कायदेशीर माहिती', 'footer.contact': 'संपर्क',
     'footer.description': 'RivoCity ग्राहक, स्थानिक दुकाने आणि डिलिव्हरी पार्टनर्सना एका विश्वासार्ह स्थानिक कॉमर्स प्लॅटफॉर्मवर जोडते.',
     'footer.terms': 'अटी व शर्ती', 'footer.privacy': 'गोपनीयता धोरण', 'footer.refund': 'परतावा व रद्दीकरण', 'footer.delete': 'खाते हटवा',
     'common.learnMore': 'अधिक जाणून घ्या', 'common.getStarted': 'सुरू करा', 'common.comingSoon': 'लवकरच येत आहे',

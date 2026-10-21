@@ -125,18 +125,14 @@ const Apps: React.FC = () => {
                 variants={revealVariants}
                 className="mt-8 text-5xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-brand-black leading-[1.05]"
               >
-                Everything RivoCity,
-                <br />
-                <span className="text-brand-primary">in one place.</span>
+                {t('apps.title', 'Everything RivoCity,')} <br /><span className="text-brand-primary">{t('apps.body', 'in one place.')}</span>
               </motion.h1>
 
               <motion.p
                 variants={revealVariants}
                 className="mt-7 text-base sm:text-lg lg:text-xl text-brand-gray-muted leading-relaxed max-w-2xl"
               >
-                Shop locally, manage your business, or deliver across your
-                city. RivoCity connects every part of the local commerce
-                journey.
+                {t('apps.body', 'Shop locally, manage your business, or deliver across your city. RivoCity connects every part of the local commerce journey.')}
               </motion.p>
 
               <motion.div

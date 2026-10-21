@@ -121,7 +121,7 @@ const Navbar = () => {
             type="button"
             onClick={() => setIsOpen((open) => !open)}
             className="rounded-full p-2 text-black transition-colors duration-200 hover:bg-neutral-100 lg:hidden"
-            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-label={isOpen ? t('nav.menuClose', 'Close navigation menu') : t('nav.menuOpen', 'Open navigation menu')}
             aria-expanded={isOpen}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

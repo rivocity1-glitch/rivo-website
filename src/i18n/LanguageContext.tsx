@@ -28,7 +28,7 @@ const translations: TranslationTable = {
     'home.categories.label': 'स्थानीय दुकानों को देखें', 'home.categories.title': 'आपके इलाके की हर ज़रूरत', 'home.categories.body': 'रोज़मर्रा की ज़रूरतों से लेकर खास चीज़ों तक, अपने शहर की दुकानों का साथ दें।',
     'home.steps.label': 'आसान और सुविधाजनक', 'home.steps.title': 'स्थानीय खरीदारी अब आसान', 'home.steps.body': 'दुकान खोजें, ऑर्डर दें और डिलीवरी तक उसकी स्थिति देखें।',
     'home.cta.title': 'आपके शहर में बहुत कुछ है।', 'home.cta.body': 'स्थानीय दुकानों को खोजें और खरीदारी का बेहतर तरीका अपनाएँ।', 'home.cta.button': 'प्लेटफ़ॉर्म देखें',
-    'apps.title': 'ऐप्स', 'apps.body': 'ग्राहकों और डिलीवरी पार्टनर्स के लिए बनाया गया स्थानीय खरीदारी अनुभव।', 'apps.customer': 'ग्राहक ऐप', 'apps.rider': 'डिलीवरी पार्टनर ऐप',
+    'apps.title': 'RivoCity की सभी सुविधाएँ', 'apps.body': 'एक ही जगह पर।', 'apps.intro': 'स्थानीय खरीदारी करें, अपना व्यवसाय संभालें या डिलीवरी करें। RivoCity स्थानीय कॉमर्स के हर हिस्से को जोड़ता है।', 'apps.customer': 'ग्राहक ऐप', 'apps.rider': 'डिलीवरी पार्टनर ऐप',
   },
   mr: {
     'nav.home': 'मुख्यपृष्ठ', 'nav.apps': 'अ‍ॅप्स', 'nav.customers': 'ग्राहक', 'nav.riders': 'डिलिव्हरी पार्टनर्स', 'nav.vendors': 'दुकानदार', 'nav.cities': 'शहरे', 'nav.pricing': 'दर', 'nav.about': 'आमच्याबद्दल', 'nav.help': 'मदत', 'nav.contact': 'संपर्क',

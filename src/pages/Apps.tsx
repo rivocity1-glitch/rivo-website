@@ -15,6 +15,7 @@ import {
   Check,
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const CUSTOMER_APK =
   'https://github.com/rivocity1-glitch/rivo-website/releases/latest/download/RivoCity.apk';

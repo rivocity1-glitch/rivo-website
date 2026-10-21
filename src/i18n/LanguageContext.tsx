@@ -16,7 +16,7 @@ const translations: TranslationTable = {
     'home.categories.label': 'Explore local', 'home.categories.title': 'Everything your neighbourhood needs', 'home.categories.body': 'From everyday essentials to special finds, support the stores that make your city unique.',
     'home.steps.label': 'Simple by design', 'home.steps.title': 'Local shopping, made easy', 'home.steps.body': 'Discover a store, place an order and follow it all the way to your door.',
     'home.cta.title': 'Your city has more to offer.', 'home.cta.body': 'Explore local stores and discover a more connected way to shop.', 'home.cta.button': 'Explore the platform',
-    'apps.title': 'Apps', 'apps.body': 'One local commerce experience, designed for customers and delivery partners.', 'apps.customer': 'Customer app', 'apps.rider': 'Rider app',
+    'apps.title': 'Apps', 'apps.body': 'in one place.', 'apps.intro': 'Shop locally, manage your business, or deliver across your city. RivoCity connects every part of the local commerce journey.', 'apps.customer': 'Customer app', 'apps.rider': 'Rider app',
   },
   hi: {
     'nav.home': 'होम', 'nav.apps': 'ऐप्स', 'nav.customers': 'ग्राहक', 'nav.riders': 'डिलीवरी पार्टनर', 'nav.vendors': 'दुकानदार', 'nav.cities': 'शहर', 'nav.pricing': 'कीमतें', 'nav.about': 'हमारे बारे में', 'nav.help': 'मदद', 'nav.contact': 'संपर्क',

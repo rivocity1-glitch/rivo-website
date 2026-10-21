@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from "../components/SEO";
+import { useLanguage } from '../i18n/LanguageContext';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import { 
@@ -45,6 +46,7 @@ const cardHoverVariants: Variants = {
 };
 
 export const About: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
       <SEO title="About Rivo" description="Learn more about Rivo and our mission to make local shopping easier." />

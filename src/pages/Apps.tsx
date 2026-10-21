@@ -83,6 +83,7 @@ const SectionLabel: React.FC<{ children: React.ReactNode }> = ({
 );
 
 const Apps: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <>
       <SEO

@@ -82,7 +82,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle })
 };
 
 const Riders: React.FC = () => {
-  const { t } = useLanguage();
+  const languageText = useLanguage();
   const [openFaqIndex, setOpenFAQIndex] = useState<number | null>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
 

@@ -4,6 +4,7 @@ import MainLayout from './layouts/MainLayout';
 import PageLoader from './components/PageLoader';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './pages/NotFound';
+import { LanguageProvider } from './i18n/LanguageContext';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Apps = React.lazy(() => import('./pages/Apps'));
@@ -21,6 +22,7 @@ const Customers = React.lazy(() => import('./pages/Customers'));
 const Riders = React.lazy(() => import('./pages/Riders'));
 
 const App: React.FC = () => (
+  <LanguageProvider>
   <BrowserRouter>
     <ScrollToTop />
     <Suspense fallback={<PageLoader />}>
@@ -45,6 +47,7 @@ const App: React.FC = () => (
       </Routes>
     </Suspense>
   </BrowserRouter>
+  </LanguageProvider>
 );
 
 export default App;

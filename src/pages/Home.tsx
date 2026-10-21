@@ -79,11 +79,11 @@ const Home: React.FC = () => {
   };
 
   const activeCard = {
-    placed: { title: 'Order Placed', description: 'Your order is received and secure.', icon: ShoppingBag, color: 'bg-[#2ECC71]/10 text-brand-primary' },
-    packed: { title: 'Marked Packed', description: 'The local store carefully packs your order.', icon: Store, color: 'bg-indigo-50 text-indigo-500' },
-    collecting: { title: 'Rider Collect', description: 'A delivery partner picks up your package.', icon: Bike, color: 'bg-[#2ECC71]/10 text-brand-primary' },
-    otp: { title: 'Secret OTP Shared', description: 'A safe code is sent to your phone for security.', icon: Lock, color: 'bg-amber-50 text-amber-500' },
-    delivered: { title: 'Order Delivered', description: 'Delivered safely. Happy customer and happy store.', icon: CheckCircle, color: 'bg-emerald-500 text-white' },
+    placed: { title: t('home.order.placed', 'Order Placed'), description: t('home.order.placedDesc', 'Your order is received and secure.'), icon: ShoppingBag, color: 'bg-[#2ECC71]/10 text-brand-primary' },
+    packed: { title: t('home.order.packed', 'Marked Packed'), description: t('home.order.packedDesc', 'The local store carefully packs your order.'), icon: Store, color: 'bg-indigo-50 text-indigo-500' },
+    collecting: { title: t('home.order.collecting', 'Rider Collect'), description: t('home.order.collectingDesc', 'A delivery partner picks up your package.'), icon: Bike, color: 'bg-[#2ECC71]/10 text-brand-primary' },
+    otp: { title: t('home.order.otp', 'Secret OTP Shared'), description: t('home.order.otpDesc', 'A safe code is sent to your phone for security.'), icon: Lock, color: 'bg-amber-50 text-amber-500' },
+    delivered: { title: t('home.order.delivered', 'Order Delivered'), description: t('home.order.deliveredDesc', 'Delivered safely. Happy customer and happy store.'), icon: CheckCircle, color: 'bg-emerald-500 text-white' },
   }[activeStep];
 
   const ActiveIcon = activeCard.icon;
@@ -149,10 +149,10 @@ const Home: React.FC = () => {
           <div className="mt-16 border-t border-neutral-200/80 pt-10 lg:mt-24">
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: Compass, label: 'First Launch City', value: 'Baramati' },
-                { icon: Layers, label: 'Vendor Categories', value: 'Growing Every Day' },
-                { icon: Zap, label: 'Local Delivery', value: 'Fast & Reliable' },
-                { icon: ShieldCheck, label: 'Payments', value: 'COD & UPI' },
+                { icon: Compass, label: '{t('home.stats.city', 'First Launch City')}', value: 'Baramati' },
+                { icon: Layers, label: 'Vendor Categories', value: '{t('home.stats.categories', 'Growing Every Day')}' },
+                { icon: Zap, label: 'Local Delivery', value: '{t('home.stats.delivery', 'Fast & Reliable')}' },
+                { icon: ShieldCheck, label: 'Payments', value: '{t('home.stats.payments', 'COD & UPI')}' },
               ].map((item) => (
                 <motion.div key={item.label} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift rounded-2xl border border-neutral-200 bg-white p-6">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 text-brand-primary"><item.icon className="h-6 w-6 stroke-[1.8]" /></div>

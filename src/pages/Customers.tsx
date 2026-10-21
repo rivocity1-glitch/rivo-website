@@ -67,7 +67,6 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 };
 
 const Customers: React.FC = () => {
-  const languageText = useLanguage();
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
       

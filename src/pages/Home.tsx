@@ -174,7 +174,7 @@ const Home: React.FC = () => {
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
-              <motion.div key={category.name} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[208px] flex-col justify-between rounded-2xl border border-neutral-200/80 bg-[#FAF9FA] p-6">
+              <motion.div key={category.nameKey} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[208px] flex-col justify-between rounded-2xl border border-neutral-200/80 bg-[#FAF9FA] p-6">
                 <div>
                   <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200/60 bg-white text-brand-primary shadow-sm"><category.icon className="h-5 w-5 stroke-[1.8]" /></div>
                   <h3 className="text-lg font-bold tracking-tight">{t(category.nameKey, category.nameFallback)}</h3>

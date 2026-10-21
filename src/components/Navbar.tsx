@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
+import { useLanguage, type Language } from '../i18n/LanguageContext';
 
 interface NavItem {
   label: string;
@@ -11,7 +12,9 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'Apps', path: '/apps' },
+  { label: 'Customers', path: '/customers' },
   { label: 'Vendors', path: '/vendors' },
+  { label: 'Riders', path: '/riders' },
   { label: 'Cities', path: '/cities' },
   { label: 'Pricing', path: '/pricing' },
   { label: 'About', path: '/about' },
@@ -23,6 +26,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
+  const languageOptions: { value: Language; label: string }[] = [
+    { value: 'en', label: 'English' },
+    { value: 'hi', label: 'हिन्दी' },
+    { value: 'mr', label: 'मराठी' },
+  ];
 
   useEffect(() => {
     let frame = 0;
@@ -73,7 +82,7 @@ const Navbar = () => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
-                  key={item.label}
+                  key={t('nav.' + item.label.toLowerCase(), item.label)}
                   to={item.path}
                   className={`relative rounded-full px-3 py-2 text-xs font-semibold transition-colors duration-200 ${
                     isActive ? 'text-black' : 'text-neutral-600 hover:text-black'
@@ -141,6 +150,13 @@ const Navbar = () => {
                     </Link>
                   );
                 })}
+              </div>
+              <div className="mt-4 flex items-center gap-3 border-t border-neutral-100 pt-4">
+                <Languages className="h-4 w-4 shrink-0 text-neutral-500" aria-hidden="true" />
+                <label className="text-sm font-semibold text-neutral-600" htmlFor="language-select-mobile">{t('nav.language', 'Language')}</label>
+                <select id="language-select-mobile" value={language} onChange={(event) => setLanguage(event.target.value as Language)} className="ml-auto rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm" aria-label={t('nav.language', 'Language')}>
+                  {languageOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+                </select>
               </div>
               <div className="mt-4 border-t border-neutral-100 pt-4">
                 <Link

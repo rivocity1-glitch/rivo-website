@@ -48,14 +48,14 @@ const cardHoverVariants: Variants = {
 type LoopStep = 'placed' | 'packed' | 'collecting' | 'otp' | 'delivered';
 
 const categories = [
-  { icon: ShoppingBag, name: t('category.grocery', 'Grocery'), desc: t('category.groceryDesc', 'Fresh fruits, vegetables, daily essentials and household items.') },
-  { icon: Activity, name: t('category.pharmacy', 'Pharmacy'), desc: t('category.pharmacyDesc', 'Medicines, healthcare products and wellness essentials.') },
-  { icon: Tv, name: t('category.electronics', 'Electronics'), desc: t('category.electronicsDesc', 'Mobile accessories, gadgets and home electronics.') },
-  { icon: Shirt, name: t('category.fashion', 'Fashion'), desc: t('category.fashionDesc', 'Clothing, footwear and everyday fashion.') },
-  { icon: Heart, name: t('category.petCare', 'Pet Care'), desc: t('category.petCareDesc', 'Food, toys and essentials for your pets.') },
-  { icon: Sparkle, name: t('category.beauty', 'Beauty'), desc: t('category.beautyDesc', 'Skincare, cosmetics and personal care.') },
-  { icon: BookOpen, name: t('category.stationery', 'Stationery'), desc: t('category.stationeryDesc', 'Books, notebooks, office supplies and school essentials.') },
-  { icon: HomeIcon, name: t('category.home', 'Home Essentials'), desc: t('category.homeDesc', 'Kitchen, cleaning and everyday home products.') },
+  { icon: ShoppingBag, nameKey: 'category.grocery', nameFallback: 'Grocery', descKey: 'category.groceryDesc', descFallback: 'Fresh fruits, vegetables, daily essentials and household items.' },
+  { icon: Activity, nameKey: 'category.pharmacy', nameFallback: 'Pharmacy', descKey: 'category.pharmacyDesc', descFallback: 'Medicines, healthcare products and wellness essentials.' },
+  { icon: Tv, nameKey: 'category.electronics', nameFallback: 'Electronics', descKey: 'category.electronicsDesc', descFallback: 'Mobile accessories, gadgets and home electronics.' },
+  { icon: Shirt, nameKey: 'category.fashion', nameFallback: 'Fashion', descKey: 'category.fashionDesc', descFallback: 'Clothing, footwear and everyday fashion.' },
+  { icon: Heart, nameKey: 'category.petCare', nameFallback: 'Pet Care', descKey: 'category.petCareDesc', descFallback: 'Food, toys and essentials for your pets.' },
+  { icon: Sparkle, nameKey: 'category.beauty', nameFallback: 'Beauty', descKey: 'category.beautyDesc', descFallback: 'Skincare, cosmetics and personal care.' },
+  { icon: BookOpen, nameKey: 'category.stationery', nameFallback: 'Stationery', descKey: 'category.stationeryDesc', descFallback: 'Books, notebooks, office supplies and school essentials.' },
+  { icon: HomeIcon, nameKey: 'category.home', nameFallback: 'Home Essentials', descKey: 'category.homeDesc', descFallback: 'Kitchen, cleaning and everyday home products.' },
 ];
 
 const Home: React.FC = () => {
@@ -177,8 +177,8 @@ const Home: React.FC = () => {
               <motion.div key={category.name} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[208px] flex-col justify-between rounded-2xl border border-neutral-200/80 bg-[#FAF9FA] p-6">
                 <div>
                   <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-neutral-200/60 bg-white text-brand-primary shadow-sm"><category.icon className="h-5 w-5 stroke-[1.8]" /></div>
-                  <h3 className="text-lg font-bold tracking-tight">{category.name}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-brand-gray-muted">{category.desc}</p>
+                  <h3 className="text-lg font-bold tracking-tight">{t(category.nameKey, category.nameFallback)}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-brand-gray-muted">{t(category.descKey, category.descFallback)}</p>
                 </div>
                 <span className="mt-5 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest text-brand-primary">{t('common.explore', 'Explore')} <ArrowRight className="h-3.5 w-3.5" /></span>
               </motion.div>

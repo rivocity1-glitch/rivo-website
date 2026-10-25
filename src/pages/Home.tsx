@@ -1,21 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, type Transition, type Variants } from 'framer-motion';
 import SEO from '../components/SEO';
 import { Button } from '../components/Button';
 import { useLanguage } from '../i18n/LanguageContext';
 import {
-  Activity,
   ArrowRight,
   Bike,
-  BookOpen,
   CheckCircle,
   Compass,
   CreditCard,
-  Heart,
   HeartHandshake,
   Headphones,
-  Home as HomeIcon,
   Layers,
   Lock,
   Navigation,
@@ -23,15 +19,12 @@ import {
   ShieldCheck,
   ShoppingBag,
   Smartphone,
-  Sparkle,
   Sparkles,
   Store,
   Truck,
-  Tv,
   Users,
   Zap,
   Briefcase,
-  Shirt,
 } from 'lucide-react';
 
 const smoothTransition: Transition = {

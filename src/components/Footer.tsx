@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
+import { Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -56,8 +57,11 @@ export const Footer: React.FC = () => {
 
           <div>
             <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.contact', 'Contact')}</h2>
-            <a href="mailto:support@rivocity.com" className="break-all text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
+            <a href="mailto:support@rivocity.com" className="block break-all text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
               support@rivocity.com
+            </a>
+            <a href="https://www.instagram.com/rivocity.1/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
+              <Instagram className="h-4 w-4" /> @rivocity.1
             </a>
           </div>
         </div>

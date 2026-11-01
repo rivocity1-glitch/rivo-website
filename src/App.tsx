@@ -20,6 +20,8 @@ const Refund = React.lazy(() => import('./pages/Refund'));
 const DeleteAccount = React.lazy(() => import('./pages/DeleteAccount'));
 const Customers = React.lazy(() => import('./pages/Customers'));
 const Riders = React.lazy(() => import('./pages/Riders'));
+const RealEstate = React.lazy(() => import('./pages/RealEstate'));
+const Fashion = React.lazy(() => import('./pages/Fashion'));
 
 const App: React.FC = () => (
   <LanguageProvider>
@@ -33,6 +35,8 @@ const App: React.FC = () => (
           <Route path="apps" element={<Apps />} />
           <Route path="customers" element={<Customers />} />
           <Route path="riders" element={<Riders />} />
+          <Route path="real-estate" element={<RealEstate />} />
+          <Route path="fashion" element={<Fashion />} />
           <Route path="about" element={<About />} />
           <Route path="vendors" element={<Vendors />} />
           <Route path="cities" element={<Cities />} />

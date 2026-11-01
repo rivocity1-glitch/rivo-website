@@ -204,31 +204,36 @@ const Home: React.FC = () => {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { icon: ShoppingBag, title: 'Grocery', desc: 'Daily essentials, fresh produce and neighbourhood stores.', path: '/vendors' },
-              { icon: HeartHandshake, title: 'Pharmacy', desc: 'Local pharmacies and everyday healthcare essentials.', path: '/vendors' },
-              { icon: Smartphone, title: 'Electronics', desc: 'Gadgets, accessories and electronics from nearby shops.', path: '/vendors' },
-              { icon: ShoppingBag, title: 'Fashion', desc: 'Clothing, footwear, bags and accessories from local stores.', path: '/fashion' },
-              { icon: HeartHandshake, title: 'Pet Care', desc: 'Pet supplies and services from businesses in your city.', path: '/vendors' },
+              { icon: HeartHandshake, title: 'Pharmacy', desc: 'Local pharmacies and everyday healthcare essentials.', comingSoon: true },
+              { icon: Smartphone, title: 'Electronics', desc: 'Gadgets, accessories and electronics from nearby shops.', comingSoon: true },
+              { icon: ShoppingBag, title: 'Fashion', desc: 'Clothing, footwear, bags and accessories from local stores.', comingSoon: true },
+              { icon: HeartHandshake, title: 'Pet Care', desc: 'Pet supplies and services from businesses in your city.', comingSoon: true },
               { icon: Sparkles, title: 'Beauty', desc: 'Beauty, grooming and personal-care products and services.', path: '/vendors' },
               { icon: Layers, title: 'Stationery', desc: 'Books, school supplies, office and art essentials.', path: '/vendors' },
               { icon: Store, title: 'Home Essentials', desc: 'Useful products and everyday needs for your home.', path: '/vendors' },
-              { icon: Briefcase, title: 'Real Estate', desc: 'Homes, rentals, commercial spaces and plots in your city.', path: '/real-estate' },
+              { icon: Briefcase, title: 'Real Estate', desc: 'Homes, rentals, commercial spaces and plots in your city.', comingSoon: true },
             ].map((item) => (
               <motion.button
                 key={item.title}
                 type="button"
-                onClick={() => navigate(item.path)}
+                disabled={item.comingSoon}
+                onClick={() => { if (!item.comingSoon && item.path) navigate(item.path); }}
                 variants={cardHoverVariants}
                 initial="initial"
-                whileHover="hover"
+                whileHover={item.comingSoon ? undefined : "hover"}
                 transition={smoothTransition}
-                className="interactive-lift flex min-h-[190px] flex-col items-start rounded-2xl border border-neutral-200 bg-white p-6 text-left"
+                className={`flex min-h-[190px] flex-col items-start rounded-2xl border bg-white p-6 text-left transition-colors ${
+                  item.comingSoon ? 'cursor-not-allowed border-neutral-200 opacity-75' : 'interactive-lift cursor-pointer border-neutral-200'
+                }`}
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 text-brand-primary">
                   <item.icon className="h-6 w-6 stroke-[1.8]" />
                 </div>
                 <h3 className="mt-5 text-lg font-bold tracking-tight">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-brand-gray-muted">{item.desc}</p>
-                <span className="mt-auto pt-4 text-xs font-bold text-brand-primary">Explore <ArrowRight className="ml-1 inline h-3.5 w-3.5" /></span>
+                <span className={`mt-auto pt-4 text-xs font-bold ${item.comingSoon ? 'text-neutral-500' : 'text-brand-primary'}`}>
+                  {item.comingSoon ? 'Coming Soon' : <>Explore <ArrowRight className="ml-1 inline h-3.5 w-3.5" /></>}
+                </span>
               </motion.button>
             ))}
           </div>

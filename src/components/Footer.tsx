@@ -1,7 +1,14 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
-import { Instagram } from 'lucide-react';
+
+const InstagramMark: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+  </svg>
+);
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -61,7 +68,7 @@ export const Footer: React.FC = () => {
               support@rivocity.com
             </a>
             <a href="https://www.instagram.com/rivocity.1/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
-              <Instagram className="h-4 w-4" /> @rivocity.1
+              <InstagramMark className="h-4 w-4" /> @rivocity.1
             </a>
           </div>
         </div>

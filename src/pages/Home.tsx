@@ -194,6 +194,34 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section className="border-t border-neutral-100 bg-white py-20 md:py-28" aria-labelledby="discover-more-heading">
+        <div className="container-custom">
+          <div className="mb-14 max-w-3xl">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">More to discover</span>
+            <h2 id="discover-more-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Your city is more than shopping.</h2>
+            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">Explore property opportunities and local fashion alongside the businesses you already love.</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {[
+              { icon: Briefcase, title: 'Real Estate', desc: 'Discover homes, rentals, commercial spaces and plots from local owners, agents and developers.', path: '/real-estate', cta: 'Explore properties', tag: 'Find your place' },
+              { icon: ShoppingBag, title: 'Fashion & Clothing', desc: 'Find local boutiques, clothing stores, footwear, bags and accessories across your city.', path: '/fashion', cta: 'Explore fashion', tag: 'Find your style' },
+            ].map((item) => (
+              <motion.div key={item.title} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[300px] flex-col justify-between rounded-3xl border border-neutral-200 bg-[#FAF9FA] p-8 sm:p-10">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 text-brand-primary"><item.icon className="h-6 w-6 stroke-[1.8]" /></div>
+                    <span className="rounded-full border border-[#2ECC71]/20 bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-brand-primary">{item.tag}</span>
+                  </div>
+                  <h3 className="mt-7 text-2xl font-extrabold tracking-tight">{item.title}</h3>
+                  <p className="mt-3 max-w-lg text-sm leading-7 text-brand-gray-muted">{item.desc}</p>
+                </div>
+                <Button variant="outline" onClick={() => navigate(item.path)} className="mt-8 w-full py-3.5 font-semibold sm:w-auto">{item.cta}<ArrowRight className="h-4 w-4" /></Button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-neutral-100 bg-[#FAF9FA] py-20 md:py-28" aria-labelledby="everyone-heading">
         <div className="container-custom">
           <div className="mb-14 max-w-3xl">

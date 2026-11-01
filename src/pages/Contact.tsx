@@ -10,9 +10,16 @@ import {
   Briefcase,
   Users,
   Store,
-  Bike,
-  Instagram
+  Bike
 } from 'lucide-react';
+
+const InstagramMark: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+  </svg>
+);
 
 const smoothTransition: Transition = {
   type: "tween",
@@ -187,7 +194,7 @@ export const Contact: React.FC = () => {
             >
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-xl bg-[#FAF9FA] border border-neutral-200/60 flex items-center justify-center text-brand-primary shadow-3xs">
-                  <Instagram className="w-5 h-5 stroke-[1.8]" />
+                  <InstagramMark className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-brand-black tracking-tight">Instagram</h3>

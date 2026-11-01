@@ -9,6 +9,8 @@ export const Footer: React.FC = () => {
     [t('nav.customers', 'Customers'), '/customers'],
     [t('nav.vendors', 'Vendors'), '/vendors'],
     [t('nav.riders', 'Riders'), '/riders'],
+    ['Real Estate', '/real-estate'],
+    ['Fashion', '/fashion'],
     [t('nav.cities', 'Cities'), '/cities'],
     [t('nav.pricing', 'Pricing'), '/pricing'],
     [t('nav.about', 'About'), '/about'],

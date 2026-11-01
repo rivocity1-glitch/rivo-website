@@ -7,7 +7,6 @@ import NotFound from './pages/NotFound';
 import { LanguageProvider } from './i18n/LanguageContext';
 
 const Home = React.lazy(() => import('./pages/Home'));
-const Apps = React.lazy(() => import('./pages/Apps'));
 const About = React.lazy(() => import('./pages/About'));
 const Vendors = React.lazy(() => import('./pages/Vendors'));
 const Cities = React.lazy(() => import('./pages/Cities'));
@@ -32,7 +31,6 @@ const App: React.FC = () => (
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="apps" element={<Apps />} />
           <Route path="customers" element={<Customers />} />
           <Route path="riders" element={<Riders />} />
           <Route path="real-estate" element={<RealEstate />} />

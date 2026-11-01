@@ -91,7 +91,7 @@ const Home: React.FC = () => {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ ...smoothTransition, delay: 0.16 }} className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button onClick={() => navigate('/apps')} className="px-8 py-4 text-base font-semibold">
+                <Button onClick={() => document.getElementById('explore-rivocity')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} className="px-8 py-4 text-base font-semibold">
                   {t('home.hero.primary', 'Explore Rivo')} <ArrowRight className="h-5 w-5" />
                 </Button>
                 <Button onClick={() => navigate('/vendors')} variant="outline" className="px-8 py-4 text-base font-semibold">
@@ -194,6 +194,52 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section id="explore-rivocity" className="scroll-mt-24 border-t border-neutral-100 bg-white py-20 md:py-28" aria-labelledby="discover-more-heading">
+        <div className="container-custom">
+          <div className="mb-14 max-w-3xl">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">Explore RivoCity</span>
+            <h2 id="discover-more-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl">Everything your city has to offer.</h2>
+            <p className="mt-4 text-base leading-7 text-brand-gray-muted sm:text-lg">Explore the stores, services and opportunities available across your city — all in one place.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { icon: ShoppingBag, title: 'Grocery', desc: 'Daily essentials, fresh produce and neighbourhood stores.', path: '/vendors' },
+              { icon: HeartHandshake, title: 'Pharmacy', desc: 'Local pharmacies and everyday healthcare essentials.', comingSoon: true },
+              { icon: Smartphone, title: 'Electronics', desc: 'Gadgets, accessories and electronics from nearby shops.', comingSoon: true },
+              { icon: ShoppingBag, title: 'Fashion', desc: 'Clothing, footwear, bags and accessories from local stores.', comingSoon: true },
+              { icon: HeartHandshake, title: 'Pet Care', desc: 'Pet supplies and services from businesses in your city.', comingSoon: true },
+              { icon: Sparkles, title: 'Beauty', desc: 'Beauty, grooming and personal-care products and services.', path: '/vendors' },
+              { icon: Layers, title: 'Stationery', desc: 'Books, school supplies, office and art essentials.', path: '/vendors' },
+              { icon: Store, title: 'Home Essentials', desc: 'Useful products and everyday needs for your home.', path: '/vendors' },
+              { icon: Briefcase, title: 'Real Estate', desc: 'Homes, rentals, commercial spaces and plots in your city.', comingSoon: true },
+            ].map((item) => (
+              <motion.button
+                key={item.title}
+                type="button"
+                disabled={item.comingSoon}
+                onClick={() => { if (!item.comingSoon && item.path) navigate(item.path); }}
+                variants={cardHoverVariants}
+                initial="initial"
+                whileHover={item.comingSoon ? undefined : "hover"}
+                transition={smoothTransition}
+                className={`flex min-h-[190px] flex-col items-start rounded-2xl border bg-white p-6 text-left transition-colors ${
+                  item.comingSoon ? 'cursor-not-allowed border-neutral-200 opacity-75' : 'interactive-lift cursor-pointer border-neutral-200'
+                }`}
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 text-brand-primary">
+                  <item.icon className="h-6 w-6 stroke-[1.8]" />
+                </div>
+                <h3 className="mt-5 text-lg font-bold tracking-tight">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-brand-gray-muted">{item.desc}</p>
+                <span className={`mt-auto pt-4 text-xs font-bold ${item.comingSoon ? 'text-neutral-500' : 'text-brand-primary'}`}>
+                  {item.comingSoon ? 'Coming Soon' : <>Explore <ArrowRight className="ml-1 inline h-3.5 w-3.5" /></>}
+                </span>
+              </motion.button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-neutral-100 bg-[#FAF9FA] py-20 md:py-28" aria-labelledby="everyone-heading">
         <div className="container-custom">
           <div className="mb-14 max-w-3xl">
@@ -203,9 +249,9 @@ const Home: React.FC = () => {
           </div>
           <div className="grid gap-5 lg:grid-cols-3">
             {[
-              { icon: Users, title: 'Customers', desc: 'Discover local stores, shop with confidence and get your essentials delivered.', cta: 'Explore App', path: '/apps' },
+              { icon: Users, title: 'Customers', desc: 'Discover local stores, shop with confidence and get your essentials delivered.', cta: 'Explore Customer Experience', path: '/customers' },
               { icon: Briefcase, title: 'Vendors', desc: 'Grow your business, reach more customers and manage everything from one place.', cta: 'Become a Partner', path: '/vendors' },
-              { icon: Bike, title: 'Riders', desc: 'Deliver locally, stay flexible and build reliable income opportunities.', cta: 'Join RivoCity Rider', path: '/apps' },
+              { icon: Bike, title: 'Riders', desc: 'Deliver locally, stay flexible and build reliable income opportunities.', cta: 'Learn About Rider Opportunities', path: '/riders' },
             ].map((item) => (
               <motion.div key={item.title} variants={cardHoverVariants} initial="initial" whileHover="hover" transition={smoothTransition} className="interactive-lift flex min-h-[360px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-8">
                 <div><div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2ECC71]/10 text-brand-primary"><item.icon className="h-6 w-6 stroke-[1.8]" /></div><h3 className="mt-6 text-xl font-bold tracking-tight">{item.title}</h3><p className="mt-3 text-sm leading-relaxed text-brand-gray-muted">{item.desc}</p></div>

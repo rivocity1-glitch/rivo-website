@@ -2,6 +2,14 @@ import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Link } from 'react-router-dom';
 
+const InstagramMark: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
   const navigation = [
@@ -9,6 +17,8 @@ export const Footer: React.FC = () => {
     [t('nav.customers', 'Customers'), '/customers'],
     [t('nav.vendors', 'Vendors'), '/vendors'],
     [t('nav.riders', 'Riders'), '/riders'],
+    ['Real Estate', '/real-estate'],
+    ['Fashion', '/fashion'],
     [t('nav.cities', 'Cities'), '/cities'],
     [t('nav.pricing', 'Pricing'), '/pricing'],
     [t('nav.about', 'About'), '/about'],
@@ -54,8 +64,11 @@ export const Footer: React.FC = () => {
 
           <div>
             <h2 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-black">{t('footer.contact', 'Contact')}</h2>
-            <a href="mailto:support@rivocity.com" className="break-all text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
+            <a href="mailto:support@rivocity.com" className="block break-all text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
               support@rivocity.com
+            </a>
+            <a href="https://www.instagram.com/rivocity.1/" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors duration-200 hover:text-black">
+              <InstagramMark className="h-4 w-4" /> @rivocity.1
             </a>
           </div>
         </div>

@@ -13,6 +13,14 @@ import {
   Bike
 } from 'lucide-react';
 
+const InstagramMark: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+  </svg>
+);
+
 const smoothTransition: Transition = {
   type: "tween",
   ease: [0.16, 1, 0.3, 1],
@@ -131,7 +139,7 @@ export const Contact: React.FC = () => {
       {/* ================= SECTION 2: CONTACT INFORMATION ================= */}
       <section className="py-16 md:py-24 bg-[#FAF9FA] border-t border-neutral-100" aria-label="Contact Channels">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch max-w-6xl mx-auto text-left">
             
             {/* Email Support */}
             <motion.div
@@ -172,6 +180,29 @@ export const Contact: React.FC = () => {
               </div>
               <p className="text-sm font-semibold text-brand-black mt-6 break-all">rivocity1@gmail.com</p>
             </motion.div>
+
+            {/* Instagram */}
+            <motion.a
+              href="https://www.instagram.com/rivocity.1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={cardHoverVariants}
+              initial="initial"
+              whileHover="hover"
+              transition={smoothTransition}
+              className="bg-white border border-neutral-200 rounded-2xl p-8 flex flex-col justify-between cursor-pointer shadow-2xs"
+            >
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[#FAF9FA] border border-neutral-200/60 flex items-center justify-center text-brand-primary shadow-3xs">
+                  <InstagramMark className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-brand-black tracking-tight">Instagram</h3>
+                  <p className="text-xs text-brand-gray-muted mt-1 leading-relaxed font-light">Follow RivoCity for updates, launches and local stories.</p>
+                </div>
+              </div>
+              <p className="text-sm font-semibold text-brand-black mt-6">@rivocity.1 <ArrowRight className="inline w-4 h-4 ml-1" /></p>
+            </motion.a>
 
             {/* Business Hours */}
             <motion.div

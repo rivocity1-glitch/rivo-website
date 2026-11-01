@@ -11,7 +11,6 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
-  { label: 'Apps', path: '/apps' },
   { label: 'Customers', path: '/customers' },
   { label: 'Vendors', path: '/vendors' },
   { label: 'Riders', path: '/riders' },
@@ -109,12 +108,7 @@ const Navbar = () => {
                 {languageOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
               </select>
             </div>
-            <Link
-              to="/apps"
-              className="rounded-full bg-[#2ECC71] px-5 py-2.5 text-xs font-bold tracking-wide text-black shadow-sm transition-[transform,background-color,box-shadow] duration-200 hover:bg-[#27ae60] hover:shadow-md active:scale-[0.98]"
-            >
-              {t('nav.getApp', 'Get RivoCity')}
-            </Link>
+
           </div>
 
           <button
@@ -164,14 +158,6 @@ const Navbar = () => {
                 <select id="language-select-mobile" value={language} onChange={(event) => setLanguage(event.target.value as Language)} className="ml-auto rounded-lg border border-neutral-200 bg-white px-3 py-2 text-sm" aria-label={t('nav.language', 'Language')}>
                   {languageOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
                 </select>
-              </div>
-              <div className="mt-4 border-t border-neutral-100 pt-4">
-                <Link
-                  to="/apps"
-                  className="block w-full rounded-xl bg-[#2ECC71] px-4 py-3 text-center text-sm font-bold text-black transition-[transform,background-color] duration-200 hover:bg-[#27ae60] active:scale-[0.99]"
-                >
-                  {t('nav.getApp', 'Get RivoCity')}
-                </Link>
               </div>
             </div>
           </motion.div>

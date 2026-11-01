@@ -144,9 +144,9 @@ const Riders: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
-              <Button variant="primary" className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Become a Rider <ArrowRight className="w-5 h-5 ml-1" />
-              </Button>
+              <a href="https://ig.me/m/rivocity.1?text=Hi%20RivoCity!%20I'm%20interested%20in%20joining%20as%20a%20delivery%20rider.%20Please%20share%20the%20registration%20process%20and%20requirements." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-brand-primary px-8 py-4 text-base font-semibold text-brand-black shadow-md shadow-brand-primary/10 transition hover:brightness-95">
+                Message us on Instagram <ArrowRight className="w-5 h-5 ml-1" />
+              </a>
               <Button onClick={scrollToBenefits} variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
                 Learn More
               </Button>
@@ -419,9 +419,9 @@ const Riders: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4 justify-center">
-              <Button variant="primary" className="px-10 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Become a Rider <ArrowRight className="w-5 h-5 ml-1" />
-              </Button>
+              <a href="https://ig.me/m/rivocity.1?text=Hi%20RivoCity!%20I'm%20interested%20in%20joining%20as%20a%20delivery%20rider.%20Please%20share%20the%20registration%20process%20and%20requirements." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-brand-primary px-10 py-4 text-base font-semibold text-brand-black shadow-md shadow-brand-primary/10 transition hover:brightness-95">
+                Message us on Instagram <ArrowRight className="w-5 h-5 ml-1" />
+              </a>
               <Button variant="outline" className="px-10 py-4 text-base font-semibold bg-white">
                 Contact Us
               </Button>

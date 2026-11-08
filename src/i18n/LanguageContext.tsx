@@ -7,7 +7,7 @@ type TranslationTable = Record<Language, Dictionary>;
 
 const translations: TranslationTable = {
   en: {
-    'nav.home': 'Home', 'nav.apps': 'Apps', 'nav.customers': 'Customers', 'nav.riders': 'Riders', 'nav.vendors': 'Vendors', 'nav.cities': 'Cities', 'nav.pricing': 'Pricing', 'nav.about': 'About', 'nav.help': 'Help', 'nav.contact': 'Contact',
+    'nav.home': 'Home', 'nav.apps': 'Apps', 'nav.customers': 'Customers', 'nav.riders': 'Riders', 'nav.realEstate': 'Real Estate', 'nav.vendors': 'Vendors', 'nav.cities': 'Cities', 'nav.pricing': 'Pricing', 'nav.about': 'About', 'nav.help': 'Help', 'nav.contact': 'Contact',
     'nav.getApp': 'Get RivoCity', 'nav.language': 'Language', 'nav.menuOpen': 'Open navigation menu', 'nav.menuClose': 'Close navigation menu', 'footer.navigation': 'Navigation', 'footer.legal': 'Legal', 'footer.contact': 'Contact',
     'footer.description': 'RivoCity connects customers, local businesses and delivery partners through one trusted city commerce platform built for local communities.',
     'footer.terms': 'Terms & Conditions', 'footer.privacy': 'Privacy Policy', 'footer.refund': 'Refund & Cancellation', 'footer.delete': 'Delete Account',
@@ -26,7 +26,7 @@ const translations: TranslationTable = {
     'about.eyebrow': 'About Rivo', 'about.heroTitle': 'Built for the cities we call home.', 'about.heroBody': "Rivo was created with a simple idea — make local shopping easier for customers while helping local businesses grow. By bringing trusted stores, delivery partners and customers together on one platform, we're building a better way to shop locally.", 'about.challenge': 'The Challenge', 'about.challengeTitle': 'Local shopping should be easier.', 'about.unified': 'Unified Commerce', 'about.solutionTitle': 'One platform for your entire city.', 'about.solutionBody': 'We tie the community closer together by closing the gap between neighborhood supply and immediate home demands.', 'about.mission': 'Our Mission', 'about.missionBody': 'To help every city thrive by making local shopping faster, easier and more connected.', 'about.vision': 'Our Vision',
   },
   hi: {
-    'nav.home': 'होम', 'nav.apps': 'ऐप्स', 'nav.customers': 'ग्राहक', 'nav.riders': 'डिलीवरी पार्टनर', 'nav.vendors': 'दुकानदार', 'nav.cities': 'शहर', 'nav.pricing': 'कीमतें', 'nav.about': 'हमारे बारे में', 'nav.help': 'मदद', 'nav.contact': 'संपर्क',
+    'nav.home': 'होम', 'nav.apps': 'ऐप्स', 'nav.customers': 'ग्राहक', 'nav.riders': 'डिलीवरी पार्टनर', 'nav.realEstate': 'रियल एस्टेट', 'nav.vendors': 'दुकानदार', 'nav.cities': 'शहर', 'nav.pricing': 'कीमतें', 'nav.about': 'हमारे बारे में', 'nav.help': 'मदद', 'nav.contact': 'संपर्क',
     'nav.getApp': 'RivoCity इस्तेमाल करें', 'nav.language': 'भाषा', 'nav.menuOpen': 'नेविगेशन मेन्यू खोलें', 'nav.menuClose': 'नेविगेशन मेन्यू बंद करें', 'footer.navigation': 'नेविगेशन', 'footer.legal': 'कानूनी जानकारी', 'footer.contact': 'संपर्क',
     'footer.description': 'RivoCity ग्राहकों, स्थानीय दुकानों और डिलीवरी पार्टनर्स को एक भरोसेमंद स्थानीय कॉमर्स प्लेटफ़ॉर्म से जोड़ता है।',
     'footer.terms': 'नियम और शर्तें', 'footer.privacy': 'गोपनीयता नीति', 'footer.refund': 'रिफंड और रद्दीकरण', 'footer.delete': 'खाता हटाएँ',

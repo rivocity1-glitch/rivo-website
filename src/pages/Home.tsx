@@ -211,12 +211,12 @@ const Home: React.FC = () => {
               { icon: Sparkles, title: 'Beauty', desc: 'Beauty, grooming and personal-care products and services.', path: '/vendors' },
               { icon: Layers, title: 'Stationery', desc: 'Books, school supplies, office and art essentials.', path: '/vendors' },
               { icon: Store, title: 'Home Essentials', desc: 'Useful products and everyday needs for your home.', path: '/vendors' },
-              { icon: Briefcase, title: 'Real Estate', desc: 'Homes, rentals, commercial spaces and plots in your city.', comingSoon: true },
+              { icon: Briefcase, title: 'Real Estate', desc: 'Homes, rentals, commercial spaces and plots in your city.', path: '/real-estate' },
             ].map((item) => (
               <motion.button
                 key={item.title}
                 type="button"
-                disabled={item.comingSoon}
+                disabled={Boolean(item.comingSoon)}
                 onClick={() => { if (!item.comingSoon && item.path) navigate(item.path); }}
                 variants={cardHoverVariants}
                 initial="initial"

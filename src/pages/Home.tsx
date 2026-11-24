@@ -211,12 +211,12 @@ const Home: React.FC = () => {
               { icon: Sparkles, title: 'Beauty', desc: 'Beauty, grooming and personal-care products and services.', path: '/vendors' },
               { icon: Layers, title: 'Stationery', desc: 'Books, school supplies, office and art essentials.', path: '/vendors' },
               { icon: Store, title: 'Home Essentials', desc: 'Useful products and everyday needs for your home.', path: '/vendors' },
-              { icon: Briefcase, title: 'Real Estate', desc: 'Homes, rentals, commercial spaces and plots in your city.', comingSoon: true },
+              { icon: Briefcase, title: 'Real Estate', desc: 'Homes, rentals, commercial spaces and plots in your city.', path: '/real-estate' },
             ].map((item) => (
               <motion.button
                 key={item.title}
                 type="button"
-                disabled={item.comingSoon}
+                disabled={Boolean(item.comingSoon)}
                 onClick={() => { if (!item.comingSoon && item.path) navigate(item.path); }}
                 variants={cardHoverVariants}
                 initial="initial"
@@ -237,6 +237,30 @@ const Home: React.FC = () => {
               </motion.button>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-neutral-100 bg-[#FAF9FA] py-16 md:py-20" aria-labelledby="get-rivo-apps-heading">
+        <div className="container-custom">
+          <div className="mb-10 max-w-3xl">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-primary">RivoCity Apps</span>
+            <h2 id="get-rivo-apps-heading" className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">One city. Three connected experiences.</h2>
+            <p className="mt-4 text-base leading-7 text-brand-gray-muted">Choose the RivoCity app for the way you participate in your local city economy.</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              { title: 'Customer App', detail: 'Discover local stores, shop products, check out and follow your delivery.', href: '/downloads/rivocity-customer.apk', cta: 'Download Customer APK' },
+              { title: 'Rider App', detail: 'Manage assigned deliveries, complete customer handoffs and review earnings and settlements.', href: '/downloads/rivocity-rider.apk', cta: 'Download Rider APK' },
+              { title: 'Vendor Portal', detail: 'Register your store, manage products and inventory, handle orders and review settlements.', href: 'https://vendor.rivocity.com/login', cta: 'Open Vendor Portal' },
+            ].map((app) => (
+              <div key={app.title} className="rounded-2xl border border-neutral-200 bg-white p-7">
+                <h3 className="text-lg font-extrabold">{app.title}</h3>
+                <p className="mt-3 min-h-[72px] text-sm leading-6 text-brand-gray-muted">{app.detail}</p>
+                <a href={app.href} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#0D0D0D] px-5 py-3 text-sm font-bold text-white transition hover:bg-neutral-700">{app.cta}<ArrowRight className="h-4 w-4" /></a>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-xs text-neutral-500">Android APK downloads are provided for direct installation. Enable installation from your browser or file manager when prompted. Vendor access opens the web portal.</p>
         </div>
       </section>
 

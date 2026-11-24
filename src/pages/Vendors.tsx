@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
@@ -193,6 +194,7 @@ const Vendors: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
+      <SEO title="RivoCity Vendor Portal | Grow Your Local Business" description="Register your store, manage products and stock, process orders, review analytics and track settlements with the RivoCity Vendor Portal." canonical="/vendors" />
 
       {/* =====================================================
           SECTION 1 — HERO

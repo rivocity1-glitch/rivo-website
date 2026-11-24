@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import { 
@@ -70,6 +71,7 @@ const Customers: React.FC = () => {
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
       
+      <SEO title="RivoCity for Customers | Shop Local" description="Discover local stores, browse products, place orders and follow delivery progress with RivoCity." canonical="/customers" />
       {/* ================= SECTION 1: HERO (LEFT-ALIGNED TYPOGRAPHY) ================= */}
       <section className="relative pt-8 pb-16 md:pt-16 md:pb-24 lg:pb-32" aria-labelledby="customers-hero-heading">
         <div className="container-custom">
@@ -114,12 +116,8 @@ const Customers: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto"
             >
-              <Button variant="primary" className="px-8 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-                Explore Stores <ArrowRight className="w-5 h-5 ml-1" />
-              </Button>
-              <Button variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
-                Download App
-              </Button>
+              <a href="/downloads/rivocity-customer.apk" className="inline-flex items-center justify-center rounded-full bg-brand-primary px-8 py-4 text-base font-semibold text-brand-black shadow-md shadow-brand-primary/10">Download Customer App <ArrowRight className="ml-1 h-5 w-5" /></a>
+              <a href="#shopping-flow-heading" className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-8 py-4 text-base font-semibold text-brand-black">How it works</a>
             </motion.div>
 
           </div>
@@ -331,10 +329,10 @@ const Customers: React.FC = () => {
           </div>
           <div className="max-w-3xl mx-auto space-y-4">
             <FAQItem question="How do I place an order?" answer="Open the app, browse your favorite local stores, select your items, and checkout in seconds." />
-            <FAQItem question="Which payment methods are available?" answer="You can pay online via UPI, credit/debit cards, or choose Cash on Delivery." />
+            <FAQItem question="Which payment methods are available?" answer="Cash on Delivery and UPI are the available payment methods." />
             <FAQItem question="Can I track my order?" answer="Yes, you can track your order from the store to your doorstep." />
             <FAQItem question="How long does delivery take?" answer="Since your order comes from a store nearby, delivery is fast and efficient." />
-            <FAQItem question="Can I order from multiple stores?" answer="Yes, you can place orders from different stores to get everything you need." />
+            <FAQItem question="Can I order from multiple stores?" answer="Your cart groups items by store and checkout creates a separate order for each participating store." />
           </div>
         </div>
       </section>
@@ -349,12 +347,7 @@ const Customers: React.FC = () => {
             Everything you need is closer than you think. Discover trusted stores in your city and enjoy a better way to shop.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4 justify-center">
-            <Button variant="primary" className="px-10 py-4 text-base font-semibold shadow-md shadow-brand-primary/10">
-              Explore Stores <ArrowRight className="w-5 h-5 ml-1" />
-            </Button>
-            <Button variant="outline" className="px-10 py-4 text-base font-semibold bg-white">
-              Download App
-            </Button>
+            <a href="/downloads/rivocity-customer.apk" className="inline-flex items-center justify-center rounded-full bg-brand-primary px-10 py-4 text-base font-semibold text-brand-black shadow-md shadow-brand-primary/10">Download Customer App <ArrowRight className="ml-1 h-5 w-5" /></a>
           </div>
         </div>
       </section>

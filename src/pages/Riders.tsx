@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import SEO from '../components/SEO';
 import { motion, type Variants, type Transition } from 'framer-motion';
 import { Button } from '../components/Button';
 import { 
@@ -10,7 +11,7 @@ import {
   Headphones,
   Smartphone,
   ChevronDown,
-  Navigation,
+  Pickup & drop details,
   Clock,
   Bike,
   FileText,
@@ -98,6 +99,7 @@ const Riders: React.FC = () => {
   return (
     <div className="bg-white min-h-screen overflow-x-hidden selection:bg-brand-primary selection:text-brand-black">
       
+      <SEO title="RivoCity Rider | Delivery Partner App" description="Join RivoCity as a delivery partner. Manage assigned deliveries, customer handoffs, collection records and settlement history." canonical="/riders" />
       {/* ================= SECTION 1: HERO ================= */}
       <section className="relative pt-8 pb-16 md:pt-16 md:pb-24 lg:pb-32" aria-labelledby="riders-hero-heading">
         <div className="container-custom">
@@ -147,9 +149,8 @@ const Riders: React.FC = () => {
               <a href="https://ig.me/m/rivocity.1?text=Hi%20RivoCity!%20I'm%20interested%20in%20joining%20as%20a%20delivery%20rider.%20Please%20share%20the%20registration%20process%20and%20requirements." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-brand-primary px-8 py-4 text-base font-semibold text-brand-black shadow-md shadow-brand-primary/10 transition hover:brightness-95">
                 Message us on Instagram <ArrowRight className="w-5 h-5 ml-1" />
               </a>
-              <Button onClick={scrollToBenefits} variant="outline" className="px-8 py-4 text-base font-semibold bg-white">
-                Learn More
-              </Button>
+              <a href="https://rider.rivocity.com" className="inline-flex items-center justify-center rounded-full border border-neutral-300 bg-white px-8 py-4 text-base font-semibold text-brand-black">Open Rider Portal</a>
+              <Button onClick={scrollToBenefits} variant="outline" className="px-8 py-4 text-base font-semibold bg-white">Learn More</Button>
             </motion.div>
 
           </div>
@@ -169,11 +170,11 @@ const Riders: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Wallet, title: "Launch Incentives — Coming Soon", desc: "Early riders can unlock launch incentives based on verified activity and completed deliveries." },
+              { icon: Wallet, title: "Earnings & collection records", desc: "Review delivery earnings and record customer cash or UPI collection details." },
               { icon: Clock, title: "Flexible Working Hours", desc: "Choose when you want to work." },
-              { icon: Wallet, title: "Weekly Settlements", desc: "Receive transparent weekly payouts." },
+              { icon: Wallet, title: "Settlement history", desc: "Review available balances, settlement requests, paid amounts and payment references." },
               { icon: Layers, title: "Easy Delivery Flow", desc: "Simple pickup and delivery process." },
-              { icon: Navigation, title: "Coming Soon", desc: "Turn-by-turn navigation will be introduced in a future update to make deliveries even easier." },
+              { icon: Navigation, title: "Coming Soon", desc: "Access store and customer address information for assigned deliveries." },
               { icon: Headphones, title: "Reliable Support", desc: "Get help whenever you need it." },
               { icon: Compass, title: "Grow With Us", desc: "Become part of a growing local platform." }
             ].map((card, idx) => {
@@ -260,8 +261,8 @@ const Riders: React.FC = () => {
             {[
               { icon: Calendar, title: "Availability", desc: "Go online or offline anytime." },
               { icon: Layers, title: "Order Management", desc: "Receive nearby delivery requests." },
-              { icon: Navigation, title: "Navigation", desc: "Simple pickup and drop locations." },
-              { icon: CreditCard, title: "Earnings", desc: "Track completed deliveries and payouts." },
+              { icon: Navigation, title: "Navigation", desc: "Access store and customer address information for assigned deliveries." },
+              { icon: CreditCard, title: "Earnings", desc: "Record cash received or UPI collection details during the delivery handoff." },
               { icon: ShieldCheck, title: "Safety", desc: "Verified stores and customer information." },
               { icon: Headphones, title: "Support", desc: "Dedicated support whenever needed." }
             ].map((feat, idx) => {
